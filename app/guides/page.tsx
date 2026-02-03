@@ -7,6 +7,22 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'ai-youtube-channel',
+    title: 'Start an AI-Powered YouTube Channel',
+    description: 'Cut video production from 13 hours to 3 hours. Scripts, editing, thumbnails, and monetization timeline.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live'
+  },
+  {
+    slug: 'ai-online-course-business',
+    title: 'Create and Sell Online Courses with AI',
+    description: 'Launch a course in 3 weeks instead of 3 months. Planning, production, pricing, and marketing.',
+    difficulty: 'Intermediate',
+    time: '20 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-social-media-management',
     title: 'AI Social Media Management: $3K/Month Side Hustle',
     description: 'Manage social media for small businesses using AI. Turn 2 hours of work into 20 hours of output.',
