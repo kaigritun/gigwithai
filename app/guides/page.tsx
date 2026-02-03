@@ -15,6 +15,14 @@ const guides = [
     status: 'live'
   },
   {
+    slug: 'selling-ai-automation-services',
+    title: 'How to Sell AI Automation Services',
+    description: 'No coding needed. Learn the tools, find clients, and price your AI automation services.',
+    difficulty: 'Intermediate',
+    time: '22 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-side-hustles-2026',
     title: '10 AI Side Hustles You Can Start This Week',
     description: 'Realistic income opportunities with AI—from content creation to automation services.',
@@ -36,14 +44,6 @@ const guides = [
     description: 'How to position, price, and land your first AI services client on Upwork or Fiverr.',
     difficulty: 'Intermediate',
     time: '25 min',
-    status: 'coming-soon'
-  },
-  {
-    slug: 'ai-automation-services',
-    title: 'Selling AI Automation Services',
-    description: 'Help small businesses automate with AI. Zapier, Make, custom workflows.',
-    difficulty: 'Intermediate',
-    time: '22 min',
     status: 'coming-soon'
   },
 ]
