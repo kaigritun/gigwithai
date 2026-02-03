@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -216,6 +217,24 @@ export default function AIPassiveIncome2026() {
               Read next: AI Side Hustles for 2026 →
             </Link>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-side-hustles-2026',
+                              title: 'AI Side Hustles',
+                              description: 'Active hustles that can go passive.'
+                    },
+                    {
+                              slug: 'ai-print-on-demand',
+                              title: 'Print on Demand',
+                              description: 'POD for passive income.'
+                    },
+                    {
+                              slug: 'ai-online-course-business',
+                              title: 'Online Courses',
+                              description: 'Courses as passive income.'
+                    }
+          ]} />
         </article>
       </main>
 

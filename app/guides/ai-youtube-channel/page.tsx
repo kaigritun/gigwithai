@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -249,6 +250,24 @@ export default function AIYouTubeChannelPage() {
               </p>
             </section>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-content-creation-business',
+                              title: 'Content Creation',
+                              description: 'YouTube as content business.'
+                    },
+                    {
+                              slug: 'ai-voice-acting-side-hustle',
+                              title: 'Voice Acting',
+                              description: 'Add voiceovers to videos.'
+                    },
+                    {
+                              slug: 'ai-newsletter-business',
+                              title: 'Newsletter Business',
+                              description: 'Convert viewers to subscribers.'
+                    }
+          ]} />
         </article>
 
         <div className="mt-16 pt-8 border-t border-white/10">

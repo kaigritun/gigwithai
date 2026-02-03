@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -205,6 +206,24 @@ export default function AIVoiceActingGuide() {
               ← More AI Side Hustle Ideas
             </Link>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-youtube-channel',
+                              title: 'AI YouTube Channel',
+                              description: 'Voice content for YouTube.'
+                    },
+                    {
+                              slug: 'ai-online-course-business',
+                              title: 'Online Courses',
+                              description: 'Voice narration for courses.'
+                    },
+                    {
+                              slug: 'ai-content-creation-business',
+                              title: 'Content Creation',
+                              description: 'Audio content creation.'
+                    }
+          ]} />
         </article>
       </main>
 

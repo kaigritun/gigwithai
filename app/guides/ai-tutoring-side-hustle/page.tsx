@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -435,7 +436,25 @@ Keep it warm but professional. Under 200 words.`}</p>
             </section>
           </div>
         </div>
-      </article>
+      
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-online-course-business',
+                              title: 'Online Courses',
+                              description: 'Scale tutoring with courses.'
+                    },
+                    {
+                              slug: 'ai-virtual-assistant',
+                              title: 'Virtual Assistant',
+                              description: 'Education-focused VA work.'
+                    },
+                    {
+                              slug: 'ai-content-creation-business',
+                              title: 'Content Creation',
+                              description: 'Create educational content.'
+                    }
+          ]} />
+        </article>
 
       {/* Footer */}
       <footer className="border-t border-white/10 px-6 py-8 mt-auto">

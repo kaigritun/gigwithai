@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -216,6 +217,24 @@ export default function ChatGPTMoneyGuide() {
               Next: Getting Your First AI Freelance Client →
             </Link>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-side-hustles-2026',
+                              title: 'AI Side Hustles 2026',
+                              description: '10 realistic AI side hustles that pay.'
+                    },
+                    {
+                              slug: 'ai-copywriting-services',
+                              title: 'AI Copywriting Services',
+                              description: 'Start an AI-powered copywriting business.'
+                    },
+                    {
+                              slug: 'selling-ai-automation-services',
+                              title: 'Selling AI Automation',
+                              description: 'Sell automation services to businesses.'
+                    }
+          ]} />
         </article>
       </main>
 

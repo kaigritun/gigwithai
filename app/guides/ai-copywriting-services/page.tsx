@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -318,6 +319,24 @@ export default function AICopywritingGuide() {
               Next: Getting Your First Freelance Client →
             </Link>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-freelancing-first-client',
+                              title: 'Getting Your First Client',
+                              description: 'Land your first copywriting client.'
+                    },
+                    {
+                              slug: 'ai-content-creation-business',
+                              title: 'Content Creation Business',
+                              description: 'Expand from copywriting to content.'
+                    },
+                    {
+                              slug: 'pricing-ai-services',
+                              title: 'Pricing AI Services',
+                              description: 'Price copywriting services profitably.'
+                    }
+          ]} />
         </article>
       </main>
 

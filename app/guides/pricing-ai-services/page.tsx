@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -250,7 +251,25 @@ export default function PricingAIServices() {
             Explore More Guides
           </Link>
         </div>
-      </article>
+      
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-freelancing-first-client',
+                              title: 'First Client',
+                              description: 'Price right to land clients.'
+                    },
+                    {
+                              slug: 'selling-ai-automation-services',
+                              title: 'Selling Automation',
+                              description: 'Price automation services.'
+                    },
+                    {
+                              slug: 'ai-consulting-practice',
+                              title: 'AI Consulting',
+                              description: 'Consulting pricing strategies.'
+                    }
+          ]} />
+        </article>
 
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 mt-12">

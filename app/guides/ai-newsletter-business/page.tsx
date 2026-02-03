@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -249,6 +250,24 @@ export default function AINewsletterBusiness() {
               ← More Guides
             </Link>
           </div>
+        
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-content-creation-business',
+                              title: 'Content Creation Business',
+                              description: 'Create content beyond newsletters.'
+                    },
+                    {
+                              slug: 'ai-copywriting-services',
+                              title: 'AI Copywriting',
+                              description: 'Writing skills for newsletters.'
+                    },
+                    {
+                              slug: 'ai-social-media-management',
+                              title: 'Social Media Management',
+                              description: 'Promote your newsletter on social.'
+                    }
+          ]} />
         </article>
       </main>
     </div>

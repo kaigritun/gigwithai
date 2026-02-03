@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import RelatedGuides from '@/components/RelatedGuides'
 
 export const metadata = {
   title: 'How to Sell AI Automation Services (Beginner\'s Guide) | GigWithAI',
@@ -315,7 +316,25 @@ export default function SellingAIAutomationServicesPage() {
             </section>
           </div>
         </div>
-      </article>
+      
+          <RelatedGuides guides={[
+                    {
+                              slug: 'ai-data-automation',
+                              title: 'AI Data Automation',
+                              description: 'Automate data tasks for clients.'
+                    },
+                    {
+                              slug: 'ai-consulting-practice',
+                              title: 'AI Consulting',
+                              description: 'Consult on automation strategy.'
+                    },
+                    {
+                              slug: 'pricing-ai-services',
+                              title: 'Pricing AI Services',
+                              description: 'Price automation projects for profit.'
+                    }
+          ]} />
+        </article>
 
       <footer className="border-t border-white/10 px-6 py-8 mt-auto">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
