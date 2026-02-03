@@ -46,6 +46,27 @@ export default function Home() {
           
           <div className="space-y-4">
             <Link 
+              href="/guides/ai-content-creation-business"
+              className="block p-6 border border-white/10 rounded-lg hover:border-violet-500/50 hover:bg-white/[0.02] transition group"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-violet-400 transition">
+                    Start an AI Content Creation Business
+                  </h3>
+                  <p className="text-gray-400 text-sm">
+                    Build a content creation service using AI. Services, pricing, tools, and getting clients.
+                  </p>
+                </div>
+                <span className="text-violet-400 opacity-0 group-hover:opacity-100 transition">→</span>
+              </div>
+              <div className="mt-4 flex gap-2">
+                <span className="text-xs px-2 py-1 bg-violet-500/10 text-violet-400 rounded">Beginner</span>
+                <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded">18 min read</span>
+              </div>
+            </Link>
+
+            <Link 
               href="/guides/ai-side-hustles-2026"
               className="block p-6 border border-white/10 rounded-lg hover:border-violet-500/50 hover:bg-white/[0.02] transition group"
             >
@@ -63,27 +84,6 @@ export default function Home() {
               <div className="mt-4 flex gap-2">
                 <span className="text-xs px-2 py-1 bg-violet-500/10 text-violet-400 rounded">Beginner</span>
                 <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded">15 min read</span>
-              </div>
-            </Link>
-
-            <Link 
-              href="/guides/chatgpt-money-guide"
-              className="block p-6 border border-white/10 rounded-lg hover:border-violet-500/50 hover:bg-white/[0.02] transition group"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-violet-400 transition">
-                    How to Make Money with ChatGPT
-                  </h3>
-                  <p className="text-gray-400 text-sm">
-                    Turn ChatGPT into a money-making tool. Freelancing, content, automation, and more.
-                  </p>
-                </div>
-                <span className="text-violet-400 opacity-0 group-hover:opacity-100 transition">→</span>
-              </div>
-              <div className="mt-4 flex gap-2">
-                <span className="text-xs px-2 py-1 bg-violet-500/10 text-violet-400 rounded">Beginner</span>
-                <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded">20 min read</span>
               </div>
             </Link>
 

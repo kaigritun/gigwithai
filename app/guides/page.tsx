@@ -7,6 +7,14 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'ai-content-creation-business',
+    title: 'Start an AI Content Creation Business',
+    description: 'Build a content creation service using AI. Services, pricing, tools, and getting clients.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-side-hustles-2026',
     title: '10 AI Side Hustles You Can Start This Week',
     description: 'Realistic income opportunities with AI—from content creation to automation services.',
@@ -28,14 +36,6 @@ const guides = [
     description: 'How to position, price, and land your first AI services client on Upwork or Fiverr.',
     difficulty: 'Intermediate',
     time: '25 min',
-    status: 'coming-soon'
-  },
-  {
-    slug: 'ai-content-creation',
-    title: 'AI Content Creation Business',
-    description: 'Build a content creation service using AI. Blog posts, social media, newsletters.',
-    difficulty: 'Beginner',
-    time: '18 min',
     status: 'coming-soon'
   },
   {
@@ -70,34 +70,52 @@ export default function GuidesPage() {
           <p className="text-gray-400 mb-12">Practical, no-fluff guides to making money with AI.</p>
 
           <div className="space-y-4">
-            {guides.map((guide) => (
-              <div
-                key={guide.slug}
-                className="block p-6 border border-white/10 rounded-lg relative overflow-hidden"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">
-                      {guide.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm">
-                      {guide.description}
-                    </p>
+            {guides.map((guide) => {
+              const isLive = guide.status === 'live'
+              const content = (
+                <>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className={`text-lg font-semibold mb-2 ${isLive ? 'group-hover:text-violet-400 transition' : ''}`}>
+                        {guide.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        {guide.description}
+                      </p>
+                    </div>
+                    {isLive && <span className="text-violet-400 opacity-0 group-hover:opacity-100 transition">→</span>}
                   </div>
+                  <div className="mt-4 flex gap-2">
+                    <span className={`text-xs px-2 py-1 rounded ${
+                      guide.difficulty === 'Beginner' 
+                        ? 'bg-violet-500/10 text-violet-400'
+                        : 'bg-amber-500/10 text-amber-400'
+                    }`}>
+                      {guide.difficulty}
+                    </span>
+                    <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded">{guide.time}</span>
+                    {!isLive && <span className="text-xs px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded">Coming Soon</span>}
+                  </div>
+                </>
+              )
+              
+              return isLive ? (
+                <Link
+                  key={guide.slug}
+                  href={`/guides/${guide.slug}`}
+                  className="block p-6 border border-white/10 rounded-lg relative overflow-hidden hover:border-violet-500/50 hover:bg-white/[0.02] transition group"
+                >
+                  {content}
+                </Link>
+              ) : (
+                <div
+                  key={guide.slug}
+                  className="block p-6 border border-white/10 rounded-lg relative overflow-hidden"
+                >
+                  {content}
                 </div>
-                <div className="mt-4 flex gap-2">
-                  <span className={`text-xs px-2 py-1 rounded ${
-                    guide.difficulty === 'Beginner' 
-                      ? 'bg-violet-500/10 text-violet-400'
-                      : 'bg-amber-500/10 text-amber-400'
-                  }`}>
-                    {guide.difficulty}
-                  </span>
-                  <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded">{guide.time}</span>
-                  <span className="text-xs px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded">Coming Soon</span>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-12">
