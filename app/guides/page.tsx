@@ -7,6 +7,22 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'make-money-with-ai',
+    title: 'How to Make Money with AI: 12 Proven Methods',
+    description: 'Comprehensive guide to making money with AI in 2026. Freelancing, content creation, automation, and more.',
+    difficulty: 'Beginner',
+    time: '25 min',
+    status: 'live'
+  },
+  {
+    slug: 'best-ai-tools-for-freelancers',
+    title: 'Best AI Tools for Freelancers in 2026',
+    description: 'Curated list of AI tools for writing, design, productivity, and client management. Build your freelance stack.',
+    difficulty: 'Beginner',
+    time: '12 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-youtube-channel',
     title: 'Start an AI-Powered YouTube Channel',
     description: 'Cut video production from 13 hours to 3 hours. Scripts, editing, thumbnails, and monetization timeline.',
