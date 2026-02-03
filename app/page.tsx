@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import EmailSignup from '@/components/EmailSignup'
 
 export default function Home() {
   return (
@@ -34,6 +35,14 @@ export default function Home() {
           >
             Browse Guides →
           </Link>
+          
+          {/* Email Signup in Hero */}
+          <div className="mt-12 max-w-md mx-auto text-left">
+            <EmailSignup 
+              headline="Get AI income ideas weekly" 
+              buttonText="Get Free Ideas" 
+            />
+          </div>
         </div>
       </section>
 
@@ -145,6 +154,16 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="px-6 py-16 border-t border-white/10">
+        <div className="max-w-md mx-auto">
+          <EmailSignup 
+            headline="Join 1,000+ AI hustlers" 
+            buttonText="Subscribe Free" 
+          />
         </div>
       </section>
 
