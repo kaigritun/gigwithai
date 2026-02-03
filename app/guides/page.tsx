@@ -23,6 +23,14 @@ const guides = [
     status: 'live'
   },
   {
+    slug: 'ai-tutoring-side-hustle',
+    title: 'AI Tutoring Side Hustle: Make $50-150/Hour',
+    description: 'Build an AI-powered tutoring business. Use ChatGPT for prep, custom materials, and 24/7 student support.',
+    difficulty: 'Beginner',
+    time: '20 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-side-hustles-2026',
     title: '10 AI Side Hustles You Can Start This Week',
     description: 'Realistic income opportunities with AI—from content creation to automation services.',
