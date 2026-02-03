@@ -7,6 +7,22 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'ai-passive-income-2026',
+    title: 'AI Passive Income: 7 Ways to Make Money While You Sleep',
+    description: 'Build income streams that work 24/7 with AI. Print on demand, faceless YouTube, niche blogs, and more.',
+    difficulty: 'Beginner',
+    time: '15 min',
+    status: 'live'
+  },
+  {
+    slug: 'ai-etsy-sellers',
+    title: 'AI for Etsy Sellers: Double Your Sales',
+    description: 'Use AI to write better listings, optimize for search, and cut listing time from 3 hours to 30 minutes.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-content-creation-business',
     title: 'Start an AI Content Creation Business',
     description: 'Build a content creation service using AI. Services, pricing, tools, and getting clients.',
