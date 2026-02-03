@@ -7,6 +7,30 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'ai-social-media-management',
+    title: 'AI Social Media Management: $3K/Month Side Hustle',
+    description: 'Manage social media for small businesses using AI. Turn 2 hours of work into 20 hours of output.',
+    difficulty: 'Beginner',
+    time: '12 min',
+    status: 'live'
+  },
+  {
+    slug: 'ai-newsletter-business',
+    title: 'Start an AI-Powered Newsletter',
+    description: 'Build a profitable newsletter using AI. From picking a niche to $8K/month at 10K subscribers.',
+    difficulty: 'Beginner',
+    time: '15 min',
+    status: 'live'
+  },
+  {
+    slug: 'ai-data-automation',
+    title: 'Sell AI Data & Spreadsheet Automation: $100/Hour',
+    description: 'Automate spreadsheets and data workflows for businesses. Premium rates, no coding required.',
+    difficulty: 'Intermediate',
+    time: '14 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-virtual-assistant',
     title: 'AI Virtual Assistant Side Hustle',
     description: 'Start an AI-powered VA business. Handle 3x the clients with ChatGPT and automation tools. Earn $35-75/hour.',
