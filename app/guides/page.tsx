@@ -7,6 +7,22 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'ai-virtual-assistant',
+    title: 'AI Virtual Assistant Side Hustle',
+    description: 'Start an AI-powered VA business. Handle 3x the clients with ChatGPT and automation tools. Earn $35-75/hour.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live'
+  },
+  {
+    slug: 'ai-bookkeeping-services',
+    title: 'AI Bookkeeping: $50-100/Hour Side Hustle',
+    description: 'Use QuickBooks + AI to help small businesses. Auto-categorize transactions, generate reports, earn great money.',
+    difficulty: 'Beginner',
+    time: '20 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-passive-income-2026',
     title: 'AI Passive Income: 7 Ways to Make Money While You Sleep',
     description: 'Build income streams that work 24/7 with AI. Print on demand, faceless YouTube, niche blogs, and more.',
