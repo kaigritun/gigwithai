@@ -47,6 +47,14 @@ const guides = [
     status: 'live'
   },
   {
+    slug: 'pricing-ai-services',
+    title: 'How to Price AI Services',
+    description: 'Don\'t leave money on the table. Project-based, retainer, and value-based pricing strategies with real market benchmarks.',
+    difficulty: 'Intermediate',
+    time: '12 min',
+    status: 'live'
+  },
+  {
     slug: 'selling-ai-automation-services',
     title: 'How to Sell AI Automation Services',
     description: 'No coding needed. Learn the tools, find clients, and price your AI automation services.',
