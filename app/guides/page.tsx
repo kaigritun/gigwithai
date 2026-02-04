@@ -7,6 +7,24 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'start-ai-agency-2026',
+    title: 'How to Start an AI Agency in 2026 (From Zero to First Client)',
+    description: 'Step-by-step guide to starting an AI agency. Find clients, price services, deliver results. No coding required.',
+    difficulty: 'Intermediate',
+    time: '20 min',
+    status: 'live',
+    featured: true
+  },
+  {
+    slug: 'best-ai-services-freelancers',
+    title: '12 AI Services You Can Sell as a Freelancer in 2026',
+    description: 'High-demand AI services that businesses will pay for. No coding required. Start selling this week.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live',
+    featured: true
+  },
+  {
     slug: 'chatgpt-business-ideas',
     title: 'ChatGPT Business Ideas: 10 Proven Ways to Make Money in 2026',
     description: 'Start a business with ChatGPT. 10 proven ideas including content writing, chatbots, consulting, and more. Zero to $10K/month potential.',
