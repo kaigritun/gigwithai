@@ -118,8 +118,10 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className="text-center text-gray-500 text-sm mt-8">
-            More guides coming soon
+          <p className="text-center mt-8">
+            <Link href="/guides" className="text-violet-400 hover:text-violet-300 text-sm font-medium transition">
+              View all 60+ guides →
+            </Link>
           </p>
         </div>
       </section>
