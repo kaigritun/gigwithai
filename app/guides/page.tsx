@@ -7,6 +7,31 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'sell-chatgpt-services',
+    title: 'How to Sell ChatGPT Services and Make $1,000-5,000/Month',
+    description: 'Learn how to sell ChatGPT services to businesses. 5 services you can offer today, pricing strategies, and how to find clients.',
+    difficulty: 'Beginner',
+    time: '15 min',
+    status: 'live',
+    featured: true
+  },
+  {
+    slug: 'ai-automation-services',
+    title: 'How to Start an AI Automation Business (No Coding Required)',
+    description: 'Start an AI automation business without coding. Learn Make.com, Zapier, and ChatGPT API to build automations businesses pay $2,000-10,000 for.',
+    difficulty: 'Intermediate',
+    time: '18 min',
+    status: 'live'
+  },
+  {
+    slug: 'chatgpt-freelancing',
+    title: '7 Ways to Make Money with ChatGPT as a Freelancer in 2026',
+    description: 'Make money with ChatGPT freelancing. 7 services you can offer, how to price them, and getting your first clients this week.',
+    difficulty: 'Beginner',
+    time: '16 min',
+    status: 'live'
+  },
+  {
     slug: 'ai-dropshipping-guide',
     title: 'AI for Dropshipping: Run a Profitable Store in 2026',
     description: 'How to use AI for dropshipping. Product research, descriptions that convert, and customer service automation.',
