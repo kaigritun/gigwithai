@@ -1,36 +1,39 @@
 import { MetadataRoute } from 'next'
+import fs from 'fs'
+import path from 'path'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://gigwithai.com'
   
-  const pages = [
+  // Static pages
+  const staticPages = [
     { path: '', priority: 1, changeFrequency: 'weekly' as const },
     { path: '/guides', priority: 0.9, changeFrequency: 'weekly' as const },
     { path: '/tools', priority: 0.9, changeFrequency: 'weekly' as const },
-    // Guides
-    { path: '/guides/ai-side-hustles-2026', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-passive-income-2026', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/chatgpt-money-guide', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-freelancing-first-client', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/pricing-ai-services', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/selling-ai-automation-services', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-content-creation-business', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-copywriting-services', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-social-media-management', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-newsletter-business', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-online-course-business', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-youtube-channel', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-consulting-practice', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-virtual-assistant', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-data-automation', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-bookkeeping-services', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-tutoring-side-hustle', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-voice-acting-side-hustle', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-print-on-demand', priority: 0.8, changeFrequency: 'monthly' as const },
-    { path: '/guides/ai-etsy-sellers', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/toolkit', priority: 0.9, changeFrequency: 'weekly' as const },
   ]
+  
+  // Dynamically get all guide pages
+  const guidesDir = path.join(process.cwd(), 'app/guides')
+  let guidePages: { path: string; priority: number; changeFrequency: 'monthly' }[] = []
+  
+  try {
+    const guideFolders = fs.readdirSync(guidesDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name)
+    
+    guidePages = guideFolders.map(folder => ({
+      path: `/guides/${folder}`,
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    }))
+  } catch (error) {
+    console.error('Error reading guides directory:', error)
+  }
 
-  return pages.map(({ path, priority, changeFrequency }) => ({
+  const allPages = [...staticPages, ...guidePages]
+
+  return allPages.map(({ path, priority, changeFrequency }) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
     changeFrequency,
