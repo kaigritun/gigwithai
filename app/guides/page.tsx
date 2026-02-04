@@ -7,6 +7,24 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'chatgpt-for-freelancers',
+    title: 'ChatGPT for Freelancers: Complete Guide to 10x Your Output',
+    description: 'Learn how to use ChatGPT to 10x your freelance output. Proposal writing, client communication, pricing AI-assisted work, and workflows that actually work.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live',
+    featured: true
+  },
+  {
+    slug: 'ai-upwork-profile',
+    title: 'How to Use AI to Create a Winning Upwork Profile',
+    description: 'Use AI to build an Upwork profile that actually converts. Step-by-step guide to crafting your title, overview, and portfolio descriptions with ChatGPT.',
+    difficulty: 'Beginner',
+    time: '15 min',
+    status: 'live',
+    featured: true
+  },
+  {
     slug: 'start-ai-automation-agency',
     title: 'How to Start an AI Automation Agency in 2026',
     description: 'Complete guide to building an AI automation agency. Learn the tools, find clients, price at $2,000-10,000+, and scale to $10K/month.',
