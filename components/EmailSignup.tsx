@@ -19,10 +19,10 @@ export default function EmailSignup({
     setStatus('loading');
     
     try {
-      const response = await fetch('https://buttondown.com/api/emails/embed-subscribe/gigwithai', {
+      const response = await fetch('/api/subscribe', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `email=${encodeURIComponent(email)}`,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
       });
       
       if (response.ok) {
