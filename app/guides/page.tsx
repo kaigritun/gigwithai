@@ -7,6 +7,15 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'start-ai-automation-agency',
+    title: 'How to Start an AI Automation Agency in 2026',
+    description: 'Complete guide to building an AI automation agency. Learn the tools, find clients, price at $2,000-10,000+, and scale to $10K/month.',
+    difficulty: 'Intermediate',
+    time: '25 min',
+    status: 'live',
+    featured: true
+  },
+  {
     slug: 'sell-chatgpt-services',
     title: 'How to Sell ChatGPT Services and Make $1,000-5,000/Month',
     description: 'Learn how to sell ChatGPT services to businesses. 5 services you can offer today, pricing strategies, and how to find clients.',
