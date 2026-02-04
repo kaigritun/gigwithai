@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import EmailSignup from '@/components/EmailSignup'
 import RelatedGuides from '@/components/RelatedGuides'
+import EmailSignup from '@/components/EmailSignup'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'How to Start a ChatGPT Consulting Business in 2026 | GigWithAI',
-  description: 'Start a ChatGPT consulting business with low startup costs. Learn the consulting model, how to find clients, and avoid common mistakes.',
+  description: 'Start a ChatGPT consulting business with low startup costs. Learn pricing, finding clients, and delivering results in this complete guide.',
 }
 
-export default function ChatGPTConsultingBusinessGuide() {
+export default function ChatGPTConsultingGuide() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <nav className="border-b border-white/10 px-6 py-4">
@@ -39,14 +39,11 @@ export default function ChatGPTConsultingBusinessGuide() {
             How to Start a ChatGPT Consulting Business in 2026
           </h1>
           <p className="text-xl text-gray-400 mb-12 leading-relaxed">
-            Starting a ChatGPT consulting business is one of the fastest ways to monetize AI skills without building a product.
+            Most businesses know they should use AI but don&apos;t know how. That&apos;s your opportunity.
           </p>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Why ChatGPT Consulting Works</h2>
-            <p className="text-gray-300 mb-4">
-              Most businesses know they should use AI but don&apos;t know how. That&apos;s your opportunity.
-            </p>
             <p className="text-gray-300 mb-4">
               You don&apos;t need to be a developer. You need to understand:
             </p>
@@ -58,27 +55,25 @@ export default function ChatGPTConsultingBusinessGuide() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">The Consulting Model</h2>
+            <h2 className="text-2xl font-bold mb-4">The Consulting Model</h2>
             <div className="grid md:grid-cols-3 gap-4">
               <div className="border border-white/10 rounded-lg p-6">
-                <h3 className="font-bold text-violet-400 mb-3">Hourly Consulting</h3>
-                <p className="text-2xl font-bold text-white mb-2">$75-200/hr</p>
-                <p className="text-gray-400 text-sm">Good for starting out and learning</p>
+                <h3 className="font-bold text-violet-400 mb-2">Hourly</h3>
+                <p className="text-2xl font-bold mb-2">$75-200/hr</p>
+                <p className="text-gray-400 text-sm">Best for learning</p>
+              </div>
+              <div className="border border-violet-500/30 rounded-lg p-6 bg-violet-600/10">
+                <h3 className="font-bold text-violet-400 mb-2">Project</h3>
+                <p className="text-2xl font-bold mb-2">$500-5K</p>
+                <p className="text-gray-400 text-sm">Better margins</p>
               </div>
               <div className="border border-white/10 rounded-lg p-6">
-                <h3 className="font-bold text-violet-400 mb-3">Project-Based</h3>
-                <p className="text-2xl font-bold text-white mb-2">$500-5,000</p>
-                <p className="text-gray-400 text-sm">Better margins, implementation work</p>
-              </div>
-              <div className="border border-white/10 rounded-lg p-6">
-                <h3 className="font-bold text-violet-400 mb-3">Retainer</h3>
-                <p className="text-2xl font-bold text-white mb-2">$500-2,000/mo</p>
-                <p className="text-gray-400 text-sm">Ongoing optimization, recurring revenue</p>
+                <h3 className="font-bold text-violet-400 mb-2">Retainer</h3>
+                <p className="text-2xl font-bold mb-2">$500-2K/mo</p>
+                <p className="text-gray-400 text-sm">Recurring revenue</p>
               </div>
             </div>
-            <p className="text-gray-400 mt-4 text-sm">
-              Start hourly to learn, then move to project-based for better margins.
-            </p>
+            <p className="text-gray-400 mt-4 text-sm">Start hourly to learn, then move to project-based for better margins.</p>
           </section>
 
           <section className="mb-12">
@@ -86,9 +81,7 @@ export default function ChatGPTConsultingBusinessGuide() {
             
             <div className="border border-white/10 rounded-lg p-6 mb-4">
               <h3 className="font-bold text-lg mb-3">1. Pick a Niche (Critical)</h3>
-              <p className="text-gray-300 text-sm mb-3">
-                Generic &quot;AI consultant&quot; means nothing. Pick ONE:
-              </p>
+              <p className="text-gray-300 text-sm mb-4">Generic &quot;AI consultant&quot; means nothing. Pick ONE:</p>
               <ul className="space-y-1 text-gray-400 text-sm">
                 <li>• Real estate agents (listing descriptions, client emails)</li>
                 <li>• E-commerce stores (product descriptions, customer service)</li>
@@ -96,117 +89,85 @@ export default function ChatGPTConsultingBusinessGuide() {
                 <li>• Small law firms (document review, client intake)</li>
                 <li>• Marketing agencies (copy variations, research)</li>
               </ul>
-              <p className="text-violet-400 text-sm mt-3">The more specific, the easier to find clients.</p>
             </div>
 
             <div className="border border-white/10 rounded-lg p-6 mb-4">
               <h3 className="font-bold text-lg mb-3">2. Build Your Proof</h3>
-              <p className="text-gray-300 text-sm mb-3">
-                You need examples before clients will pay. Create:
-              </p>
-              <ul className="space-y-1 text-gray-400 text-sm">
-                <li>• 3-5 case studies (even from personal projects)</li>
-                <li>• Before/after comparisons</li>
-                <li>• Time-saved calculations</li>
-              </ul>
-              <div className="bg-black/30 rounded p-3 mt-3 text-sm text-gray-300">
-                Example: &quot;Helped a realtor generate 20 listing descriptions in 30 minutes instead of 4 hours&quot;
+              <p className="text-gray-300 text-sm mb-2">Create 3-5 case studies (even from personal projects):</p>
+              <div className="bg-black/30 rounded p-4 text-sm text-gray-300">
+                <p>&quot;Helped a realtor generate 20 listing descriptions in 30 minutes instead of 4 hours&quot;</p>
               </div>
             </div>
 
             <div className="border border-white/10 rounded-lg p-6 mb-4">
               <h3 className="font-bold text-lg mb-3">3. Package Your Services</h3>
-              <p className="text-gray-300 text-sm mb-3">
-                Don&apos;t sell &quot;ChatGPT help.&quot; Sell outcomes:
-              </p>
-              <ul className="space-y-1 text-gray-400 text-sm">
-                <li>• &quot;AI-Powered Email System Setup&quot; (not &quot;ChatGPT training&quot;)</li>
-                <li>• &quot;Automated Content Workflow&quot; (not &quot;prompt writing&quot;)</li>
-                <li>• &quot;Customer Response Templates&quot; (not &quot;AI assistance&quot;)</li>
-              </ul>
-              <p className="text-violet-400 text-sm mt-3">Price the outcome, not your time.</p>
+              <p className="text-gray-300 text-sm mb-4">Don&apos;t sell &quot;ChatGPT help.&quot; Sell outcomes:</p>
+              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                <div className="border border-red-500/20 rounded p-3 bg-red-600/5">
+                  <p className="text-red-400 font-bold mb-1">❌ Don&apos;t Say</p>
+                  <p className="text-gray-400">&quot;ChatGPT training&quot;</p>
+                </div>
+                <div className="border border-emerald-500/20 rounded p-3 bg-emerald-600/5">
+                  <p className="text-emerald-400 font-bold mb-1">✅ Say</p>
+                  <p className="text-gray-400">&quot;AI-Powered Email System Setup&quot;</p>
+                </div>
+              </div>
             </div>
 
             <div className="border border-white/10 rounded-lg p-6 mb-4">
               <h3 className="font-bold text-lg mb-3">4. Find Your First 3 Clients</h3>
-              <p className="text-gray-300 text-sm mb-3">Warm outreach works best:</p>
+              <p className="text-gray-300 text-sm mb-2">Warm outreach works best:</p>
               <ul className="space-y-1 text-gray-400 text-sm">
                 <li>• LinkedIn posts showing results (not selling)</li>
                 <li>• Facebook groups for your niche</li>
                 <li>• Direct messages to businesses you&apos;ve researched</li>
                 <li>• Local business networking events</li>
               </ul>
-              <p className="text-gray-400 text-sm mt-3">
-                Cold email can work but needs volume. Start with 20 personalized emails to businesses in your niche.
-              </p>
             </div>
 
             <div className="border border-white/10 rounded-lg p-6">
               <h3 className="font-bold text-lg mb-3">5. Deliver and Document</h3>
-              <p className="text-gray-300 text-sm mb-3">Every project should create:</p>
-              <ul className="space-y-1 text-gray-400 text-sm">
+              <p className="text-gray-300 text-sm">Every project should create:</p>
+              <ul className="space-y-1 text-gray-400 text-sm mt-2">
                 <li>• A system the client can use independently</li>
                 <li>• Documentation they can reference</li>
                 <li>• Results they can measure</li>
               </ul>
-              <p className="text-violet-400 text-sm mt-3">This creates testimonials and referrals.</p>
-            </div>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4">Common Mistakes to Avoid</h2>
-            <div className="grid md:grid-cols-3 gap-4">
-              <div className="border border-red-500/20 rounded-lg p-6 bg-red-600/5">
-                <h3 className="font-bold text-red-400 mb-3">Overcomplicating It</h3>
-                <p className="text-gray-300 text-sm">Start with simple use cases. Email templates, content outlines, customer FAQs.</p>
-              </div>
-              <div className="border border-red-500/20 rounded-lg p-6 bg-red-600/5">
-                <h3 className="font-bold text-red-400 mb-3">Underpricing</h3>
-                <p className="text-gray-300 text-sm">If you save a business 10 hours/week, $500/month is a bargain for them.</p>
-              </div>
-              <div className="border border-red-500/20 rounded-lg p-6 bg-red-600/5">
-                <h3 className="font-bold text-red-400 mb-3">Not Niching Down</h3>
-                <p className="text-gray-300 text-sm">&quot;I help everyone with AI&quot; helps no one.</p>
-              </div>
             </div>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">What You Actually Need</h2>
-            <div className="border border-emerald-500/20 rounded-lg p-6 bg-emerald-600/5">
-              <ul className="space-y-2 text-gray-300">
-                <li>• ChatGPT Plus ($20/month) - for GPT-4 access</li>
-                <li>• A simple website or LinkedIn presence</li>
-                <li>• 3 good examples of your work</li>
-                <li>• A way to collect payment (Stripe, PayPal)</li>
-              </ul>
-              <p className="text-emerald-400 font-bold mt-4">Total startup cost: Under $50</p>
-            </div>
+            <ul className="space-y-2 text-gray-300">
+              <li>• ChatGPT Plus ($20/month) - for GPT-4 access</li>
+              <li>• A simple website or LinkedIn presence</li>
+              <li>• 3 good examples of your work</li>
+              <li>• A way to collect payment (Stripe, PayPal)</li>
+            </ul>
+            <p className="text-violet-400 mt-4 font-bold">Total startup cost: Under $50.</p>
           </section>
 
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4">Getting Started Today</h2>
-            <div className="border border-violet-500/30 rounded-lg p-6 bg-violet-600/10">
+            <div className="bg-gradient-to-r from-violet-600/20 to-purple-600/20 border border-violet-500/30 rounded-lg p-6">
               <ol className="space-y-2 text-gray-300">
                 <li>1. Pick your niche (30 minutes of research)</li>
                 <li>2. Create one detailed case study</li>
                 <li>3. Post on LinkedIn about what you learned</li>
                 <li>4. Reach out to 5 businesses this week</li>
               </ol>
-              <p className="text-violet-400 font-medium mt-4">
-                You don&apos;t need permission. You need proof you can deliver value.
-              </p>
+              <p className="text-violet-400 mt-4 font-bold">You don&apos;t need permission. You need proof you can deliver value.</p>
             </div>
           </section>
 
-          <EmailSignup headline="Want more AI business strategies?" buttonText="Get Free Tips" />
+          <EmailSignup />
 
           <div className="flex gap-4 flex-wrap mt-12">
             <Link 
-              href="/guides/ai-side-hustles-2026"
+              href="/guides/ai-consulting-practice"
               className="text-violet-400 hover:text-violet-300"
             >
-              ← All AI Side Hustles
+              ← AI Consulting Practice
             </Link>
             <Link 
               href="/guides/sell-chatgpt-services"
@@ -223,14 +184,14 @@ export default function ChatGPTConsultingBusinessGuide() {
               description: '5 services you can sell today.'
             },
             {
-              slug: 'ai-automation-services',
-              title: 'AI Automation Services',
-              description: 'Build automations for $2K-10K.'
+              slug: 'chatgpt-freelancing',
+              title: 'ChatGPT Freelancing',
+              description: '7 ways to make money freelancing.'
             },
             {
-              slug: 'first-1000-with-ai',
-              title: 'First $1,000 with AI',
-              description: 'Step-by-step to your first earnings.'
+              slug: 'prompt-engineering-business',
+              title: 'Prompt Engineering Business',
+              description: 'Monetize your prompt skills.'
             }
           ]} />
         </article>
