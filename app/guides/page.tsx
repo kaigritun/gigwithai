@@ -130,11 +130,12 @@ const guides = [
   },
   {
     slug: 'ai-side-hustles-2026',
-    title: '10 AI Side Hustles You Can Start This Week',
-    description: 'Realistic income opportunities with AI—from content creation to automation services.',
+    title: '15 Best AI Side Hustles for 2026 (Realistic Income)',
+    description: 'Comprehensive guide to AI side hustles with realistic income potential. 15 proven methods with time to first dollar, skills needed, and tools to use.',
     difficulty: 'Beginner',
-    time: '15 min',
-    status: 'coming-soon'
+    time: '22 min',
+    status: 'live',
+    featured: true
   },
   {
     slug: 'chatgpt-money-guide',
