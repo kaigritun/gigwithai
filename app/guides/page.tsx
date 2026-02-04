@@ -7,6 +7,15 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'social-media-management-side-hustle',
+    title: 'How to Start a Social Media Management Side Hustle with AI in 2025',
+    description: 'Complete guide to starting a social media management side hustle using AI tools. Charge $500-2000/month per client while working part-time.',
+    difficulty: 'Beginner',
+    time: '16 min',
+    status: 'live',
+    featured: true
+  },
+  {
     slug: 'chatgpt-consulting-business',
     title: 'How to Start a ChatGPT Consulting Business in 2026',
     description: 'Start a ChatGPT consulting business with low startup costs. Learn the consulting model, how to find clients, and avoid common mistakes.',
