@@ -7,6 +7,24 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'chatgpt-business-ideas',
+    title: 'ChatGPT Business Ideas: 10 Proven Ways to Make Money in 2026',
+    description: 'Start a business with ChatGPT. 10 proven ideas including content writing, chatbots, consulting, and more. Zero to $10K/month potential.',
+    difficulty: 'Beginner',
+    time: '15 min',
+    status: 'live',
+    featured: true
+  },
+  {
+    slug: 'first-1000-with-ai',
+    title: 'How to Make Your First $1,000 with AI (Step-by-Step)',
+    description: 'Step-by-step guide to earning your first $1,000 with AI services. From picking your offer to closing clients in 3-4 weeks.',
+    difficulty: 'Beginner',
+    time: '12 min',
+    status: 'live',
+    featured: true
+  },
+  {
     slug: 'chatgpt-for-freelancers',
     title: 'ChatGPT for Freelancers: Complete Guide to 10x Your Output',
     description: 'Learn how to use ChatGPT to 10x your freelance output. Proposal writing, client communication, pricing AI-assisted work, and workflows that actually work.',
