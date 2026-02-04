@@ -12,7 +12,8 @@ const guides = [
     description: 'Comprehensive guide to making money with AI in 2026. Freelancing, content creation, automation, and more.',
     difficulty: 'Beginner',
     time: '25 min',
-    status: 'live'
+    status: 'live',
+    featured: true
   },
   {
     slug: 'best-ai-tools-for-freelancers',
@@ -20,7 +21,8 @@ const guides = [
     description: 'Curated list of AI tools for writing, design, productivity, and client management. Build your freelance stack.',
     difficulty: 'Beginner',
     time: '12 min',
-    status: 'live'
+    status: 'live',
+    featured: true
   },
   {
     slug: 'ai-youtube-channel',
@@ -190,6 +192,7 @@ export default function GuidesPage() {
                     {isLive && <span className="text-violet-400 opacity-0 group-hover:opacity-100 transition">→</span>}
                   </div>
                   <div className="mt-4 flex gap-2">
+                    {'featured' in guide && guide.featured && <span className="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded">⭐ Featured</span>}
                     <span className={`text-xs px-2 py-1 rounded ${
                       guide.difficulty === 'Beginner' 
                         ? 'bg-violet-500/10 text-violet-400'

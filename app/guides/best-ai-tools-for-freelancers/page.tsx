@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import RelatedGuides from '@/components/RelatedGuides'
+import EmailSignup from '@/components/EmailSignup'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -429,6 +430,14 @@ export default function BestAIToolsForFreelancers() {
             </ul>
           </section>
 
+          {/* Email Signup */}
+          <section className="mb-12">
+            <EmailSignup 
+              headline="Get our AI Tool Stack Cheatsheet" 
+              buttonText="Get Free Cheatsheet"
+            />
+          </section>
+
           {/* Bottom Line */}
           <section className="bg-violet-600/10 border border-violet-500/30 rounded-lg p-6 mb-12">
             <h2 className="text-xl font-bold mb-4">The Bottom Line</h2>
@@ -442,18 +451,32 @@ export default function BestAIToolsForFreelancers() {
           </section>
 
           {/* Links */}
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mb-4">
             <Link 
-              href="/guides/ai-freelancing-first-client"
+              href="/guides/make-money-with-ai"
               className="text-violet-400 hover:text-violet-300"
             >
-              Read next: Getting Your First Client →
+              Read next: How to Make Money with AI →
             </Link>
+            <Link 
+              href="/guides/ai-freelancing-first-client"
+              className="text-gray-500 hover:text-white"
+            >
+              Getting Your First Client →
+            </Link>
+          </div>
+          <div className="flex flex-wrap gap-4">
             <Link 
               href="/guides/ai-content-creation-business"
               className="text-gray-500 hover:text-white"
             >
               AI Content Creation Business →
+            </Link>
+            <Link 
+              href="/guides/selling-ai-automation-services"
+              className="text-gray-500 hover:text-white"
+            >
+              Selling AI Automation Services →
             </Link>
           </div>
         

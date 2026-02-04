@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import RelatedGuides from '@/components/RelatedGuides'
+import EmailSignup from '@/components/EmailSignup'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -312,26 +313,11 @@ export default function MakeMoneyWithAI() {
           </section>
 
           {/* Email Capture CTA */}
-          <section className="mb-12 bg-gradient-to-br from-violet-600/20 to-violet-900/20 border border-violet-500/30 rounded-lg p-8">
-            <h2 className="text-2xl font-bold mb-3">Get the AI Income Toolkit</h2>
-            <p className="text-gray-300 mb-6">
-              Free templates, prompts, and scripts to start your AI side hustle this week. 
-              Plus weekly tips on what&apos;s actually working.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3">
-              <input 
-                type="email" 
-                placeholder="your@email.com" 
-                className="flex-1 px-4 py-3 bg-black/50 border border-white/20 rounded-lg focus:border-violet-500 focus:outline-none"
-              />
-              <button 
-                type="submit"
-                className="px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-lg font-semibold transition"
-              >
-                Get Free Toolkit
-              </button>
-            </form>
-            <p className="text-xs text-gray-500 mt-3">No spam. Unsubscribe anytime.</p>
+          <section className="mb-12">
+            <EmailSignup 
+              headline="Get the AI Income Toolkit" 
+              buttonText="Get Free Toolkit"
+            />
           </section>
 
           {/* Essential Tools */}
@@ -441,26 +427,40 @@ export default function MakeMoneyWithAI() {
           </section>
 
           {/* Next Steps */}
-          <div className="flex flex-wrap gap-4 mb-8">
+          <div className="flex flex-wrap gap-4 mb-4">
             <Link 
-              href="/guides/ai-content-creation-business"
+              href="/guides/best-ai-tools-for-freelancers"
               className="text-violet-400 hover:text-violet-300"
             >
-              Deep dive: AI Content Creation Business →
+              Must-read: Best AI Tools for Freelancers →
             </Link>
+            <Link 
+              href="/guides/ai-content-creation-business"
+              className="text-gray-500 hover:text-white"
+            >
+              AI Content Creation Business →
+            </Link>
+          </div>
+          <div className="flex flex-wrap gap-4 mb-8">
             <Link 
               href="/guides/ai-freelancing-first-client"
               className="text-gray-500 hover:text-white"
             >
               Getting Your First Client →
             </Link>
-          </div>
-          <div className="flex gap-4">
             <Link 
               href="/guides/selling-ai-automation-services"
               className="text-gray-500 hover:text-white"
             >
               Selling AI Automation Services →
+            </Link>
+          </div>
+          <div className="flex gap-4">
+            <Link 
+              href="/guides/pricing-ai-services"
+              className="text-gray-500 hover:text-white"
+            >
+              How to Price AI Services →
             </Link>
           </div>
         
