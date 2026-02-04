@@ -163,7 +163,7 @@ export default function Home() {
       <section className="px-6 py-16 border-t border-white/10">
         <div className="max-w-md mx-auto">
           <EmailSignup 
-            headline="Join 1,000+ AI hustlers" 
+            headline="Get weekly AI hustle tips" 
             buttonText="Subscribe Free" 
           />
         </div>
