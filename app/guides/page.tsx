@@ -7,6 +7,33 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'chatgpt-consulting-business',
+    title: 'How to Start a ChatGPT Consulting Business in 2026',
+    description: 'Start a ChatGPT consulting business with low startup costs. Learn the consulting model, how to find clients, and avoid common mistakes.',
+    difficulty: 'Beginner',
+    time: '12 min',
+    status: 'live',
+    featured: true
+  },
+  {
+    slug: 'ai-thumbnail-designer',
+    title: 'AI Thumbnail Designer: Make $500-2,000/Month Creating YouTube Thumbnails',
+    description: 'Start an AI thumbnail design business. Learn the tools, process, and how to find YouTube creator clients. Earn $60-300/hour effective rate.',
+    difficulty: 'Beginner',
+    time: '15 min',
+    status: 'live',
+    featured: true
+  },
+  {
+    slug: 'ai-coloring-books-kdp',
+    title: 'Sell AI-Generated Coloring Books on Amazon KDP (Full Guide)',
+    description: 'Create and sell AI coloring books on Amazon KDP. Step-by-step guide to passive income with low-content books. $50-200/month per book potential.',
+    difficulty: 'Beginner',
+    time: '18 min',
+    status: 'live',
+    featured: true
+  },
+  {
     slug: 'start-ai-agency-2026',
     title: 'How to Start an AI Agency in 2026 (From Zero to First Client)',
     description: 'Step-by-step guide to starting an AI agency. Find clients, price services, deliver results. No coding required.',
