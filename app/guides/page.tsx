@@ -7,6 +7,30 @@ export const metadata = {
 
 const guides = [
   {
+    slug: 'ai-dropshipping-guide',
+    title: 'AI for Dropshipping: Run a Profitable Store in 2026',
+    description: 'How to use AI for dropshipping. Product research, descriptions that convert, and customer service automation.',
+    difficulty: 'Intermediate',
+    time: '12 min',
+    status: 'live'
+  },
+  {
+    slug: 'chatgpt-client-acquisition',
+    title: 'ChatGPT Client Acquisition Scripts That Actually Work',
+    description: 'Cold outreach scripts powered by ChatGPT. LinkedIn messages, cold emails, and follow-up sequences that land freelance clients.',
+    difficulty: 'Beginner',
+    time: '10 min',
+    status: 'live'
+  },
+  {
+    slug: 'ai-copywriting-freelancers',
+    title: 'AI Copywriting for Freelancers: 10x Your Output',
+    description: 'How freelance copywriters can use AI to 4x their output without sacrificing quality. Prompts, workflows, and pricing strategies.',
+    difficulty: 'Beginner',
+    time: '12 min',
+    status: 'live'
+  },
+  {
     slug: 'make-money-with-ai',
     title: 'How to Make Money with AI: 12 Proven Methods',
     description: 'Comprehensive guide to making money with AI in 2026. Freelancing, content creation, automation, and more.',
