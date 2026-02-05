@@ -23,12 +23,13 @@ export default function Home() {
             Browse Guides →
           </Link>
           
-          {/* Email Signup in Hero */}
+          {/* Email Signup in Hero - A/B testing enabled */}
           <div className="mt-12 max-w-md mx-auto text-left">
             <EmailSignup 
               headline="Get AI income ideas weekly" 
               description="Free weekly tips on making money with AI tools."
-              buttonText="Get Free Ideas" 
+              buttonText="Get Free Ideas"
+              abTestCta={true}
             />
           </div>
         </div>
@@ -140,13 +141,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA - A/B testing enabled */}
       <section className="px-6 py-16 border-t border-white/10">
         <div className="max-w-md mx-auto">
           <EmailSignup 
             headline="Get weekly AI hustle tips" 
             description="Join thousands of side hustlers using AI to earn extra income."
-            buttonText="Subscribe Free" 
+            buttonText="Subscribe Free"
+            abTestCta={true}
           />
         </div>
       </section>
