@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function SellingAIAutomationServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="max-w-3xl mx-auto px-6 py-16">
       <nav className="border-b border-white/10 px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-xl font-bold text-violet-400">
@@ -345,6 +345,6 @@ export default function SellingAIAutomationServicesPage() {
           </div>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }

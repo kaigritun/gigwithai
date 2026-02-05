@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AIBookkeepingServicesPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="max-w-3xl mx-auto px-6 py-16">
       {/* Nav */}
       <nav className="border-b border-white/10 px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
@@ -459,6 +459,6 @@ Keep it under 200 words, non-technical language.`}</p>
           </div>
         </div>
       </footer>
-    </main>
+    </div>
   )
 }

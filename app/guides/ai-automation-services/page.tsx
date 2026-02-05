@@ -9,21 +9,8 @@ export const metadata: Metadata = {
 
 export default function AIAutomationServicesGuide() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-violet-400">
-            GigWithAI
-          </Link>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <Link href="/guides" className="hover:text-white transition">Guides</Link>
-            <Link href="/tools" className="hover:text-white transition">Tools</Link>
-          </div>
-        </div>
-      </nav>
-
-      <main className="max-w-3xl mx-auto px-6 py-16">
-        <Link 
+    <div className="max-w-3xl mx-auto px-6 py-16">
+      <Link 
           href="/guides" 
           className="text-sm text-gray-500 hover:text-white transition mb-8 inline-block"
         >
@@ -233,15 +220,6 @@ export default function AIAutomationServicesGuide() {
             }
           ]} />
         </article>
-      </main>
-
-      <footer className="border-t border-white/10 mt-24">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <p className="text-sm text-gray-500">
-            © 2026 GigWithAI. Real guides for real income.
-          </p>
-        </div>
-      </footer>
     </div>
   )
 }
