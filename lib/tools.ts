@@ -442,6 +442,149 @@ Ready to get started? Click "Order Now" or message me with questions!
   outputLabel: 'Your Gig Description',
 }
 
+// ============ ADDITIONAL TOOLS ============
+
+export const portfolioScoreCalculator: ScoreTool = {
+  slug: 'portfolio-score-calculator',
+  name: 'Portfolio Score Calculator',
+  description: 'Rate your freelance portfolio and get tips to improve conversions',
+  category: 'Freelance',
+  type: 'score',
+  seo: {
+    title: 'Free Portfolio Score Calculator | Rate Your Work Samples',
+    description: 'Find out how effective your freelance portfolio is at winning clients. Get actionable tips to improve your conversion rate.',
+  },
+  inputLabel: 'Describe Your Portfolio',
+  inputPlaceholder: 'Describe your portfolio: what projects are included, how it\'s organized, testimonials, case studies, etc...',
+  criteria: [
+    {
+      name: 'Case Studies',
+      weight: 25,
+      keywords: ['case study', 'before after', 'results', 'roi', 'outcome', 'metrics', 'impact', 'increased', 'grew', 'saved'],
+      description: 'Detailed case studies showing process and results',
+    },
+    {
+      name: 'Social Proof',
+      weight: 20,
+      keywords: ['testimonial', 'review', 'client', 'feedback', 'quote', 'recommendation', 'endorsement', '5 star', 'rating'],
+      description: 'Client testimonials and reviews',
+    },
+    {
+      name: 'Variety & Range',
+      weight: 15,
+      keywords: ['different', 'variety', 'range', 'industries', 'types', 'styles', 'diverse', 'multiple', 'various'],
+      description: 'Diverse projects showing range of capabilities',
+    },
+    {
+      name: 'Clear Specialization',
+      weight: 15,
+      keywords: ['specialize', 'focus', 'niche', 'expert', 'specifically', 'only', 'dedicated', 'best at'],
+      description: 'Clear positioning and specialty',
+    },
+    {
+      name: 'Professional Presentation',
+      weight: 15,
+      keywords: ['website', 'behance', 'dribbble', 'notion', 'custom', 'branded', 'professional', 'clean', 'organized'],
+      description: 'Professional platform or custom portfolio site',
+    },
+    {
+      name: 'Call to Action',
+      weight: 10,
+      keywords: ['contact', 'hire', 'book', 'schedule', 'call', 'email', 'form', 'inquiry', 'get in touch'],
+      description: 'Clear call to action for potential clients',
+    },
+  ],
+  tips: [
+    'Lead with your 3 best projects, not 30 mediocre ones',
+    'Include metrics and results for every project if possible',
+    'Add testimonials directly on project pages, not a separate section',
+    'Show your process with before/after or step-by-step breakdowns',
+    'Specialize: "I design SaaS dashboards" beats "I do graphic design"',
+    'Add a clear CTA: "Book a free discovery call" with calendar link',
+  ],
+}
+
+export const aiBusinessIdeaGenerator: GeneratorTool = {
+  slug: 'ai-business-idea-generator',
+  name: 'AI Side Hustle Idea Generator',
+  description: 'Get personalized AI business ideas based on your skills and interests',
+  category: 'Side Hustle',
+  type: 'generator',
+  seo: {
+    title: 'AI Business Idea Generator | Find Your Perfect Side Hustle',
+    description: 'Discover AI-powered side hustle ideas matched to your skills. Get actionable business concepts you can start today.',
+  },
+  fields: [
+    {
+      id: 'skills',
+      label: 'Your Current Skills',
+      type: 'select',
+      options: [
+        { value: 'writing', label: 'Writing / Content Creation' },
+        { value: 'design', label: 'Design / Visual Arts' },
+        { value: 'coding', label: 'Programming / Development' },
+        { value: 'marketing', label: 'Marketing / Sales' },
+        { value: 'video', label: 'Video / Audio Production' },
+        { value: 'consulting', label: 'Consulting / Coaching' },
+        { value: 'admin', label: 'Admin / Operations' },
+        { value: 'none', label: 'No specific skills yet' },
+      ],
+      required: true,
+    },
+    { id: 'hours', label: 'Hours Available Per Week', type: 'text', placeholder: '10', required: true },
+    { id: 'budget', label: 'Startup Budget', type: 'select', options: [
+      { value: '0', label: '$0 - Free tools only' },
+      { value: '100', label: 'Under $100' },
+      { value: '500', label: '$100 - $500' },
+      { value: '1000', label: '$500+' },
+    ], required: true },
+    { id: 'interests', label: 'Industries/Topics You Like', type: 'text', placeholder: 'tech, fitness, finance...', required: true },
+  ],
+  template: `🚀 AI SIDE HUSTLE IDEAS FOR YOU
+
+Based on: {{skills}} skills, {{hours}}h/week, {{budget}} budget, interests in {{interests}}
+
+---
+
+💡 IDEA 1: AI-Enhanced {{skills}} Agency
+• Use AI tools to 10x your output
+• Start by offering services on Fiverr/Upwork
+• Automate repetitive tasks, focus on strategy
+• Potential: $500-5000/month
+
+💡 IDEA 2: AI Tool Tutorials
+• Create content teaching others to use AI for {{skills}}
+• Monetize: YouTube, courses, affiliate links
+• Low competition in specific niches
+• Potential: $200-2000/month
+
+💡 IDEA 3: Niche {{interests}} Content
+• Use AI to research and draft content faster
+• Focus on {{interests}} + {{skills}} intersection
+• Build audience, monetize with products/services
+• Potential: $100-1000/month (grows over time)
+
+---
+
+📋 YOUR 7-DAY ACTION PLAN
+
+Day 1-2: Research competitors, pick one idea
+Day 3-4: Set up basic infrastructure (accounts, tools)
+Day 5-6: Create first deliverable/content
+Day 7: Launch and get feedback
+
+---
+
+🔧 RECOMMENDED AI TOOLS
+• ChatGPT/Claude: Research, writing, brainstorming
+• Midjourney/DALL-E: Image generation
+• ElevenLabs: Voice/audio content
+• Gamma: Presentations and decks
+
+Start small, iterate fast. Your first $100 teaches more than 100 hours of planning.`,
+  outputLabel: 'Your AI Side Hustle Ideas',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -451,6 +594,8 @@ export const allTools: Tool[] = [
   freelanceRateCalculator,
   clientPitchGenerator,
   gigDescriptionGenerator,
+  portfolioScoreCalculator,
+  aiBusinessIdeaGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
