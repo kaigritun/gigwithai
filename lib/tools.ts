@@ -585,6 +585,425 @@ Start small, iterate fast. Your first $100 teaches more than 100 hours of planni
   outputLabel: 'Your AI Side Hustle Ideas',
 }
 
+// ============ CONTENT CREATOR TOOLS ============
+
+export const socialMediaProfileScore: ScoreTool = {
+  slug: 'social-media-profile-score',
+  name: 'Social Media Profile Score',
+  description: 'Rate your Twitter/X, LinkedIn, or Instagram profile for monetization potential',
+  category: 'Content Creator',
+  type: 'score',
+  seo: {
+    title: 'Free Social Media Profile Score | Optimize for Growth & Income',
+    description: 'Analyze your social media profile for engagement and monetization potential. Get tips to grow your audience and income.',
+  },
+  inputLabel: 'Paste Your Social Media Bio & Recent Posts',
+  inputPlaceholder: 'Paste your bio, headline, and 3-5 recent post examples...',
+  criteria: [
+    {
+      name: 'Clear Value Proposition',
+      weight: 25,
+      keywords: ['help', 'teach', 'share', 'tips', 'guide', 'insights', 'learn', 'grow', 'build', 'create'],
+      description: 'Bio clearly states what value you provide',
+    },
+    {
+      name: 'Niche Focus',
+      weight: 20,
+      keywords: ['specialize', 'focus', 'niche', 'expert', 'only', 'dedicated', 'specifically', 'all about'],
+      description: 'Consistent theme rather than random topics',
+    },
+    {
+      name: 'Engagement Hooks',
+      weight: 15,
+      keywords: ['thread', 'story', 'lesson', 'how to', 'mistake', 'secret', 'truth', 'here\'s', 'why', 'revealed'],
+      description: 'Content uses hooks that drive engagement',
+    },
+    {
+      name: 'Social Proof',
+      weight: 15,
+      keywords: ['followers', 'featured', 'clients', 'years', 'built', 'grew', '$', 'revenue', 'subscribers', 'downloads'],
+      description: 'Credibility indicators in bio or content',
+    },
+    {
+      name: 'Call to Action',
+      weight: 15,
+      keywords: ['follow', 'dm', 'link', 'newsletter', 'subscribe', 'join', 'download', 'free', 'get'],
+      description: 'Clear CTAs driving action',
+    },
+    {
+      name: 'Monetization Path',
+      weight: 10,
+      keywords: ['course', 'coaching', 'consulting', 'product', 'service', 'book', 'template', 'hire', 'work with'],
+      description: 'Visible path to monetization',
+    },
+  ],
+  tips: [
+    'Pick ONE niche and go deep — generalists don\'t build audiences',
+    'Lead with transformation: "I help X achieve Y"',
+    'Add social proof: followers, revenue, client results',
+    'Include a CTA: newsletter, DM, or link',
+    'Post consistently (3-5x/week minimum)',
+    'Engage genuinely with others in your niche',
+  ],
+}
+
+export const landingPageScore: ScoreTool = {
+  slug: 'landing-page-score',
+  name: 'Landing Page Score Calculator',
+  description: 'Analyze your landing page copy for conversions',
+  category: 'Sales',
+  type: 'score',
+  seo: {
+    title: 'Free Landing Page Score | Optimize Copy for Conversions',
+    description: 'Get instant feedback on your landing page copy. Improve headlines, CTAs, and conversion elements.',
+  },
+  inputLabel: 'Paste Your Landing Page Copy',
+  inputPlaceholder: 'Paste your landing page headline, subheadline, body copy, and CTA...',
+  criteria: [
+    {
+      name: 'Headline Clarity',
+      weight: 25,
+      keywords: ['get', 'how to', 'without', 'in', 'days', 'free', 'simple', 'easy', 'fast', 'proven'],
+      description: 'Clear, benefit-driven headline',
+    },
+    {
+      name: 'Problem Agitation',
+      weight: 20,
+      keywords: ['tired', 'frustrated', 'struggle', 'problem', 'pain', 'hate', 'difficult', 'confusing', 'overwhelmed', 'stuck'],
+      description: 'Clearly articulates the problem',
+    },
+    {
+      name: 'Solution Clarity',
+      weight: 20,
+      keywords: ['solution', 'answer', 'finally', 'introducing', 'discover', 'learn', 'get', 'achieve', 'transform'],
+      description: 'Clear explanation of the solution',
+    },
+    {
+      name: 'Social Proof',
+      weight: 15,
+      keywords: ['testimonial', 'review', 'clients', 'customers', 'trusted', 'featured', 'as seen', 'companies', 'results'],
+      description: 'Testimonials or credibility indicators',
+    },
+    {
+      name: 'Strong CTA',
+      weight: 10,
+      keywords: ['start', 'get', 'try', 'join', 'download', 'sign up', 'free', 'now', 'today', 'instant'],
+      description: 'Compelling call-to-action',
+    },
+    {
+      name: 'Urgency/Scarcity',
+      weight: 10,
+      keywords: ['limited', 'only', 'today', 'now', 'spots', 'closing', 'deadline', 'last chance', 'expires'],
+      description: 'Elements creating urgency',
+    },
+  ],
+  tips: [
+    'Headline should pass the "blink test" — clear value in <3 seconds',
+    'Lead with the problem, then present the solution',
+    'Use specific numbers: "Join 10,437 subscribers"',
+    'One CTA, repeated multiple times',
+    'Above the fold: headline, subheadline, CTA',
+    'Include at least 3 testimonials with real names/photos',
+  ],
+}
+
+export const testimonialRequestGenerator: GeneratorTool = {
+  slug: 'testimonial-request-generator',
+  name: 'Testimonial Request Generator',
+  description: 'Get powerful testimonials from your clients with easy-to-use templates',
+  category: 'Sales',
+  type: 'generator',
+  seo: {
+    title: 'Free Testimonial Request Generator | Get Client Reviews',
+    description: 'Generate professional testimonial request messages. Get powerful social proof from your clients.',
+  },
+  fields: [
+    { id: 'client_name', label: 'Client Name', type: 'text', placeholder: 'Sarah Johnson', required: true },
+    { id: 'service', label: 'Service You Provided', type: 'text', placeholder: 'Website redesign', required: true },
+    { id: 'result', label: 'Key Result/Outcome', type: 'text', placeholder: 'Increased conversions by 40%', required: true },
+    { id: 'format', label: 'Testimonial Format', type: 'select', options: [
+      { value: 'written', label: 'Written testimonial' },
+      { value: 'video', label: 'Video testimonial' },
+      { value: 'linkedin', label: 'LinkedIn recommendation' },
+      { value: 'review', label: 'Platform review (G2, Upwork, etc)' },
+    ], required: true },
+  ],
+  template: `📧 TESTIMONIAL REQUEST
+
+Subject: Quick favor — 2 min testimonial?
+
+Hi {{client_name}},
+
+I hope you're enjoying the results from the {{service}}! It was great to see {{result}}.
+
+I'm building out my portfolio and would love to feature your experience. Would you be open to providing a quick testimonial?
+
+To make it super easy, you could just answer these 3 questions:
+1. What problem were you facing before?
+2. How did working together help?
+3. What results have you seen?
+
+If you have 2 minutes, a brief response would mean the world. (I've drafted a sample below you can edit or use as inspiration.)
+
+Thanks so much!
+[Your name]
+
+---
+
+📝 DRAFT TEMPLATE (for them to edit)
+
+"Before working with [Your name], I was struggling with [problem]. They helped me [solution], and the results have been [result]. I'd highly recommend them to anyone looking to [outcome]."
+
+---
+
+💡 TIPS FOR GREAT TESTIMONIALS
+• Make it easy: provide a draft they can edit
+• Be specific: ask about specific outcomes
+• Time it right: ask when results are fresh
+• Follow up once if no response
+• Offer to write it for their approval`,
+  outputLabel: 'Your Testimonial Request',
+}
+
+export const servicePackageGenerator: GeneratorTool = {
+  slug: 'service-package-generator',
+  name: 'Service Package Generator',
+  description: 'Create tiered service packages that sell',
+  category: 'Sales',
+  type: 'generator',
+  seo: {
+    title: 'Free Service Package Generator | Create Tiered Offerings',
+    description: 'Generate professional service packages with tiered pricing. Template for freelancers and consultants.',
+  },
+  fields: [
+    { id: 'service', label: 'Your Core Service', type: 'text', placeholder: 'AI Copywriting', required: true },
+    { id: 'basic_price', label: 'Basic Package Price', type: 'text', placeholder: '$500', required: true },
+    { id: 'basic_includes', label: 'Basic Package Includes', type: 'text', placeholder: '5 blog posts, basic SEO', required: true },
+    { id: 'standard_price', label: 'Standard Package Price', type: 'text', placeholder: '$1000', required: true },
+    { id: 'standard_includes', label: 'Standard Package Includes', type: 'text', placeholder: '10 blog posts, SEO, social clips', required: true },
+    { id: 'premium_price', label: 'Premium Package Price', type: 'text', placeholder: '$2500', required: true },
+    { id: 'premium_includes', label: 'Premium Package Includes', type: 'text', placeholder: '20 posts, full strategy, unlimited revisions', required: true },
+  ],
+  template: `🎯 {{service}} PACKAGES
+
+---
+
+📦 STARTER — {{basic_price}}
+Perfect for: Testing the waters
+
+Includes:
+{{basic_includes}}
+
+---
+
+⭐ PROFESSIONAL — {{standard_price}} ← MOST POPULAR
+Perfect for: Serious growth
+
+Includes:
+{{standard_includes}}
+
+---
+
+🚀 PREMIUM — {{premium_price}}
+Perfect for: Full transformation
+
+Includes:
+{{premium_includes}}
+
+---
+
+💡 PRICING PSYCHOLOGY TIPS
+
+1. **Anchor high**: Show premium first so standard looks reasonable
+2. **Mark the middle**: "Most Popular" badge increases conversions 50%+
+3. **Price endings**: $997 > $1000 (feels like a deal)
+4. **Bundle value**: Show itemized value vs. package price
+5. **Guarantee**: "100% satisfaction or full refund" reduces friction
+
+---
+
+📊 VALUE STACK EXAMPLE
+
+Premium Package Value:
+• 20 blog posts ($100 each = $2,000)
+• Content strategy ($500 value)
+• Unlimited revisions ($300 value)
+• Priority support ($200 value)
+
+**Total value: $3,000**
+**Your price: {{premium_price}}**
+
+(This shows a 40%+ discount)`,
+  outputLabel: 'Your Service Packages',
+}
+
+export const contentCalendarGenerator: GeneratorTool = {
+  slug: 'content-calendar-generator',
+  name: 'Content Calendar Generator',
+  description: 'Create a week of content ideas for your niche',
+  category: 'Content Creator',
+  type: 'generator',
+  seo: {
+    title: 'Free Content Calendar Generator | Weekly Content Plan',
+    description: 'Generate a full week of content ideas for your niche. Templates for Twitter, LinkedIn, Instagram, and YouTube.',
+  },
+  fields: [
+    { id: 'niche', label: 'Your Niche', type: 'text', placeholder: 'AI for freelancers', required: true },
+    { id: 'platform', label: 'Primary Platform', type: 'select', options: [
+      { value: 'twitter', label: 'Twitter/X' },
+      { value: 'linkedin', label: 'LinkedIn' },
+      { value: 'instagram', label: 'Instagram' },
+      { value: 'youtube', label: 'YouTube' },
+    ], required: true },
+    { id: 'goal', label: 'Content Goal', type: 'select', options: [
+      { value: 'awareness', label: 'Build awareness/followers' },
+      { value: 'engagement', label: 'Increase engagement' },
+      { value: 'leads', label: 'Generate leads' },
+      { value: 'sales', label: 'Drive sales' },
+    ], required: true },
+    { id: 'offer', label: 'Your Offer (optional)', type: 'text', placeholder: 'AI automation course' },
+  ],
+  template: `📅 WEEKLY CONTENT CALENDAR: {{niche}}
+
+Platform: {{platform}} | Goal: {{goal}}
+
+---
+
+**MONDAY — Educational**
+Topic: "5 mistakes most people make with {{niche}}"
+Format: Carousel / Thread
+Hook: "I made all of these. Don't repeat my errors."
+
+**TUESDAY — Personal Story**
+Topic: Your journey with {{niche}}
+Format: Long-form post
+Hook: "3 years ago I knew nothing about {{niche}}. Now..."
+
+**WEDNESDAY — Tactical**
+Topic: Step-by-step how-to
+Format: Tutorial / Guide
+Hook: "Do this in the next 10 minutes and see results"
+
+**THURSDAY — Contrarian**
+Topic: Unpopular opinion about {{niche}}
+Format: Short-form hot take
+Hook: "Most advice about {{niche}} is wrong. Here's why:"
+
+**FRIDAY — Results/Proof**
+Topic: Client result or personal win
+Format: Before/after or case study
+Hook: "From [before state] to [after state] in X days"
+
+**SATURDAY — Community/Engagement**
+Topic: Ask a question or run a poll
+Format: Short engagement post
+Hook: "What's your biggest challenge with {{niche}}?"
+
+**SUNDAY — Value Bomb + CTA**
+Topic: Your best insight + soft pitch
+Format: Thread/carousel ending with {{offer}}
+Hook: "The complete guide to [outcome] with {{niche}}"
+
+---
+
+💡 POSTING BEST PRACTICES
+• Optimal times: 8-9am, 12-1pm, 5-6pm
+• Engage for 30 min after posting
+• Reply to every comment
+• Batch create on one day, schedule for week
+• Repurpose: Twitter→LinkedIn→Newsletter`,
+  outputLabel: 'Your Content Calendar',
+}
+
+export const passiveIncomeQuiz: QuizTool = {
+  slug: 'passive-income-quiz',
+  name: 'Passive Income Readiness Quiz',
+  description: 'Find out which passive income stream matches your situation',
+  category: 'Side Hustle',
+  type: 'quiz',
+  seo: {
+    title: 'Passive Income Quiz | Find Your Best Income Stream',
+    description: 'Discover which passive income model fits your skills, time, and goals. Get personalized recommendations.',
+  },
+  questions: [
+    {
+      id: 'time_upfront',
+      question: 'How much time can you invest upfront to build this?',
+      options: [
+        { value: 'minimal', label: 'A few hours total', points: { affiliate: 3, digital: 0, course: 0 } },
+        { value: 'moderate', label: 'A few hours per week for 1-2 months', points: { affiliate: 2, digital: 3, course: 1 } },
+        { value: 'significant', label: '10+ hours/week for 3-6 months', points: { affiliate: 0, digital: 2, course: 3 } },
+        { value: 'major', label: 'Whatever it takes, I want it right', points: { affiliate: 0, digital: 1, course: 3 } },
+      ],
+    },
+    {
+      id: 'existing_audience',
+      question: 'Do you have an existing audience?',
+      options: [
+        { value: 'none', label: 'No audience yet', points: { affiliate: 0, digital: 2, course: 0 } },
+        { value: 'small', label: 'Small following (under 1K)', points: { affiliate: 1, digital: 3, course: 1 } },
+        { value: 'medium', label: 'Medium following (1K-10K)', points: { affiliate: 2, digital: 2, course: 3 } },
+        { value: 'large', label: 'Large following (10K+)', points: { affiliate: 3, digital: 2, course: 3 } },
+      ],
+    },
+    {
+      id: 'expertise',
+      question: 'How deep is your expertise in your niche?',
+      options: [
+        { value: 'beginner', label: 'Still learning', points: { affiliate: 3, digital: 1, course: 0 } },
+        { value: 'intermediate', label: 'Know more than most', points: { affiliate: 2, digital: 3, course: 1 } },
+        { value: 'expert', label: 'Recognized expert', points: { affiliate: 1, digital: 2, course: 3 } },
+        { value: 'proven', label: 'Proven results for others', points: { affiliate: 0, digital: 2, course: 3 } },
+      ],
+    },
+    {
+      id: 'income_style',
+      question: 'What type of income stream appeals to you?',
+      options: [
+        { value: 'low_touch', label: 'Truly passive, minimal maintenance', points: { affiliate: 3, digital: 2, course: 0 } },
+        { value: 'moderate', label: 'Some ongoing work is fine', points: { affiliate: 2, digital: 3, course: 2 } },
+        { value: 'high_touch', label: 'Happy to engage with customers', points: { affiliate: 0, digital: 1, course: 3 } },
+        { value: 'community', label: 'Want to build a community', points: { affiliate: 0, digital: 1, course: 3 } },
+      ],
+    },
+  ],
+  results: [
+    {
+      id: 'affiliate',
+      title: 'Affiliate Marketing',
+      description: 'You\'re suited for promoting other people\'s products and earning commissions. Lower effort to start, scales with traffic.',
+      recommendations: [
+        'Start a review site or content hub in your niche',
+        'Join affiliate programs (Amazon, PartnerStack, Impact)',
+        'Focus on SEO for evergreen traffic',
+        'Build an email list to promote offers',
+      ],
+    },
+    {
+      id: 'digital',
+      title: 'Digital Products',
+      description: 'You should create and sell digital products — templates, guides, tools. Build once, sell forever.',
+      recommendations: [
+        'Create Notion templates, spreadsheets, or checklists',
+        'Sell on Gumroad, Lemonsqueezy, or your own site',
+        'Price $9-49 for volume, or premium for smaller sales',
+        'Build a product ladder: free → low-ticket → high-ticket',
+      ],
+    },
+    {
+      id: 'course',
+      title: 'Online Courses',
+      description: 'Your expertise + audience makes courses ideal. Higher effort but highest income ceiling.',
+      recommendations: [
+        'Start with a cohort-based course to validate',
+        'Pre-sell before building the full course',
+        'Price $200-2000 based on transformation value',
+        'Add community/coaching for premium pricing',
+      ],
+    },
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -596,6 +1015,12 @@ export const allTools: Tool[] = [
   gigDescriptionGenerator,
   portfolioScoreCalculator,
   aiBusinessIdeaGenerator,
+  socialMediaProfileScore,
+  landingPageScore,
+  testimonialRequestGenerator,
+  servicePackageGenerator,
+  contentCalendarGenerator,
+  passiveIncomeQuiz,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
