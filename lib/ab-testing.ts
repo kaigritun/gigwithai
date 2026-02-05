@@ -156,20 +156,40 @@ export function clearAssignments(): void {
 }
 
 /**
- * Track conversion event (placeholder - integrate with analytics)
+ * Track conversion event with Vercel Analytics
  */
 export function trackConversion(experimentName: string, eventName: string): void {
   const result = getVariant(experimentName)
   
-  // Log for now - integrate with Vercel Analytics or other provider
-  console.log('[A/B]', {
-    experiment: experimentName,
-    variant: result.variant,
-    event: eventName,
-    timestamp: new Date().toISOString(),
-  })
+  // Send to Vercel Analytics
+  if (typeof window !== 'undefined' && window.va) {
+    window.va('event', {
+      name: `ab_${eventName}`,
+      experiment: experimentName,
+      variant: result.variant,
+      isControl: result.isControl,
+    })
+  }
+}
+
+/**
+ * Track A/B exposure (when user sees a variant)
+ */
+export function trackExposure(experimentName: string): void {
+  const result = getVariant(experimentName)
   
-  // TODO: Send to analytics
-  // - Vercel Analytics custom events
-  // - Or custom endpoint for aggregation
+  if (typeof window !== 'undefined' && window.va) {
+    window.va('event', {
+      name: 'ab_exposure',
+      experiment: experimentName,
+      variant: result.variant,
+    })
+  }
+}
+
+// Extend window for Vercel Analytics
+declare global {
+  interface Window {
+    va?: (type: string, params: Record<string, unknown>) => void
+  }
 }

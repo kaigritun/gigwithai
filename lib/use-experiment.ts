@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getVariant, ExperimentResult } from './ab-testing'
+import { getVariant, trackExposure, ExperimentResult } from './ab-testing'
 
 /**
  * React hook for A/B testing
@@ -20,6 +20,8 @@ export function useExperiment(experimentName: string): ExperimentResult & { isLo
       ...assignment,
       isLoading: false,
     })
+    // Track that user was exposed to this variant
+    trackExposure(experimentName)
   }, [experimentName])
 
   return result
