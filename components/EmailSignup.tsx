@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { useExperiment, useVariant } from '@/lib/use-experiment';
+import { trackConversion } from '@/lib/ab-testing';
 
 interface EmailSignupProps {
   headline?: string;
@@ -8,6 +10,8 @@ interface EmailSignupProps {
   buttonText?: string;
   accentColor?: 'emerald' | 'violet' | 'blue';
   compact?: boolean;
+  /** Enable A/B testing for CTA copy */
+  abTestCta?: boolean;
 }
 
 const colorClasses = {
@@ -34,10 +38,17 @@ export default function EmailSignup({
   buttonText = "Subscribe",
   accentColor = 'violet',
   compact = false,
+  abTestCta = false,
 }: EmailSignupProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const colors = colorClasses[accentColor];
+
+  // A/B testing for CTA copy
+  const { variant: ctaVariant, isLoading: ctaLoading } = useExperiment('cta-copy');
+  const finalButtonText = abTestCta && !ctaLoading && ctaVariant 
+    ? ctaVariant 
+    : buttonText;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,6 +64,10 @@ export default function EmailSignup({
       if (response.ok) {
         setStatus('success');
         setEmail('');
+        // Track A/B test conversion
+        if (abTestCta) {
+          trackConversion('cta-copy', 'email_signup');
+        }
       } else {
         setStatus('error');
       }
@@ -87,7 +102,7 @@ export default function EmailSignup({
         >
           {status === 'loading' ? (
             <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-          ) : buttonText}
+          ) : finalButtonText}
         </button>
       </form>
     );
@@ -113,7 +128,7 @@ export default function EmailSignup({
         >
           {status === 'loading' ? (
             <span className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-          ) : buttonText}
+          ) : finalButtonText}
         </button>
       </form>
       {status === 'error' && (
