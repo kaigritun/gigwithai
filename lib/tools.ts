@@ -2184,6 +2184,121 @@ Based on: {{typical_project}}
   outputLabel: 'Your Productized Service Plan',
 }
 
+export const emailListScore: ScoreTool = {
+  slug: 'email-list-score',
+  name: 'Email List Strategy Score',
+  description: 'Rate your newsletter or email list strategy for subscriber growth',
+  category: 'Marketing',
+  type: 'score',
+  seo: {
+    title: 'Email List Score | Rate Your Newsletter Strategy',
+    description: 'Score your email list growth strategy. Learn what makes people subscribe and stay engaged.',
+  },
+  inputLabel: 'Describe Your Email List Strategy',
+  inputPlaceholder: `My newsletter: Weekly AI tool reviews for freelancers
+
+Lead magnet: Free PDF - "50 AI Prompts for Client Work"
+
+Signup locations:
+- Homepage popup (exit intent)
+- End of blog posts
+- Twitter bio link
+
+Current stats:
+- 500 subscribers
+- 45% open rate
+- Post weekly on Tuesdays
+
+Monetization:
+- Affiliate links in newsletter
+- Plan to launch course later`,
+  criteria: [
+    { name: 'Lead Magnet', weight: 25, keywords: ['lead magnet', 'free', 'pdf', 'template', 'guide', 'checklist', 'resource', 'download', 'ebook', 'toolkit'], description: 'Offers compelling free resource to attract signups' },
+    { name: 'Clear Value Prop', weight: 25, keywords: ['weekly', 'daily', 'monthly', 'tips', 'insights', 'tools', 'reviews', 'for', 'about', 'learn'], description: 'Clear explanation of what subscribers get' },
+    { name: 'Multiple Touchpoints', weight: 20, keywords: ['popup', 'homepage', 'blog', 'twitter', 'linkedin', 'youtube', 'footer', 'form', 'landing page'], description: 'Captures emails from multiple sources' },
+    { name: 'Engagement Tracking', weight: 15, keywords: ['open rate', 'click rate', 'subscriber', 'engagement', 'analytics', 'stats', '%'], description: 'Tracks key metrics' },
+    { name: 'Monetization Plan', weight: 15, keywords: ['affiliate', 'sponsor', 'course', 'product', 'monetize', 'revenue', 'paid', 'premium'], description: 'Has a path to revenue' },
+  ],
+  tips: [
+    'Lead magnets work - create something genuinely useful',
+    'Be specific about frequency and content',
+    'Add signup forms everywhere (blog, socials, signature)',
+    'Track open rates (40%+ is good, 50%+ is excellent)',
+    'Start monetizing early even with small lists (100+ is enough)',
+  ],
+}
+
+export const freelanceBioGenerator: GeneratorTool = {
+  slug: 'freelance-bio-generator',
+  name: 'Freelance Bio Generator',
+  description: 'Create professional bios for your portfolio, proposals, and social profiles',
+  category: 'Branding',
+  type: 'generator',
+  seo: {
+    title: 'Freelance Bio Generator | Professional Bios That Convert',
+    description: 'Generate compelling freelance bios for portfolios, proposals, and social media. Stand out to clients.',
+  },
+  fields: [
+    { id: 'name', label: 'Your Name', type: 'text', placeholder: 'e.g., Sarah Chen', required: true },
+    { id: 'specialty', label: 'What You Do', type: 'text', placeholder: 'e.g., UX Designer, Copywriter, Video Editor', required: true },
+    { id: 'experience', label: 'Years of Experience', type: 'select', options: [
+      { value: 'emerging', label: '1-2 years' },
+      { value: 'established', label: '3-5 years' },
+      { value: 'senior', label: '6-10 years' },
+      { value: 'expert', label: '10+ years' },
+    ], required: true },
+    { id: 'clients', label: 'Notable Clients/Results', type: 'text', placeholder: 'e.g., Worked with Shopify, Nike; Helped clients generate $2M in sales', required: true },
+    { id: 'niche', label: 'Your Niche', type: 'text', placeholder: 'e.g., SaaS companies, Health & wellness brands, Tech startups', required: true },
+  ],
+  template: `# Professional Bios for {{name}}
+
+## Twitter/X Bio (160 chars)
+{{specialty}} for {{niche}} | {{clients}} | DM for collabs →
+
+## LinkedIn Headline
+{{specialty}} | Helping {{niche}} with {{experience}} years of experience | {{clients}}
+
+## Short Bio (50 words - Proposals)
+{{name}} is a {{specialty}} specializing in {{niche}}. With {{experience}} years of experience, they've {{clients}}. They combine strategic thinking with hands-on execution to deliver results clients love.
+
+## Medium Bio (100 words - Portfolio)
+{{name}} is a {{specialty}} who helps {{niche}} stand out and grow. With {{experience}} years in the industry, {{name}} has {{clients}}.
+
+Their approach: understand the business goals first, then craft solutions that actually move the needle. No fluff, no generic templates—just work that gets results.
+
+When not working with clients, you'll find {{name}} [hobby/interest]. Always open to interesting projects.
+
+## Long Bio (150+ words - About Page)
+{{name}} started as a {{specialty}} because they believed {{niche}} deserved better. {{experience}} years later, that belief has turned into a track record: {{clients}}.
+
+**What makes working with {{name}} different?**
+
+1. **Business-first thinking.** Every project starts with understanding your goals, not jumping to deliverables.
+
+2. **Clear communication.** No jargon, no disappearing. You'll always know what's happening and why.
+
+3. **Results that matter.** Pretty work is nice, but work that drives growth is better.
+
+{{name}} works best with {{niche}} who are ready to invest in quality and want a partner, not just a vendor.
+
+**Want to work together?** [Contact method]
+
+---
+
+## Quick Copy Options
+
+**Email Signature:**
+{{name}} | {{specialty}}
+{{clients}}
+
+**Proposal Intro:**
+Hi, I'm {{name}}, a {{specialty}} who specializes in {{niche}}.
+
+**Cold Outreach:**
+I'm {{name}}, and I help {{niche}} with {{specialty}}. I recently {{clients}}.`,
+  outputLabel: 'Your Professional Bios',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2223,6 +2338,8 @@ export const allTools: Tool[] = [
   passiveIncomeCalculator,
   affiliatePitchScore,
   productizedServiceGenerator,
+  emailListScore,
+  freelanceBioGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
