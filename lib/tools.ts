@@ -2299,6 +2299,127 @@ I'm {{name}}, and I help {{niche}} with {{specialty}}. I recently {{clients}}.`,
   outputLabel: 'Your Professional Bios',
 }
 
+// ============ COURSE & REVENUE TOOLS ============
+
+export const courseLaunchChecklistGenerator: GeneratorTool = {
+  slug: 'course-launch-checklist-generator',
+  name: 'Course Launch Checklist Generator',
+  description: 'Get a complete launch checklist for your online course or digital product',
+  category: 'Digital Products',
+  type: 'generator',
+  seo: {
+    title: 'Course Launch Checklist Generator | Launch Your Course Successfully',
+    description: 'Generate a complete launch checklist for your online course. Pre-launch, launch day, and post-launch tasks to maximize sales.',
+  },
+  fields: [
+    { id: 'course_name', label: 'Course/Product Name', type: 'text', placeholder: 'AI Automation Masterclass', required: true },
+    { id: 'price', label: 'Price Point', type: 'select', options: [
+      { value: 'low', label: '$0-50 (impulse buy)' },
+      { value: 'mid', label: '$50-200 (considered purchase)' },
+      { value: 'high', label: '$200-500 (premium)' },
+      { value: 'flagship', label: '$500+ (flagship)' },
+    ], required: true },
+    { id: 'audience_size', label: 'Email List / Audience Size', type: 'select', options: [
+      { value: 'small', label: 'Under 500' },
+      { value: 'medium', label: '500-2,000' },
+      { value: 'large', label: '2,000-10,000' },
+      { value: 'xlarge', label: '10,000+' },
+    ], required: true },
+    { id: 'launch_date', label: 'Target Launch Date', type: 'text', placeholder: 'March 15, 2026', required: true },
+  ],
+  template: `🚀 COURSE LAUNCH CHECKLIST: {{course_name}}
+
+Price: {{price}} | Audience: {{audience_size}} | Launch: {{launch_date}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 4 WEEKS BEFORE LAUNCH
+□ Finish all course content and modules
+□ Set up course platform (Teachable, Kajabi, Gumroad, etc.)
+□ Create sales page with compelling copy
+□ Record video sales letter (if applicable)
+□ Set up payment processing
+□ Test the entire purchase flow
+
+📅 2 WEEKS BEFORE LAUNCH
+□ Send "coming soon" email to list
+□ Create launch content calendar
+□ Prepare 5-7 launch emails
+□ Create social media content for launch week
+□ Set up early bird or founding member pricing
+□ Prepare bonuses for launch window
+
+📅 1 WEEK BEFORE LAUNCH
+□ Send teaser emails (build anticipation)
+□ Share behind-the-scenes on social
+□ Reach out to affiliates/partners
+□ Test all links and checkout again
+□ Prepare FAQ document
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 LAUNCH DAY ({{launch_date}})
+□ Send launch email (morning)
+□ Post on all social channels
+□ Go live or host webinar (if applicable)
+□ Monitor for tech issues
+□ Respond to questions quickly
+□ Send reminder email (evening)
+
+📧 LAUNCH EMAIL SEQUENCE
+Day 1: "It's live!" (announcement)
+Day 2: "Here's what you get" (value stack)
+Day 3: "Student success story" (social proof)
+Day 5: "Common questions" (objection handling)
+Day 7: "Last chance" (urgency + close)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 POST-LAUNCH (Week 2+)
+□ Send thank you to all buyers
+□ Collect testimonials from early students
+□ Address any support issues quickly
+□ Analyze what worked/didn't
+□ Plan evergreen funnel or next launch
+
+💡 LAUNCH DAY TIPS
+• Have someone else handle tech issues
+• Document everything for next time
+• Celebrate any sales — don't compare to others
+• Focus on helping, not selling`,
+  outputLabel: 'Your Launch Checklist',
+}
+
+export const recurringRevenueScore: ScoreTool = {
+  slug: 'recurring-revenue-score',
+  name: 'Recurring Revenue Score',
+  description: 'Evaluate your business for subscription or retainer revenue potential',
+  category: 'Business',
+  type: 'score',
+  seo: {
+    title: 'Recurring Revenue Score | Build Predictable Income',
+    description: 'Score your freelance business for recurring revenue potential. Learn how to convert one-time clients into monthly retainers.',
+  },
+  inputLabel: 'Describe your current business model and services',
+  inputPlaceholder: `I do one-off website designs for $3,000-5,000 each. Most clients come back 1-2 years later for updates. I've thought about offering maintenance packages but haven't started. I have about 20 past clients I stay in touch with...`,
+  criteria: [
+    { name: 'Ongoing Need', weight: 25, keywords: ['recurring', 'ongoing', 'monthly', 'regular', 'continuous', 'maintenance', 'support', 'updates', 'management'], description: 'Services that require ongoing work' },
+    { name: 'Client Retention', weight: 20, keywords: ['repeat', 'return', 'long-term', 'relationship', 'retained', 'came back', 'loyal', 'referral'], description: 'Track record of client retention' },
+    { name: 'Scalable Delivery', weight: 20, keywords: ['template', 'system', 'process', 'automated', 'efficient', 'scalable', 'productized', 'standardized'], description: 'Ability to deliver at scale' },
+    { name: 'Value Over Time', weight: 20, keywords: ['results', 'roi', 'growth', 'improvement', 'optimization', 'performance', 'value', 'impact'], description: 'Demonstrable ongoing value to clients' },
+    { name: 'Pricing Structure', weight: 15, keywords: ['package', 'tier', 'monthly', 'retainer', 'subscription', 'pricing', 'plan', 'bundle'], description: 'Packaging services for recurring billing' },
+  ],
+  tips: [
+    'Start with one retainer offer and refine before scaling',
+    'Monthly value should be clear: "X deliverables" or "Y hours"',
+    'Anchor pricing: Show annual savings for monthly commitment',
+    'Grandfathering: Reward early adopters with locked-in pricing',
+    'Upsell existing clients — they already trust you',
+    'Consider: maintenance, support, strategy calls, priority access',
+    'Aim for 80% recurring revenue for business stability',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2340,6 +2461,8 @@ export const allTools: Tool[] = [
   productizedServiceGenerator,
   emailListScore,
   freelanceBioGenerator,
+  courseLaunchChecklistGenerator,
+  recurringRevenueScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
