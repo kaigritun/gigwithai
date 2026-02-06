@@ -3069,6 +3069,122 @@ If you're an e-commerce brand doing over $1M and struggling with support volume,
   ],
 }
 
+// ============ SIDE PROJECT MONETIZATION ============
+
+export const sideProjectMonetizationScore: ScoreTool = {
+  slug: 'side-project-monetization-score',
+  name: 'Side Project Monetization Score',
+  description: 'Evaluate your side project\'s revenue potential and monetization strategy',
+  category: 'Monetization',
+  type: 'score',
+  seo: {
+    title: 'Side Project Monetization Score | Revenue Potential Assessment',
+    description: 'Assess your side project\'s potential for generating income. Get feedback on business model, market fit, and monetization strategy.',
+  },
+  inputLabel: 'Describe Your Side Project',
+  inputPlaceholder: 'Describe your side project: what it does, current users/traffic, existing revenue (if any), target audience, and how you plan to monetize it...',
+  criteria: [
+    {
+      name: 'Market Demand',
+      weight: 25,
+      keywords: ['users', 'customers', 'traffic', 'downloads', 'signups', 'waitlist', 'demand', 'requests', 'paying', 'subscribers'],
+      description: 'Evidence of market demand and user interest',
+    },
+    {
+      name: 'Revenue Model',
+      weight: 25,
+      keywords: ['subscription', 'one-time', 'freemium', 'ads', 'affiliate', 'sponsorship', 'pricing', 'tier', 'plan', '$', 'monthly', 'annual'],
+      description: 'Clear monetization strategy',
+    },
+    {
+      name: 'Competitive Advantage',
+      weight: 20,
+      keywords: ['unique', 'better', 'faster', 'cheaper', 'different', 'only', 'first', 'niche', 'specialized', 'focused'],
+      description: 'What makes your project stand out',
+    },
+    {
+      name: 'Scalability',
+      weight: 15,
+      keywords: ['scale', 'automated', 'passive', 'recurring', 'growth', 'expand', 'market', 'global', 'saas', 'digital'],
+      description: 'Potential for passive or scalable income',
+    },
+    {
+      name: 'Execution Readiness',
+      weight: 15,
+      keywords: ['launched', 'live', 'beta', 'mvp', 'ready', 'built', 'working', 'payments', 'stripe', 'checkout'],
+      description: 'How close to monetization-ready',
+    },
+  ],
+  tips: [
+    'Validate demand before building features — pre-sell or get commitments first',
+    'One paying customer > 1000 free users for validation',
+    'Start with high-touch, high-price — easier to scale down than up',
+    'Monthly revenue > one-time for predictable income',
+    'Solve expensive problems for businesses, not cheap problems for consumers',
+    'Your audience\'s willingness to pay matters more than market size',
+    'Consider productized services as bridge to pure product revenue',
+    'Ship fast, iterate based on what people actually pay for',
+  ],
+}
+
+// ============ NEWSLETTER GROWTH SCORE ============
+
+export const newsletterGrowthScore: ScoreTool = {
+  slug: 'newsletter-growth-score',
+  name: 'Newsletter Growth Score',
+  description: 'Evaluate your newsletter strategy for subscriber growth and engagement',
+  category: 'Content',
+  type: 'score',
+  seo: {
+    title: 'Newsletter Growth Score | Email List Strategy Assessment',
+    description: 'Assess your newsletter\'s growth potential. Get feedback on acquisition, engagement, and monetization strategy.',
+  },
+  inputLabel: 'Describe Your Newsletter',
+  inputPlaceholder: 'Describe your newsletter: topic/niche, current subscribers, growth rate, open rates, how you acquire subscribers, and monetization plans...',
+  criteria: [
+    {
+      name: 'Growth Channels',
+      weight: 25,
+      keywords: ['twitter', 'linkedin', 'referral', 'seo', 'content', 'guest', 'podcast', 'collaborate', 'cross-promote', 'lead magnet', 'landing page'],
+      description: 'Multiple acquisition channels for subscriber growth',
+    },
+    {
+      name: 'Engagement Metrics',
+      weight: 25,
+      keywords: ['open rate', '%', 'click', 'reply', 'engagement', 'feedback', 'comments', 'response', 'interaction'],
+      description: 'Evidence of subscriber engagement',
+    },
+    {
+      name: 'Value Proposition',
+      weight: 20,
+      keywords: ['unique', 'exclusive', 'curated', 'insights', 'analysis', 'actionable', 'specific', 'niche', 'valuable', 'useful'],
+      description: 'Clear differentiated value for readers',
+    },
+    {
+      name: 'Consistency',
+      weight: 15,
+      keywords: ['weekly', 'daily', 'monthly', 'schedule', 'consistent', 'regular', 'every', 'issues', 'editions'],
+      description: 'Regular publishing schedule',
+    },
+    {
+      name: 'Monetization Path',
+      weight: 15,
+      keywords: ['sponsor', 'paid', 'premium', 'ads', 'affiliate', 'product', 'course', 'consulting', 'revenue', '$'],
+      description: 'Plan to monetize the audience',
+    },
+  ],
+  tips: [
+    'Focus on one niche deeply — generalists don\'t build engaged audiences',
+    'Referral programs work: offer exclusive content for successful referrals',
+    'LinkedIn posts → newsletter is one of the fastest growth channels right now',
+    'Open rates above 40% = great, below 20% = check deliverability and subject lines',
+    'Reply to every email — engaged readers become advocates',
+    'Sponsorships start making sense around 5k-10k targeted subscribers',
+    'One highly-engaged 1k list beats a disengaged 10k list for monetization',
+    'Archive issues on your website for SEO discovery',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3124,6 +3240,8 @@ export const allTools: Tool[] = [
   clientTestimonialScore,
   retainerContractScore,
   portfolioCaseStudyScore,
+  sideProjectMonetizationScore,
+  newsletterGrowthScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
