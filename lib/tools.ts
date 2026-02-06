@@ -1004,6 +1004,136 @@ export const passiveIncomeQuiz: QuizTool = {
   ],
 }
 
+export const contentRoiCalculator: ScoreTool = {
+  slug: 'content-roi-calculator',
+  name: 'Content ROI Calculator',
+  description: 'Calculate the return on investment for your content creation efforts',
+  category: 'Analytics',
+  type: 'score',
+  seo: {
+    title: 'Free Content ROI Calculator | Measure Content Performance',
+    description: 'Calculate whether your content is worth the time investment. Measure views, engagement, and revenue against effort.',
+  },
+  inputLabel: 'Describe your content piece and results',
+  inputPlaceholder: `Content: YouTube video tutorial
+Time spent: 8 hours (script, filming, editing)
+Views: 5,000
+Subscribers gained: 150
+Revenue: $50 from ads, 2 clients worth $500 each`,
+  criteria: [
+    { name: 'Reach', weight: 25, keywords: ['views', 'impressions', 'visitors', 'traffic', 'reach', 'followers', 'subscribers'], description: 'How many people saw your content' },
+    { name: 'Engagement', weight: 25, keywords: ['comments', 'likes', 'shares', 'saves', 'replies', 'dms', 'engagement', 'interaction'], description: 'How people interacted with your content' },
+    { name: 'Conversion', weight: 30, keywords: ['leads', 'emails', 'subscribers', 'clients', 'customers', 'sales', 'revenue', 'conversion'], description: 'Business outcomes generated' },
+    { name: 'Efficiency', weight: 20, keywords: ['hours', 'time', 'quick', 'fast', 'efficient', 'repurposed', 'batched'], description: 'Time investment vs results' },
+  ],
+  tips: [
+    'Track time investment accurately to calculate true ROI',
+    'Consider compounding value (evergreen content keeps working)',
+    'Repurposed content counts for efficiency',
+    'Revenue attribution can be indirect (leads → clients)',
+  ],
+}
+
+export const clientOnboardingGenerator: GeneratorTool = {
+  slug: 'client-onboarding-generator',
+  name: 'Client Onboarding Generator',
+  description: 'Create a professional client onboarding sequence and welcome packet',
+  category: 'Client Management',
+  type: 'generator',
+  seo: {
+    title: 'Free Client Onboarding Generator | Welcome Packet Template',
+    description: 'Generate a professional client onboarding sequence with welcome emails, questionnaires, and project kickoff templates.',
+  },
+  fields: [
+    { id: 'service', label: 'Your Service', type: 'text', placeholder: 'Website Design', required: true },
+    { id: 'client_name', label: 'Client Name', type: 'text', placeholder: 'Sarah', required: true },
+    { id: 'project', label: 'Project Description', type: 'text', placeholder: '5-page business website', required: true },
+    { id: 'timeline', label: 'Project Timeline', type: 'select', options: [
+      { value: '1week', label: '1 week' },
+      { value: '2weeks', label: '2 weeks' },
+      { value: '1month', label: '1 month' },
+      { value: '2months', label: '2+ months' },
+    ], required: true },
+  ],
+  template: `🎉 CLIENT ONBOARDING SEQUENCE
+
+Client: {{client_name}}
+Project: {{project}}
+Service: {{service}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📧 EMAIL 1: WELCOME (Send immediately)
+
+Subject: Welcome aboard, {{client_name}}! 🎉 Here's what's next
+
+Hi {{client_name}},
+
+I'm so excited to work on your {{project}}!
+
+Here's what happens next:
+1. You'll receive a short questionnaire (takes ~10 min)
+2. We'll schedule a kickoff call
+3. I'll start working on your {{service}}
+
+Timeline: {{timeline}}
+
+If you have any questions, just reply to this email.
+
+Let's make something great together!
+[Your name]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 ONBOARDING QUESTIONNAIRE
+
+1. What's the #1 goal for this {{project}}?
+2. Who is your target audience?
+3. What brands/competitors do you admire?
+4. What's your brand voice? (professional, playful, bold?)
+5. Any must-haves or dealbreakers?
+6. Best way to reach you for quick questions?
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 KICKOFF CALL AGENDA (30 min)
+
+□ Review questionnaire answers
+□ Clarify project scope and deliverables
+□ Set milestone dates
+□ Establish communication cadence
+□ Answer any questions
+□ Get excited about the project!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 PROJECT TRACKER TEMPLATE
+
+Phase 1: Discovery (Day 1-3)
+□ Questionnaire received
+□ Kickoff call complete
+□ Assets gathered
+
+Phase 2: Creation (Day 4-X)
+□ First draft delivered
+□ Feedback received
+□ Revisions complete
+
+Phase 3: Delivery (Final days)
+□ Final version approved
+□ Files/access delivered
+□ Testimonial requested
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 TIPS
+• Respond to client messages within 24 hours
+• Send progress updates even if not asked
+• Under-promise, over-deliver on timeline
+• Ask for testimonial while they're happy`,
+  outputLabel: 'Your Onboarding Sequence',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1021,6 +1151,8 @@ export const allTools: Tool[] = [
   servicePackageGenerator,
   contentCalendarGenerator,
   passiveIncomeQuiz,
+  contentRoiCalculator,
+  clientOnboardingGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
