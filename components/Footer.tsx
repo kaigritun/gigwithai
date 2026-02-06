@@ -80,9 +80,6 @@ export default function Footer() {
           <p className="text-sm text-white/40">
             © 2026 GigWithAI. Real guides for real income.
           </p>
-          <p className="text-sm text-white/40">
-            Made with AI, for hustlers.
-          </p>
         </div>
       </div>
     </footer>
