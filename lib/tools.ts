@@ -1421,6 +1421,100 @@ Timeline: 2 weeks`,
   ],
 }
 
+// ============ CONTRACT & RETAINER TOOLS ============
+
+export const contractNegotiationScore: ScoreTool = {
+  slug: 'contract-negotiation-score',
+  name: 'Contract Negotiation Score',
+  description: 'Evaluate your freelance contract for risks and better terms',
+  category: 'Client Management',
+  type: 'score',
+  seo: {
+    title: 'Free Contract Score | Freelance Contract Review',
+    description: 'Analyze your freelance contract for red flags. Protect yourself and your work.',
+  },
+  inputLabel: 'Paste Your Contract Terms',
+  inputPlaceholder: 'Paste key terms: payment, IP rights, cancellation, scope, timeline...',
+  criteria: [
+    { name: 'Payment Terms', weight: 25, keywords: ['deposit', 'upfront', '50%', 'milestone', 'net 15', 'net 30', 'late fee'], description: 'Clear payment schedule with protection' },
+    { name: 'Scope Definition', weight: 20, keywords: ['scope', 'deliverables', 'includes', 'excludes', 'revisions', 'limit', 'change order'], description: 'Well-defined scope with revision limits' },
+    { name: 'Kill Fee', weight: 20, keywords: ['cancellation', 'kill fee', 'termination', 'notice', 'non-refundable'], description: 'Protection if project is cancelled' },
+    { name: 'IP Ownership', weight: 15, keywords: ['intellectual property', 'ownership', 'rights', 'transfer', 'upon payment', 'portfolio'], description: 'Clear IP transfer terms' },
+    { name: 'Timeline', weight: 10, keywords: ['timeline', 'deadline', 'delivery', 'client materials', 'delay'], description: 'Realistic timeline with dependencies' },
+    { name: 'Liability', weight: 10, keywords: ['liability', 'limited', 'cap', 'indemnify', 'maximum'], description: 'Limited liability protection' },
+  ],
+  tips: [
+    'Always get 30-50% deposit upfront',
+    'Cap revisions (e.g., 3 rounds included)',
+    'Include kill fee (50% if cancelled after start)',
+    'IP transfers only upon full payment',
+    'Add late payment penalties (1.5%/month)',
+  ],
+}
+
+export const retainerProposalGenerator: GeneratorTool = {
+  slug: 'retainer-proposal-generator',
+  name: 'Retainer Proposal Generator',
+  description: 'Create proposals for ongoing retainer relationships',
+  category: 'Sales',
+  type: 'generator',
+  seo: {
+    title: 'Free Retainer Proposal Generator | Recurring Revenue',
+    description: 'Generate retainer proposals for steady freelance income.',
+  },
+  fields: [
+    { id: 'client_name', label: 'Client Name', type: 'text', placeholder: 'Sarah at Acme Corp', required: true },
+    { id: 'service', label: 'Service', type: 'text', placeholder: 'Content writing and social media', required: true },
+    { id: 'monthly_hours', label: 'Monthly Hours', type: 'text', placeholder: '20', required: true },
+    { id: 'monthly_rate', label: 'Monthly Rate', type: 'text', placeholder: '$3,000', required: true },
+    { id: 'includes', label: 'What\'s Included', type: 'textarea', placeholder: '8 blog posts, daily social, monthly call', required: true },
+    { id: 'commitment', label: 'Minimum Commitment', type: 'select', options: [
+      { value: '1', label: '1 month' },
+      { value: '3', label: '3 months' },
+      { value: '6', label: '6 months' },
+    ], required: true },
+  ],
+  template: `📋 RETAINER PROPOSAL
+
+For: {{client_name}}
+Service: {{service}}
+
+💼 MONTHLY RETAINER: {{monthly_rate}}
+
+Hours: {{monthly_hours}}h/month
+Commitment: {{commitment}} month minimum
+
+What's Included:
+{{includes}}
+
+📊 VALUE COMPARISON
+
+Retainer benefits:
+• ~15-20% savings vs. project pricing
+• Guaranteed capacity each month
+• Priority turnaround (24-48h)
+• Monthly strategy alignment
+
+📋 HOW IT WORKS
+
+1. Monthly kick-off call to plan
+2. I deliver within your hour allocation
+3. Slack/email, 24h response time
+4. Unused hours roll over (up to 50%)
+5. Additional hours at [hourly rate]
+
+✅ NEXT STEPS
+
+Reply to confirm interest, I'll send the agreement.
+
+💡 TIPS:
+• Offer after successful project
+• Price 10-20% below project work
+• Allow limited hour rollover
+• Bill monthly in advance`,
+  outputLabel: 'Your Retainer Proposal',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1444,6 +1538,8 @@ export const allTools: Tool[] = [
   courseOutlineScore,
   invoiceScore,
   scopeCreepDetector,
+  contractNegotiationScore,
+  retainerProposalGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
