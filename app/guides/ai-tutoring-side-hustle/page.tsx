@@ -11,20 +11,7 @@ export const metadata: Metadata = {
 export default function AITutoringSideHustlePage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
-      {/* Nav */}
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-violet-400">
-            GigWithAI
-          </Link>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <Link href="/guides" className="hover:text-white transition">Guides</Link>
-            <Link href="/tools" className="hover:text-white transition">Tools</Link>
-          </div>
-        </div>
-      </nav>
-
-      <article className="px-6 py-16">
+<article className="px-6 py-16">
         <div className="max-w-3xl mx-auto">
           <Link 
             href="/guides" 
@@ -457,15 +444,6 @@ Keep it warm but professional. Under 200 words.`}</p>
         </article>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-8 mt-auto">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <p>© 2026 GigWithAI</p>
-          <div className="flex gap-6">
-            <Link href="/guides" className="hover:text-white transition">Guides</Link>
-            <Link href="/tools" className="hover:text-white transition">Tools</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </div>
   )
 }

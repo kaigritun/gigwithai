@@ -36,7 +36,7 @@ export default function ProductsPage() {
   const cheatSheets = products.filter(p => p.category === 'cheat-sheet')
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <>
       {/* Header */}
       <header className="border-b border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -88,11 +88,6 @@ export default function ProductsPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-800 py-8 mt-16">
-        <div className="max-w-6xl mx-auto px-4 text-center text-sm text-zinc-500">
-          © 2026 GigWithAI. All rights reserved.
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }

@@ -33,20 +33,7 @@ export default function ToolkitPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white">
-      {/* Nav */}
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-violet-400">
-            GigWithAI
-          </Link>
-          <div className="flex gap-6 text-sm text-gray-400">
-            <Link href="/guides" className="hover:text-white transition">Guides</Link>
-            <Link href="/tools" className="hover:text-white transition">Tools</Link>
-          </div>
-        </div>
-      </nav>
-
-      <article className="px-6 py-16">
+<article className="px-6 py-16">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <p className="text-violet-400 text-sm font-mono uppercase tracking-wider mb-4">
@@ -380,9 +367,6 @@ project-based work. Would this be helpful for you?"`}
       </article>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-gray-500 text-sm">
-        <p>© 2026 GigWithAI. Making money with AI tools.</p>
-      </footer>
-    </main>
+      </main>
   );
 }

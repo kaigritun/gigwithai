@@ -197,20 +197,7 @@ export default function ToolsPage() {
     : Object.entries(tools).filter(([cat]) => cat === activeCategory)
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
-      <nav className="border-b border-white/10 px-6 py-4">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <Link href="/" className="font-semibold text-lg text-violet-400 hover:text-violet-300 transition-colors">
-            GigWithAI
-          </Link>
-          <div className="flex gap-6 text-sm text-white/60">
-            <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
-            <Link href="/tools" className="text-white">Tools</Link>
-            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-          </div>
-        </div>
-      </nav>
-
+    <>
       <main className="max-w-6xl mx-auto px-6 py-20">
         <div className="max-w-2xl mb-16">
           <p className="text-violet-400 font-mono text-sm mb-4 uppercase tracking-wider">
@@ -504,21 +491,6 @@ export default function ToolsPage() {
           </p>
         </section>
       </main>
-
-      <footer className="border-t border-white/10 mt-24">
-        <div className="max-w-6xl mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-white/40">
-              © 2026 GigWithAI. Helping you build income with AI.
-            </p>
-            <div className="flex gap-6 text-sm text-white/40">
-              <Link href="/guides" className="hover:text-white transition-colors">Guides</Link>
-              <Link href="/tools" className="hover:text-white transition-colors">Tools</Link>
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   )
 }
