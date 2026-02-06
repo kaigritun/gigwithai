@@ -31,7 +31,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     console.error('Error reading guides directory:', error)
   }
 
-  const allPages = [...staticPages, ...guidePages]
+  // Dynamically get all tool pages
+  const toolsDir = path.join(process.cwd(), 'app/tools')
+  let toolPages: { path: string; priority: number; changeFrequency: 'monthly' }[] = []
+  
+  try {
+    const toolFolders = fs.readdirSync(toolsDir, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory() && dirent.name !== '[slug]')
+      .map(dirent => dirent.name)
+    
+    toolPages = toolFolders.map(folder => ({
+      path: `/tools/${folder}`,
+      priority: 0.8,
+      changeFrequency: 'monthly' as const,
+    }))
+  } catch (error) {
+    console.error('Error reading tools directory:', error)
+  }
+
+  const allPages = [...staticPages, ...guidePages, ...toolPages]
 
   return allPages.map(({ path, priority, changeFrequency }) => ({
     url: `${baseUrl}${path}`,
