@@ -1515,6 +1515,163 @@ Reply to confirm interest, I'll send the agreement.
   outputLabel: 'Your Retainer Proposal',
 }
 
+// ============ LEAD GEN & SALES TOOLS ============
+
+export const leadMagnetScore: ScoreTool = {
+  slug: 'lead-magnet-score',
+  name: 'Lead Magnet Score',
+  description: 'Rate your lead magnet for conversion and email capture effectiveness',
+  category: 'Marketing',
+  type: 'score',
+  seo: {
+    title: 'Free Lead Magnet Score | Optimize for Conversions',
+    description: 'Score your lead magnet for email capture effectiveness. Get tips to improve downloads and grow your list.',
+  },
+  inputLabel: 'Describe Your Lead Magnet',
+  inputPlaceholder: `Lead Magnet: "10 AI Prompts for Freelancers"
+
+Landing page headline: Get 10 AI prompts that save me 5 hours every week
+Description: These exact prompts helped me 3x my output without working more hours
+Format: PDF download
+Price: Free (email required)
+Current conversion: ~8%`,
+  criteria: [
+    {
+      name: 'Specific Promise',
+      weight: 25,
+      keywords: ['get', 'learn', 'discover', 'exactly', 'step-by-step', 'how to', 'templates', 'checklist', 'swipe file'],
+      description: 'Clear, specific outcome promised',
+    },
+    {
+      name: 'Urgency/Desire',
+      weight: 20,
+      keywords: ['now', 'today', 'instant', 'immediately', 'fast', 'quick', 'save time', 'make money', 'grow', 'scale'],
+      description: 'Creates desire to get it now',
+    },
+    {
+      name: 'Social Proof',
+      weight: 15,
+      keywords: ['downloads', 'subscribers', 'people', 'companies', 'used by', 'trusted', 'results', 'testimonial'],
+      description: 'Evidence others have benefited',
+    },
+    {
+      name: 'Easy Format',
+      weight: 15,
+      keywords: ['pdf', 'checklist', 'template', 'swipe', 'quick', 'short', 'one-page', 'cheatsheet', 'guide'],
+      description: 'Format is quick to consume',
+    },
+    {
+      name: 'Low Friction',
+      weight: 15,
+      keywords: ['free', 'no credit card', 'instant', 'immediately', 'email only', 'just enter'],
+      description: 'Easy to get (minimal form fields)',
+    },
+    {
+      name: 'Relevance to Offer',
+      weight: 10,
+      keywords: ['related', 'leads to', 'perfect for', 'if you want', 'next step', 'for those who'],
+      description: 'Attracts people who would buy your paid offer',
+    },
+  ],
+  tips: [
+    'Best performing formats: checklists, templates, swipe files',
+    'Name it specifically: "10 AI Prompts" > "AI Guide"',
+    'Add a number: "7 Templates" > "Templates"',
+    'Ask for email only (not name, company, etc.)',
+    'Show download count as social proof',
+    'Make it lead naturally to your paid offer',
+  ],
+}
+
+export const discoveryCallGenerator: GeneratorTool = {
+  slug: 'discovery-call-generator',
+  name: 'Discovery Call Script Generator',
+  description: 'Create a professional discovery call framework to qualify and close clients',
+  category: 'Sales',
+  type: 'generator',
+  seo: {
+    title: 'Free Discovery Call Script | Close More Clients',
+    description: 'Generate a discovery call framework to qualify leads and close clients. Templates for freelancers and consultants.',
+  },
+  fields: [
+    { id: 'service', label: 'Your Service', type: 'text', placeholder: 'AI automation consulting', required: true },
+    { id: 'typical_client', label: 'Typical Client', type: 'text', placeholder: 'SaaS founders doing $1-10M ARR', required: true },
+    { id: 'main_problem', label: 'Main Problem You Solve', type: 'text', placeholder: 'Manual processes eating up founder time', required: true },
+    { id: 'price_range', label: 'Price Range', type: 'text', placeholder: '$3,000-10,000', required: true },
+    { id: 'timeline', label: 'Typical Timeline', type: 'text', placeholder: '2-4 weeks', required: true },
+  ],
+  template: `📞 DISCOVERY CALL SCRIPT
+
+Service: {{service}}
+Ideal Client: {{typical_client}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 OPENING (2 min)
+
+"Thanks for taking the time. Before we dive in, I'd love to learn more about your situation so I can see if I can actually help. Mind if I ask a few questions?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❓ DISCOVERY QUESTIONS (15 min)
+
+**Situation:**
+"Tell me about your business — what do you do and where are you right now?"
+
+**Problem:**
+"What's the biggest challenge you're facing with {{main_problem}}?"
+"How long has this been a problem?"
+"What have you tried so far?"
+
+**Impact:**
+"What is this costing you? (Time, money, opportunity)"
+"What would solving this mean for your business?"
+
+**Timeline:**
+"When do you want to have this solved by?"
+"What happens if you don't solve it?"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 PRESENT SOLUTION (5 min)
+
+"Based on what you've shared, here's how I typically help {{typical_client}}..."
+
+[Explain your {{service}} approach briefly]
+
+"Typically, we can get this done in {{timeline}} with investment of {{price_range}}."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ CLOSE (3 min)
+
+If interested:
+"Do you want me to put together a proposal?"
+
+If hesitant:
+"What questions do you have?"
+"What would need to be true for this to be a yes?"
+
+If not a fit:
+"Based on what you've shared, I don't think I'm the right fit because [reason]. But I can recommend [alternative]."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 POST-CALL CHECKLIST
+
+□ Send summary email within 2 hours
+□ Include proposal if they requested one
+□ Set follow-up reminder for 3 days
+□ Add to CRM with notes
+
+💡 TIPS
+• Listen 70%, talk 30%
+• Take notes on their exact words
+• Never quote price before understanding value
+• Always get a next step scheduled`,
+  outputLabel: 'Your Discovery Call Script',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1540,6 +1697,8 @@ export const allTools: Tool[] = [
   scopeCreepDetector,
   contractNegotiationScore,
   retainerProposalGenerator,
+  leadMagnetScore,
+  discoveryCallGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
