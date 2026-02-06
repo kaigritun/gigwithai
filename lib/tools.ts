@@ -1672,6 +1672,81 @@ If not a fit:
   outputLabel: 'Your Discovery Call Script',
 }
 
+// ============ POLICY & PRICING TOOLS ============
+
+export const clientRetainerScore: ScoreTool = {
+  slug: 'client-retainer-score',
+  name: 'Client Retainer Score',
+  description: 'Evaluate if a client relationship is ready for a retainer agreement',
+  category: 'Sales',
+  type: 'score',
+  seo: {
+    title: 'Client Retainer Score | When to Propose Ongoing Work',
+    description: 'Evaluate if a client is ready for a retainer. Score your relationship to know when to propose ongoing agreements.',
+  },
+  inputLabel: 'Describe Your Client Relationship',
+  inputPlaceholder: 'How long have you worked together? Project history? Communication quality? Payment history? Future needs?',
+  criteria: [
+    { name: 'Track Record', weight: 25, keywords: ['projects', 'months', 'years', 'completed', 'successful', 'history', 'worked together'], description: 'History of successful projects together' },
+    { name: 'Payment Reliability', weight: 20, keywords: ['paid', 'on time', 'reliable', 'invoices', 'no issues', 'prompt', 'quick payment'], description: 'Consistent, on-time payments' },
+    { name: 'Communication Quality', weight: 20, keywords: ['responsive', 'clear', 'easy', 'communicate', 'feedback', 'collaborative', 'professional'], description: 'Good communication and collaboration' },
+    { name: 'Ongoing Needs', weight: 20, keywords: ['ongoing', 'recurring', 'monthly', 'regular', 'consistent work', 'continuous', 'always'], description: 'Clear ongoing work requirements' },
+    { name: 'Budget Capacity', weight: 15, keywords: ['budget', 'afford', 'invest', 'committed', 'priority', 'growth', 'scale'], description: 'Financial capacity for recurring engagement' },
+  ],
+  tips: [
+    'Wait for 2-3 successful projects before proposing retainer',
+    'Ensure they have consistent ongoing needs, not one-time work',
+    'Verify payment history is reliable before committing to retainer',
+    'Start with 3-month minimum term to test the arrangement',
+    'Price retainer at slight discount to project rates (5-10%)',
+  ],
+}
+
+export const cancellationPolicyGenerator: GeneratorTool = {
+  slug: 'cancellation-policy-generator',
+  name: 'Cancellation Policy Generator',
+  description: 'Create professional cancellation and refund policies for freelance services',
+  category: 'Business',
+  type: 'generator',
+  seo: {
+    title: 'Cancellation Policy Generator | Freelance Refund Policy',
+    description: 'Generate professional cancellation and refund policies. Protect your business while staying client-friendly.',
+  },
+  fields: [
+    { id: 'service_type', label: 'Service Type', type: 'select', options: [
+      { value: 'project', label: 'Project-based (websites, design)' },
+      { value: 'retainer', label: 'Retainer/Ongoing' },
+      { value: 'consulting', label: 'Consulting/Coaching calls' },
+    ], required: true },
+    { id: 'deposit', label: 'Deposit Amount', type: 'select', options: [
+      { value: '25', label: '25%' },
+      { value: '50', label: '50%' },
+    ], required: true },
+    { id: 'notice_period', label: 'Cancellation Notice Required', type: 'select', options: [
+      { value: '7', label: '7 days' },
+      { value: '14', label: '14 days' },
+      { value: '30', label: '30 days' },
+    ], required: true },
+  ],
+  template: `📋 CANCELLATION & REFUND POLICY
+
+Service: {{service_type}} | Deposit: {{deposit}}%
+
+**DEPOSIT:** {{deposit}}% required to secure booking and begin work.
+
+**CANCELLATION:**
+• Before work begins: Full refund minus {{deposit}}% booking fee
+• After work begins: Prorated refund for uncompleted work
+• Less than {{notice_period}} days notice: No refund
+
+**RESCHEDULING:** Calls reschedule free with 24h+ notice. Less than 24h = forfeited.
+
+**HOW TO CANCEL:** Email with name, project, and request (refund/credit/reschedule).
+
+💡 TIP: Get signed agreement before starting. Be firm but fair.`,
+  outputLabel: 'Your Cancellation Policy',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1699,6 +1774,8 @@ export const allTools: Tool[] = [
   retainerProposalGenerator,
   leadMagnetScore,
   discoveryCallGenerator,
+  clientRetainerScore,
+  cancellationPolicyGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
