@@ -3185,6 +3185,122 @@ export const newsletterGrowthScore: ScoreTool = {
   ],
 }
 
+// ============ PRODUCTIZED SERVICE SCORE ============
+
+export const productizedServiceScore: ScoreTool = {
+  slug: 'productized-service-score',
+  name: 'Productized Service Score',
+  description: 'Evaluate how well your service is packaged for scalable delivery',
+  category: 'Business Model',
+  type: 'score',
+  seo: {
+    title: 'Productized Service Score | Package Your Freelance Services',
+    description: 'Assess how well your service is productized for scale. Get feedback on pricing, scope, and delivery systems.',
+  },
+  inputLabel: 'Describe Your Productized Service',
+  inputPlaceholder: 'Describe your service: what\'s included, pricing structure, delivery timeline, who it\'s for, and how you deliver it...',
+  criteria: [
+    {
+      name: 'Clear Scope',
+      weight: 25,
+      keywords: ['includes', 'deliverables', 'specific', 'defined', 'exactly', 'scope', 'what you get', 'features', 'pages', 'revisions'],
+      description: 'Clearly defined scope with no ambiguity',
+    },
+    {
+      name: 'Fixed Pricing',
+      weight: 20,
+      keywords: ['$', 'price', 'cost', 'investment', 'one-time', 'monthly', 'flat', 'tier', 'package', 'starting at'],
+      description: 'Transparent pricing without custom quotes',
+    },
+    {
+      name: 'Defined Timeline',
+      weight: 20,
+      keywords: ['days', 'weeks', 'turnaround', 'delivery', 'timeline', 'deadline', 'fast', 'within', 'business days'],
+      description: 'Clear delivery timeframe',
+    },
+    {
+      name: 'Target Audience',
+      weight: 20,
+      keywords: ['for', 'perfect for', 'ideal for', 'designed for', 'startups', 'agencies', 'entrepreneurs', 'coaches', 'saas', 'ecommerce'],
+      description: 'Specific ideal customer defined',
+    },
+    {
+      name: 'Scalable Process',
+      weight: 15,
+      keywords: ['process', 'system', 'template', 'framework', 'automated', 'questionnaire', 'onboarding', 'workflow', 'sop'],
+      description: 'Repeatable system for delivery',
+    },
+  ],
+  tips: [
+    'Start with your most common project type — what do clients always ask for?',
+    'Fixed scope = fixed price. Never let clients expand scope without new pricing.',
+    'Tiered packages (Basic/Pro/Premium) increase average order value',
+    'Add a questionnaire/intake form to replace discovery calls',
+    'Create templates for everything you do twice — systematize before you scale',
+    'Delivery timeline should be honest — underpromise and overdeliver',
+    '"Unlimited revisions" kills margins — define revision limits clearly',
+    'Show examples of finished work to set expectations upfront',
+  ],
+}
+
+// ============ SALES PAGE SCORE ============
+
+export const salesPageScore: ScoreTool = {
+  slug: 'sales-page-score',
+  name: 'Sales Page Score',
+  description: 'Rate your sales page copy for conversions and persuasion',
+  category: 'Marketing',
+  type: 'score',
+  seo: {
+    title: 'Sales Page Score | Landing Page Copy Assessment',
+    description: 'Evaluate your sales page copy for conversion potential. Get feedback on headlines, benefits, proof, and calls-to-action.',
+  },
+  inputLabel: 'Paste Your Sales Page Copy',
+  inputPlaceholder: 'Paste your sales page text: headline, subheadline, benefits, features, testimonials, pricing, and call-to-action...',
+  criteria: [
+    {
+      name: 'Compelling Headline',
+      weight: 25,
+      keywords: ['get', 'discover', 'transform', 'without', 'finally', 'stop', 'start', 'how to', 'secret', 'proven', 'guaranteed', 'free'],
+      description: 'Attention-grabbing headline with clear benefit',
+    },
+    {
+      name: 'Benefits Over Features',
+      weight: 20,
+      keywords: ['you', 'your', 'save', 'earn', 'stop', 'never', 'finally', 'imagine', 'feel', 'freedom', 'confidence', 'results'],
+      description: 'Focus on outcomes and transformation, not just features',
+    },
+    {
+      name: 'Social Proof',
+      weight: 20,
+      keywords: ['testimonial', 'review', 'case study', 'results', 'clients', 'customers', '5-star', 'trusted', 'featured', 'as seen', '%', 'companies'],
+      description: 'Evidence that others have succeeded',
+    },
+    {
+      name: 'Urgency & Scarcity',
+      weight: 15,
+      keywords: ['limited', 'only', 'today', 'now', 'before', 'spots', 'deadline', 'exclusive', 'last chance', 'closing', 'bonus'],
+      description: 'Reasons to act now rather than later',
+    },
+    {
+      name: 'Clear CTA',
+      weight: 20,
+      keywords: ['buy', 'get', 'start', 'join', 'enroll', 'download', 'access', 'claim', 'book', 'schedule', 'sign up', 'try', 'free'],
+      description: 'Obvious next step with compelling action',
+    },
+  ],
+  tips: [
+    'Your headline has 3 seconds to hook attention — lead with the biggest benefit',
+    'Use "you" 3x more than "I" or "we" — make it about them',
+    'Stack testimonials near the buy button to overcome last-minute objections',
+    'Include a guarantee to reduce purchase anxiety',
+    'One CTA per section — don\'t make people think about what to do next',
+    'Use specific numbers: "347 clients" beats "hundreds of clients"',
+    'Address objections directly: "Even if you\'ve tried everything else..."',
+    'Mobile users scroll fast — make every section scannable with bold key points',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3242,6 +3358,8 @@ export const allTools: Tool[] = [
   portfolioCaseStudyScore,
   sideProjectMonetizationScore,
   newsletterGrowthScore,
+  productizedServiceScore,
+  salesPageScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
