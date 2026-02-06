@@ -2894,6 +2894,85 @@ I've gotten 40% of new clients from referrals this year.`,
   ],
 }
 
+// ============ NEW TOOLS (Feb 6 PM) ============
+
+export const nicheProfitabilityScore: ScoreTool = {
+  slug: 'niche-profitability-score',
+  name: 'Niche Profitability Score',
+  description: 'Evaluate if your freelance niche has real money-making potential',
+  category: 'Strategy',
+  type: 'score',
+  seo: {
+    title: 'Niche Profitability Score | Is Your Freelance Niche Profitable?',
+    description: 'Score your freelance niche for profit potential. Find out if you\'re targeting clients who can actually pay.',
+  },
+  inputLabel: 'Describe Your Freelance Niche',
+  inputPlaceholder: `Niche: AI automation for e-commerce brands
+
+Target clients: Shopify stores doing $1-10M/year who want to automate customer service, inventory, and marketing.
+
+Services: 
+- Chatbot setup ($2-5k)
+- Inventory forecasting systems ($5-10k)
+- Email automation with AI personalization ($3-8k)
+
+Why this niche: E-commerce stores have money, clear ROI metrics, and urgent problems that AI solves...`,
+  criteria: [
+    { name: 'Client Has Money', weight: 30, keywords: ['revenue', 'budget', 'funded', 'enterprise', 'growing', 'profitable', 'investor', 'million', '$'], description: 'Targets clients with real budgets' },
+    { name: 'Clear ROI', weight: 25, keywords: ['ROI', 'save', 'increase', 'reduce', 'revenue', 'profit', 'convert', 'measurable', '%', 'time'], description: 'Service has measurable return on investment' },
+    { name: 'Urgent Problem', weight: 20, keywords: ['urgent', 'pain', 'struggling', 'need', 'problem', 'deadline', 'overwhelmed', 'losing'], description: 'Solves a pressing problem they\'ll pay to fix now' },
+    { name: 'Specific Niche', weight: 15, keywords: ['specific', 'niche', 'specialize', 'focus', 'only', 'exclusively', 'industry', 'vertical'], description: 'Narrow focus = premium positioning' },
+    { name: 'Scalable', weight: 10, keywords: ['scale', 'repeat', 'systemize', 'productize', 'template', 'process', 'multiple'], description: 'Can serve multiple clients efficiently' },
+  ],
+  tips: [
+    'Follow the money: B2B > B2C, funded startups > bootstrapped',
+    'If you can\'t calculate ROI, clients won\'t pay premium rates',
+    'Urgent problems pay more: "I\'m losing customers" > "would be nice to improve"',
+    'Narrow = profitable: "AI for e-commerce" > "AI consultant"',
+    'Test with 10 outreach messages before committing to a niche',
+    'Your niche should be in pain right now, not "someday"',
+    'Best niches: regulated industries, high-ticket sales, tech-forward companies',
+    'Avoid: personal consumers, non-profits, early-stage startups with no funding',
+  ],
+}
+
+export const clientTestimonialScore: ScoreTool = {
+  slug: 'client-testimonial-score',
+  name: 'Client Testimonial Score',
+  description: 'Rate testimonials for conversion power - not all social proof is equal',
+  category: 'Social Proof',
+  type: 'score',
+  seo: {
+    title: 'Client Testimonial Score | Rate Your Testimonials',
+    description: 'Score your client testimonials for conversion power. Learn what makes testimonials actually convince prospects.',
+  },
+  inputLabel: 'Paste Your Client Testimonial',
+  inputPlaceholder: `"Before working with Sarah, our Shopify store was drowning in customer service tickets — 200+ per day. She built us an AI chatbot that now handles 80% of inquiries automatically.
+
+Result: We cut response time from 4 hours to 2 minutes, saved $4,000/month on support staff, and our customer satisfaction actually went UP.
+
+If you're an e-commerce brand doing over $1M and struggling with support volume, hire Sarah. Best $5k we ever spent."
+
+— Mike Chen, CEO at TechGear.co ($3M ARR)`,
+  criteria: [
+    { name: 'Specific Results', weight: 30, keywords: ['%', '$', 'increased', 'reduced', 'saved', 'grew', 'hours', 'days', 'time', 'revenue', 'customers'], description: 'Includes numbers and measurable outcomes' },
+    { name: 'Before/After Story', weight: 25, keywords: ['before', 'after', 'now', 'was', 'became', 'used to', 'result', 'outcome', 'transformed'], description: 'Shows transformation from problem to solution' },
+    { name: 'Credible Attribution', weight: 20, keywords: ['CEO', 'founder', 'director', 'head of', 'company', 'at', 'ARR', 'employees', 'revenue'], description: 'Full name, title, company with credibility markers' },
+    { name: 'Recommendation', weight: 15, keywords: ['recommend', 'hire', 'best', 'worth', 'would', 'should', 'if you', 'do it'], description: 'Includes explicit recommendation to others' },
+    { name: 'Target Relevance', weight: 10, keywords: ['if you', 'anyone who', 'similar', 'like us', 'struggling with', 'looking for'], description: 'Speaks to your ideal client directly' },
+  ],
+  tips: [
+    'Numbers > adjectives: "$10k saved" beats "really helpful"',
+    'Ask for before/after specifically when requesting testimonials',
+    'Include full name + title + company — anonymous testimonials convert 0%',
+    'Video testimonials convert 2-3x better than text',
+    'Best testimonial = your ideal client describing their transformation',
+    'Guide clients with questions: "What was before? What\'s after? What would you tell others?"',
+    'Place testimonials where objections happen (pricing, trust, capability)',
+    'One specific testimonial > five generic ones',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2945,6 +3024,8 @@ export const allTools: Tool[] = [
   clientOnboardingChecklist,
   launchAnnouncementScore,
   referralProgramScore,
+  nicheProfitabilityScore,
+  clientTestimonialScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
