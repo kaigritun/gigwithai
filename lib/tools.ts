@@ -3301,6 +3301,64 @@ export const salesPageScore: ScoreTool = {
   ],
 }
 
+// ============ NEW TOOLS 2026-02-06 PM ============
+
+export const retainerPitchScore: ScoreTool = {
+  slug: 'retainer-pitch-score',
+  name: 'Retainer Pitch Score',
+  description: 'Score your pitch for landing ongoing retainer clients instead of one-off projects',
+  category: 'Sales',
+  type: 'score',
+  seo: {
+    title: 'Retainer Pitch Score | Land Recurring Freelance Revenue',
+    description: 'Score your retainer pitch. Learn to convert project clients into ongoing monthly retainers.',
+  },
+  inputLabel: 'Paste Your Retainer Pitch',
+  inputPlaceholder: 'Paste the pitch or proposal you use to sell retainer arrangements...',
+  criteria: [
+    { name: 'Ongoing Value', weight: 25, keywords: ['ongoing', 'continuous', 'monthly', 'regular', 'consistent', 'maintain', 'optimize', 'grow'], description: 'Shows why ongoing work is needed' },
+    { name: 'Predictability Sell', weight: 20, keywords: ['predictable', 'budget', 'priority', 'dedicated', 'guaranteed', 'available', 'response time'], description: 'Emphasizes predictable access benefits' },
+    { name: 'Scope Definition', weight: 20, keywords: ['hours', 'deliverables', 'includes', 'scope', 'monthly', 'weekly', 'tasks', 'support'], description: 'Clear definition of what\'s included' },
+    { name: 'Cost Savings', weight: 20, keywords: ['save', 'discount', 'rate', 'compared to', 'hourly', 'value', 'investment', '$'], description: 'Shows retainer is better value' },
+    { name: 'Flexibility Terms', weight: 15, keywords: ['cancel', 'flexible', 'adjust', 'pause', 'rollover', 'month-to-month', 'no lock-in'], description: 'Reduces risk for client' },
+  ],
+  tips: [
+    'Frame it as "guaranteed access" — they jump the queue',
+    'Offer 10-20% discount vs hourly equivalent',
+    'Start small: 10-15 hours/month is easier to say yes to',
+    'Include rollover hours (unused carry forward 1 month)',
+    'Add a "priority response" perk (24-48 hour guaranteed)',
+  ],
+}
+
+export const clientGhostingRecoveryScore: ScoreTool = {
+  slug: 'client-ghosting-recovery-score',
+  name: 'Client Ghosting Recovery Score',
+  description: 'Rate your follow-up messages to revive unresponsive client conversations',
+  category: 'Client Management',
+  type: 'score',
+  seo: {
+    title: 'Client Ghosting Recovery Score | Revive Dead Conversations',
+    description: 'Score your follow-up messages for ghosted clients. Re-engage stalled conversations without being pushy.',
+  },
+  inputLabel: 'Paste Your Follow-Up Message',
+  inputPlaceholder: 'Paste the message you plan to send to a client who stopped responding...',
+  criteria: [
+    { name: 'Easy Response', weight: 25, keywords: ['yes', 'no', 'quick', 'one word', 'let me know', 'either way', 'simple'], description: 'Makes it easy to reply' },
+    { name: 'Assumption Close', weight: 20, keywords: ['assume', 'moving on', 'closing', 'unless', 'hear from you', 'otherwise'], description: 'Polite deadline without being pushy' },
+    { name: 'Value Reminder', weight: 20, keywords: ['mentioned', 'discussed', 'wanted', 'goal', 'project', 'help', 'results'], description: 'Reminds them why they reached out' },
+    { name: 'Understanding Tone', weight: 20, keywords: ['busy', 'understand', 'priorities', 'no worries', 'whenever', 'no pressure'], description: 'Shows empathy, not frustration' },
+    { name: 'Clear Next Step', weight: 15, keywords: ['call', 'chat', 'quick', 'schedule', 'next week', 'follow up'], description: 'Specific action they can take' },
+  ],
+  tips: [
+    'Wait 5-7 days between follow-ups (3 max total)',
+    'Make reply dead simple: "Just reply YES if still interested"',
+    'The "assumption close": "I\'ll assume timing changed"',
+    'Add value: "Saw this article about [their problem]"',
+    'Never guilt-trip: "I\'ve sent 3 emails..."',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3360,6 +3418,8 @@ export const allTools: Tool[] = [
   newsletterGrowthScore,
   productizedServiceScore,
   salesPageScore,
+  retainerPitchScore,
+  clientGhostingRecoveryScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
