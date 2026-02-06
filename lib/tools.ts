@@ -1747,6 +1747,75 @@ Service: {{service_type}} | Deposit: {{deposit}}%
   outputLabel: 'Your Cancellation Policy',
 }
 
+// ============ NEW TOOLS FEB 6 ============
+
+export const pricingStrategyQuiz: QuizTool = {
+  slug: 'pricing-strategy-quiz',
+  name: 'Pricing Strategy Quiz',
+  description: 'Find your optimal freelance pricing approach — hourly, project, or value-based',
+  category: 'Pricing',
+  type: 'quiz',
+  seo: {
+    title: 'Pricing Strategy Quiz | Find Your Optimal Freelance Pricing',
+    description: 'Discover whether hourly, project-based, or value-based pricing is right for your freelance business.',
+  },
+  questions: [
+    { id: 'scope', question: 'How defined are your client projects usually?', options: [
+      { value: 'clear', label: 'Very clear scope, predictable work', points: { project: 3, hourly: 1, value: 2 } },
+      { value: 'variable', label: 'Scope often changes or expands', points: { project: 0, hourly: 3, value: 1 } },
+      { value: 'outcomes', label: 'Focused on business outcomes, flexible scope', points: { project: 1, hourly: 0, value: 3 } },
+    ]},
+    { id: 'speed', question: 'How fast do you work compared to peers?', options: [
+      { value: 'faster', label: 'Much faster than average', points: { project: 3, hourly: 0, value: 2 } },
+      { value: 'average', label: 'About average', points: { project: 1, hourly: 2, value: 1 } },
+      { value: 'thorough', label: 'Slower but more thorough', points: { project: 0, hourly: 3, value: 1 } },
+    ]},
+    { id: 'impact', question: 'Can you measure the impact of your work?', options: [
+      { value: 'direct', label: 'Yes — revenue, conversions, time saved', points: { project: 1, hourly: 0, value: 3 } },
+      { value: 'indirect', label: 'Somewhat — quality improvements', points: { project: 2, hourly: 1, value: 1 } },
+      { value: 'hard', label: 'Hard to measure directly', points: { project: 2, hourly: 2, value: 0 } },
+    ]},
+    { id: 'trust', question: 'Do clients trust your expertise?', options: [
+      { value: 'expert', label: 'Yes — they hire me for results', points: { project: 1, hourly: 0, value: 3 } },
+      { value: 'growing', label: 'Building reputation', points: { project: 2, hourly: 2, value: 1 } },
+      { value: 'new', label: 'Still establishing credibility', points: { project: 1, hourly: 3, value: 0 } },
+    ]},
+  ],
+  results: [
+    { id: 'value', title: 'Value-Based Pricing', description: 'Price based on ROI to client, not time spent. Best for experts with measurable impact.', recommendations: ['Quote as % of expected value (10-20%)', 'Focus on business outcomes in proposals', 'Require discovery call before quoting'] },
+    { id: 'project', title: 'Project-Based Pricing', description: 'Fixed price per deliverable. Good for defined scope and fast workers.', recommendations: ['Quote projects, not hours', 'Build in scope change provisions', 'Track time privately to improve estimates'] },
+    { id: 'hourly', title: 'Hourly Pricing', description: 'Bill for time spent. Best for variable scope or when building reputation.', recommendations: ['Track time meticulously', 'Set minimum engagement hours', 'Plan to transition to project/value pricing as you grow'] },
+  ],
+}
+
+export const clientRedFlagScore: ScoreTool = {
+  slug: 'client-red-flag-score',
+  name: 'Client Red Flag Score',
+  description: 'Identify problematic clients before you sign the contract',
+  category: 'Clients',
+  type: 'score',
+  seo: {
+    title: 'Client Red Flag Score | Spot Bad Clients Early',
+    description: 'Rate potential clients for red flags. Avoid nightmare clients before signing contracts.',
+  },
+  inputLabel: 'Describe the Situation',
+  inputPlaceholder: 'Describe the potential client: how they found you, their communication style, what they want, budget discussions, timeline expectations, any concerns...',
+  criteria: [
+    { name: 'Respect for Process', weight: 25, keywords: ['rush', 'urgent', 'asap', 'yesterday', 'skip', 'just do it', 'no contract', 'handshake', 'trust'], description: 'Red flags around rushing or skipping your process' },
+    { name: 'Budget Reality', weight: 25, keywords: ['cheap', 'budget', 'discount', 'exposure', 'equity', 'negotiate', 'competitor', 'cheaper', 'free'], description: 'Warning signs about unrealistic budget expectations' },
+    { name: 'Scope Clarity', weight: 20, keywords: ['vague', 'unclear', 'figure out', 'you decide', 'whatever', 'simple', 'quick', 'just', 'little'], description: 'Red flags around undefined or underestimated scope' },
+    { name: 'Communication Style', weight: 15, keywords: ['ghosted', 'slow', 'difficult', 'demanding', 'weekend', 'after hours', 'urgent', 'angry', 'frustrated'], description: 'Warning signs about difficult communication' },
+    { name: 'Decision Authority', weight: 15, keywords: ['committee', 'approval', 'boss', 'stakeholder', 'check with', 'maybe', 'depends', 'not sure'], description: 'Red flags about unclear decision-making authority' },
+  ],
+  tips: [
+    'Trust your gut — if something feels off, it probably is',
+    'The best clients respect your process from day one',
+    'Difficult discovery calls = difficult projects',
+    'It costs more to fire a bad client than to pass on them',
+    'Saying no to bad fits makes room for great clients',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1776,6 +1845,8 @@ export const allTools: Tool[] = [
   discoveryCallGenerator,
   clientRetainerScore,
   cancellationPolicyGenerator,
+  pricingStrategyQuiz,
+  clientRedFlagScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
