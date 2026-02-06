@@ -2936,6 +2936,102 @@ Why this niche: E-commerce stores have money, clear ROI metrics, and urgent prob
   ],
 }
 
+export const retainerContractScore: ScoreTool = {
+  slug: 'retainer-contract-score',
+  name: 'Retainer Contract Score',
+  description: 'Rate your retainer agreement for protection and profitability',
+  category: 'Contracts',
+  type: 'score',
+  seo: {
+    title: 'Retainer Contract Score | Protect Your Freelance Income',
+    description: 'Score your retainer contract for protection and profit. Identify gaps that could cost you money or cause disputes.',
+  },
+  inputLabel: 'Paste Your Retainer Contract Terms',
+  inputPlaceholder: `Monthly Retainer Agreement
+
+Services: 20 hours/month of marketing consulting
+- Strategy calls (up to 4 per month)
+- Campaign reviews
+- Slack support during business hours
+
+Rate: $5,000/month
+Payment: Due on 1st of each month, net 7
+Term: 3 months minimum, then month-to-month
+
+Unused hours: Do not roll over
+Overage: $300/hour billed separately
+
+Termination: 30 days written notice by either party
+Scope changes: Requires written amendment...`,
+  criteria: [
+    { name: 'Clear Scope Definition', weight: 25, keywords: ['hours', 'deliverables', 'includes', 'excludes', 'scope', 'services', 'specific', 'limit', 'up to'], description: 'Precisely defines what\'s included and what\'s not' },
+    { name: 'Payment Protection', weight: 25, keywords: ['due', 'upfront', 'advance', 'deposit', 'net', 'late fee', 'penalty', 'payment terms', 'invoice'], description: 'Ensures you get paid on time' },
+    { name: 'Scope Creep Protection', weight: 20, keywords: ['overage', 'additional', 'out of scope', 'amendment', 'change order', 'extra', 'beyond', 'hourly'], description: 'Handles work beyond the retainer' },
+    { name: 'Exit Strategy', weight: 15, keywords: ['termination', 'cancel', 'notice', 'days', 'refund', 'end', 'minimum', 'commitment'], description: 'Clear terms for ending the relationship' },
+    { name: 'Rollover Policy', weight: 15, keywords: ['unused', 'rollover', 'expire', 'carry over', 'month', 'forfeit', 'accumulate'], description: 'Addresses what happens to unused hours' },
+  ],
+  tips: [
+    'Always require payment upfront — you\'re guaranteeing availability',
+    'No rollover = more profit (hours don\'t accumulate)',
+    'Minimum commitment protects you from churn',
+    '30-day notice is standard — shorter benefits client, longer benefits you',
+    'Define "emergency" work and surge pricing separately',
+    'Require written approval for anything out of scope',
+    'Include a price increase clause for annual renewals',
+    'Late payment = pause work (put it in writing)',
+  ],
+}
+
+export const portfolioCaseStudyScore: ScoreTool = {
+  slug: 'portfolio-case-study-score',
+  name: 'Portfolio Case Study Score',
+  description: 'Rate your portfolio case studies for client conversion power',
+  category: 'Portfolio',
+  type: 'score',
+  seo: {
+    title: 'Portfolio Case Study Score | Win More Clients',
+    description: 'Score your case studies for conversion power. Learn what makes case studies actually convince clients to hire you.',
+  },
+  inputLabel: 'Paste Your Case Study',
+  inputPlaceholder: `# E-commerce Email Automation for TechGear.co
+
+## The Challenge
+TechGear.co was sending generic email blasts to 50,000 subscribers. Open rates: 12%. Click rates: 1.2%. Revenue from email: $15,000/month.
+
+## My Solution
+Implemented AI-powered email personalization:
+- Segmented list by purchase history and behavior
+- Created 12 automated flows (abandoned cart, post-purchase, win-back)
+- A/B tested subject lines and send times
+- Built predictive product recommendations
+
+## The Results (90 days)
+- Open rate: 12% → 34% (183% increase)
+- Click rate: 1.2% → 4.8% (300% increase)  
+- Email revenue: $15k → $67k/month (347% increase)
+- ROI: 890% on my $7,500 project fee
+
+## Client Quote
+"Sarah's email automation paid for itself in the first week..."`,
+  criteria: [
+    { name: 'Clear Problem Statement', weight: 20, keywords: ['challenge', 'problem', 'struggling', 'before', 'issue', 'pain', 'needed', 'wanted', 'goal'], description: 'Establishes the client\'s starting situation clearly' },
+    { name: 'Specific Process', weight: 20, keywords: ['approach', 'solution', 'implemented', 'created', 'built', 'designed', 'strategy', 'steps', 'process'], description: 'Shows your methodology and expertise' },
+    { name: 'Quantified Results', weight: 30, keywords: ['%', '$', 'increased', 'decreased', 'improved', 'grew', 'revenue', 'conversion', 'ROI', 'x', 'days'], description: 'Hard numbers that prove value' },
+    { name: 'Social Proof', weight: 15, keywords: ['testimonial', 'quote', 'said', 'client', 'feedback', 'recommend', 'happy', 'review'], description: 'Includes client voice/endorsement' },
+    { name: 'Relevance Signals', weight: 15, keywords: ['industry', 'niche', 'similar', 'type', 'company', 'business', 'sector', 'vertical'], description: 'Helps prospects self-identify' },
+  ],
+  tips: [
+    'Lead with results in the title: "347% Revenue Increase" > "Email Project"',
+    'Before/after format is the most compelling structure',
+    'Include $ amounts when possible — percentages are less tangible',
+    'Show your process to demonstrate expertise, not just luck',
+    'Add a client quote even if it\'s short',
+    'Make it skimmable: headers, bullets, bold numbers',
+    'Include your fee if results justify it (shows ROI)',
+    'Write for your ideal next client — speak their language',
+  ],
+}
+
 export const clientTestimonialScore: ScoreTool = {
   slug: 'client-testimonial-score',
   name: 'Client Testimonial Score',
@@ -3026,6 +3122,8 @@ export const allTools: Tool[] = [
   referralProgramScore,
   nicheProfitabilityScore,
   clientTestimonialScore,
+  retainerContractScore,
+  portfolioCaseStudyScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
