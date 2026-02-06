@@ -2048,6 +2048,142 @@ Goal: $3,000/month by end of year`,
   ],
 }
 
+// ============ GROWTH TOOLS ============
+
+export const affiliatePitchScore: ScoreTool = {
+  slug: 'affiliate-pitch-score',
+  name: 'Affiliate Partnership Pitch Score',
+  description: 'Rate your outreach message to brands for affiliate partnerships',
+  category: 'Marketing',
+  type: 'score',
+  seo: {
+    title: 'Affiliate Pitch Score | Land Brand Partnerships',
+    description: 'Score your affiliate partnership outreach. Learn what makes brands say yes to collaborations.',
+  },
+  inputLabel: 'Paste Your Affiliate Pitch Email',
+  inputPlaceholder: `Hi [Brand] team,
+
+I run a YouTube channel focused on AI productivity tools (15k subscribers, 50k monthly views).
+
+My audience is small business owners looking for AI tools to automate their work.
+
+I'd love to partner with [Brand] because your product fits perfectly with my content. In my recent video about automation tools, I mentioned you briefly and got great feedback.
+
+I'm looking for:
+- Affiliate partnership (commission on signups)
+- Possible discount code for my audience
+
+Happy to share my media kit and analytics.
+
+Best,
+[Name]`,
+  criteria: [
+    { name: 'Audience Proof', weight: 30, keywords: ['subscriber', 'follower', 'view', 'audience', 'reach', 'engagement', 'monthly', 'download', 'email list'], description: 'Shows specific audience size and engagement' },
+    { name: 'Audience Fit', weight: 25, keywords: ['audience', 'demographic', 'target', 'niche', 'fit', 'perfect', 'ideal', 'market'], description: 'Explains why your audience matches their product' },
+    { name: 'Social Proof', weight: 20, keywords: ['mentioned', 'featured', 'reviewed', 'recommend', 'worked with', 'partner', 'brand', 'previous'], description: 'References past work or brand mentions' },
+    { name: 'Clear Ask', weight: 15, keywords: ['affiliate', 'commission', 'partnership', 'collaborate', 'discount', 'code', 'deal', 'rate'], description: 'States exactly what you want' },
+    { name: 'Professional Tone', weight: 10, keywords: ['media kit', 'analytics', 'happy to', 'discuss', 'call', 'data'], description: 'Offers supporting materials' },
+  ],
+  tips: [
+    'Lead with your audience numbers (be specific)',
+    'Explain why YOUR audience buys THEIR product',
+    'Mention if you\'ve featured them before (even briefly)',
+    'Have a media kit ready before pitching',
+    'Start with smaller brands to build portfolio',
+  ],
+}
+
+export const productizedServiceGenerator: GeneratorTool = {
+  slug: 'productized-service-generator',
+  name: 'Productized Service Generator',
+  description: 'Turn your freelance skills into a scalable, packaged service',
+  category: 'Business Strategy',
+  type: 'generator',
+  seo: {
+    title: 'Productized Service Generator | Scale Your Freelance Business',
+    description: 'Generate a productized service offering. Turn custom work into repeatable packages that scale.',
+  },
+  fields: [
+    { id: 'skill', label: 'Your Core Skill', type: 'text', placeholder: 'e.g., Logo design, copywriting, video editing', required: true },
+    { id: 'typical_project', label: 'Typical Project Description', type: 'textarea', placeholder: 'e.g., I usually create 3-5 logo concepts, do 2 revision rounds, and deliver final files...', required: true },
+    { id: 'typical_price', label: 'Typical Project Price', type: 'text', placeholder: 'e.g., $500-1500', required: true },
+    { id: 'delivery_time', label: 'Typical Delivery Time', type: 'select', options: [
+      { value: '24h', label: '24 hours' },
+      { value: '3d', label: '3 days' },
+      { value: '1w', label: '1 week' },
+      { value: '2w', label: '2 weeks' },
+    ], required: true },
+  ],
+  template: `# Productized {{skill}} Service
+
+## Your Service Package
+
+**Service Name:** [Name] - {{skill}} in {{delivery_time}}
+
+**Tagline:** Professional {{skill}} delivered in {{delivery_time}}, flat rate, no surprises.
+
+---
+
+## Package Tiers
+
+### Starter - $[Price 1]
+Based on: {{typical_project}} (simplified)
+- [Core deliverable 1]
+- [Core deliverable 2]
+- 1 revision round
+- {{delivery_time}} delivery
+
+### Professional - $[Price 2] ⭐ Most Popular
+Based on: {{typical_project}}
+- Everything in Starter
+- [Additional deliverable]
+- 2 revision rounds
+- Priority {{delivery_time}} delivery
+
+### Premium - $[Price 3]
+- Everything in Professional
+- [Premium add-on]
+- Unlimited revisions (30 days)
+- Rush delivery available
+
+---
+
+## What Makes This Work
+
+**Fixed Scope:** Every client gets the same defined deliverables
+**Fixed Price:** No custom quotes, no negotiation (based on {{typical_price}})
+**Fixed Timeline:** {{delivery_time}} delivery, every time
+
+---
+
+## Operations Checklist
+
+- [ ] Create intake form (Typeform/Tally)
+- [ ] Set up payment (Stripe/Gumroad)
+- [ ] Build delivery templates
+- [ ] Create onboarding email sequence
+- [ ] Set up project management (Notion/Trello)
+
+---
+
+## Scaling Path
+
+1. **Month 1-3:** Deliver yourself, refine process
+2. **Month 4-6:** Document SOPs, hire first VA
+3. **Month 7+:** You review, team delivers
+
+---
+
+## Landing Page Copy
+
+**Headline:** {{skill}} Without The Back-and-Forth
+
+**Subhead:** Fixed price. {{delivery_time}} delivery. Professional results.
+
+**CTA:** Get Started →`,
+  outputLabel: 'Your Productized Service Plan',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2085,6 +2221,8 @@ export const allTools: Tool[] = [
   youtubeTitleScore,
   clientExpectationScore,
   passiveIncomeCalculator,
+  affiliatePitchScore,
+  productizedServiceGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
