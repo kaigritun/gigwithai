@@ -2800,6 +2800,100 @@ Client Point of Contact: ___________`,
   outputLabel: 'Your Onboarding Checklist',
 }
 
+export const launchAnnouncementScore: ScoreTool = {
+  slug: 'launch-announcement-score',
+  name: 'Launch Announcement Score',
+  description: 'Rate your product or service launch announcement for maximum impact',
+  category: 'Marketing',
+  type: 'score',
+  seo: {
+    title: 'Launch Announcement Score | Create Buzz for Your Launch',
+    description: 'Score your launch announcement before posting. Get feedback on hooks, urgency, and social proof to maximize engagement.',
+  },
+  inputLabel: 'Paste Your Launch Announcement',
+  inputPlaceholder: `🚀 It's finally here!
+
+After 6 months of building, testing, and iterating with 50+ beta users...
+
+I'm launching [Product Name] — the AI tool that writes client proposals in 2 minutes instead of 2 hours.
+
+Early bird pricing: $29 (regular $49) — first 100 only
+
+Here's what beta users are saying:
+"Cut my proposal time by 80%" — @designer123
+"Won 3 new clients in my first week" — @freelancer456
+
+Check it out: [link]
+
+RT if you know someone who hates writing proposals 🙏`,
+  criteria: [
+    { name: 'Attention Hook', weight: 20, keywords: ['finally', 'announcing', 'introducing', 'launching', 'it\'s here', 'just dropped', 'big news', '🚀'], description: 'Grabs attention immediately' },
+    { name: 'Clear Value Prop', weight: 25, keywords: ['save', 'help', 'make', 'get', 'faster', 'easier', 'without', 'instead of', 'in minutes', 'automated'], description: 'Explains what it does and why it matters' },
+    { name: 'Social Proof', weight: 20, keywords: ['beta', 'users', 'testimonial', 'saying', 'review', 'feedback', 'quote', 'loved', 'results', '@'], description: 'Includes testimonials or user quotes' },
+    { name: 'Urgency/Scarcity', weight: 20, keywords: ['early bird', 'first', 'limited', 'only', 'launch', 'special', 'ends', 'hours', 'spots', 'exclusive'], description: 'Creates reason to act now' },
+    { name: 'Clear CTA', weight: 15, keywords: ['check', 'try', 'get', 'sign up', 'link', 'grab', 'join', 'start', 'click'], description: 'Tells people exactly what to do next' },
+  ],
+  tips: [
+    'Lead with the transformation, not features',
+    'Use specific numbers: "2 minutes" beats "fast"',
+    'Include 2-3 short testimonials with names',
+    'Early bird pricing creates urgency (don\'t fake scarcity)',
+    'Ask for a share/RT — people help if you ask',
+    'Post at peak times: Tue-Thu, 9-11 AM or 1-3 PM',
+    'Follow up with a thread expanding on features',
+    'Reply to every comment in the first hour',
+  ],
+}
+
+export const referralProgramScore: ScoreTool = {
+  slug: 'referral-program-score',
+  name: 'Referral Program Score',
+  description: 'Evaluate your client referral program structure for maximum word-of-mouth',
+  category: 'Growth',
+  type: 'score',
+  seo: {
+    title: 'Referral Program Score | Build Word-of-Mouth Growth',
+    description: 'Score your referral program. Learn how to structure incentives that get clients actively sending you leads.',
+  },
+  inputLabel: 'Describe Your Referral Program',
+  inputPlaceholder: `My referral program:
+
+For every successful referral (client who signs and pays), I offer:
+
+Referrer gets:
+- $100 Amazon gift card, OR
+- 10% off their next project, OR
+- One free month of maintenance (if on retainer)
+
+New client gets:
+- 10% off their first project
+
+How I promote it:
+- Mention at project handoff
+- Include in final invoice email
+- Have a referral page on my website
+- Ask happy clients directly after testimonial
+
+I've gotten 40% of new clients from referrals this year.`,
+  criteria: [
+    { name: 'Clear Incentive', weight: 25, keywords: ['$', 'off', 'free', 'gift', 'discount', 'cash', 'reward', 'commission', 'percentage'], description: 'Specific, valuable reward' },
+    { name: 'Two-Sided', weight: 20, keywords: ['both', 'new client', 'they get', 'you get', 'referrer', 'referred'], description: 'Benefits both referrer and new client' },
+    { name: 'Easy to Share', weight: 20, keywords: ['link', 'code', 'page', 'form', 'email', 'template', 'share', 'forward'], description: 'Simple referral mechanism' },
+    { name: 'Active Promotion', weight: 20, keywords: ['ask', 'remind', 'mention', 'email', 'handoff', 'website', 'invoice', 'newsletter'], description: 'Actively promotes the program' },
+    { name: 'Tracking', weight: 15, keywords: ['track', 'measure', '%', 'clients from', 'source', 'attributed', 'results'], description: 'Tracks referral source and results' },
+  ],
+  tips: [
+    'Cash rewards outperform discounts (people want money)',
+    'Two-sided rewards increase referral rates 2x',
+    'Ask at peak happiness: project handoff, after testimonial',
+    'Make sharing dead simple: one-click link or email template',
+    'Remind clients 2-3x per year (they forget you exist)',
+    'Track referral source religiously — know what works',
+    'Thank referrers publicly (creates social proof loop)',
+    'Best time to ask: right after they say something positive',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2849,6 +2943,8 @@ export const allTools: Tool[] = [
   clientHandoffScore,
   serviceGuaranteeScore,
   clientOnboardingChecklist,
+  launchAnnouncementScore,
+  referralProgramScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
