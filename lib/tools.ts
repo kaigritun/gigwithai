@@ -1961,6 +1961,93 @@ Option 3: The AI Side Hustle That Changed My Life`,
   ],
 }
 
+export const clientExpectationScore: ScoreTool = {
+  slug: 'client-expectation-score',
+  name: 'Client Expectation Score',
+  description: 'Rate your project proposal for clear expectation-setting',
+  category: 'Client Management',
+  type: 'score',
+  seo: {
+    title: 'Client Expectation Score | Prevent Scope Creep',
+    description: 'Score your proposal for clear expectations. Prevent misunderstandings before they happen.',
+  },
+  inputLabel: 'Paste Your Project Proposal/SOW',
+  inputPlaceholder: `Project: Website Redesign
+Duration: 4 weeks
+Price: $3,500
+
+Deliverables:
+- New homepage design (1 revision round)
+- 5 inner page templates
+- Mobile responsive
+- Basic SEO setup
+
+NOT included:
+- Content writing
+- Stock photos
+- Ongoing maintenance
+- Additional revision rounds ($150/hour)
+
+Payment: 50% upfront, 50% on delivery`,
+  criteria: [
+    { name: 'Specific Deliverables', weight: 25, keywords: ['deliverable', 'include', 'provide', 'deliver', 'create', 'design', 'build', 'pages', 'revision'], description: 'Lists exactly what client gets' },
+    { name: 'Clear Exclusions', weight: 25, keywords: ['not include', 'exclud', 'outside', 'additional', 'extra', 'not part of', 'separate'], description: 'States what is NOT included' },
+    { name: 'Timeline/Milestones', weight: 20, keywords: ['week', 'day', 'phase', 'milestone', 'deadline', 'delivery', 'timeline', 'schedule'], description: 'Clear timing expectations' },
+    { name: 'Payment Terms', weight: 15, keywords: ['payment', 'deposit', 'upfront', 'invoice', 'due', '%', 'milestone', 'final'], description: 'When and how payment works' },
+    { name: 'Revision Policy', weight: 15, keywords: ['revision', 'change', 'edit', 'round', 'feedback', 'additional', 'hour'], description: 'How changes are handled' },
+  ],
+  tips: [
+    'Always list what\'s NOT included (prevents scope creep)',
+    'Define revision rounds upfront with pricing for extras',
+    'Break timeline into milestones for client visibility',
+    'Get payment terms in writing before starting',
+    'Include what happens if they ghost (kill fee)',
+  ],
+}
+
+export const passiveIncomeCalculator: ScoreTool = {
+  slug: 'passive-income-calculator',
+  name: 'Passive Income Portfolio Score',
+  description: 'Evaluate your passive income strategy for stability and growth',
+  category: 'Business Strategy',
+  type: 'score',
+  seo: {
+    title: 'Passive Income Calculator | Build Recurring Revenue',
+    description: 'Score your passive income portfolio. Find gaps and opportunities to build more stable revenue.',
+  },
+  inputLabel: 'Describe Your Passive Income Sources',
+  inputPlaceholder: `Current passive income streams:
+
+1. Digital products on Gumroad - $400/month
+   - Notion template pack ($29)
+   - Prompt collection ($19)
+   
+2. Affiliate marketing - $200/month
+   - Software tools reviews
+   - YouTube description links
+
+3. Course on Teachable - $300/month
+   - Self-paced AI course ($99)
+   - Last updated 6 months ago
+
+Total: ~$900/month passive
+Goal: $3,000/month by end of year`,
+  criteria: [
+    { name: 'Diversification', weight: 25, keywords: ['gumroad', 'teachable', 'udemy', 'amazon', 'affiliate', 'course', 'template', 'ebook', 'membership', 'saas'], description: 'Multiple income sources, not dependent on one' },
+    { name: 'Recurring vs One-time', weight: 25, keywords: ['recurring', 'subscription', 'membership', 'monthly', 'annual', 'saas', 'retainer'], description: 'Includes subscription/recurring revenue' },
+    { name: 'Scalability', weight: 20, keywords: ['scale', 'automat', 'digital', 'unlimited', 'no cap', 'leverage', 'platform'], description: 'Can grow without proportional time increase' },
+    { name: 'Maintenance Level', weight: 15, keywords: ['update', 'maintain', 'evergreen', 'current', 'refresh', 'support'], description: 'Low ongoing maintenance required' },
+    { name: 'Clear Metrics', weight: 15, keywords: ['$', 'month', 'year', 'revenue', 'income', 'profit', 'conversion', '%'], description: 'Tracks numbers and knows what works' },
+  ],
+  tips: [
+    'Build at least 3 income streams (platform risk)',
+    'Prioritize recurring over one-time (subscriptions, memberships)',
+    'Create evergreen products that don\'t need constant updates',
+    'Know your numbers: CAC, LTV, conversion rates',
+    'Reinvest profits into traffic/marketing, not more products',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1996,6 +2083,8 @@ export const allTools: Tool[] = [
   projectTimelineScore,
   coldDmScore,
   youtubeTitleScore,
+  clientExpectationScore,
+  passiveIncomeCalculator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
