@@ -1,373 +1,159 @@
-import Link from 'next/link'
+'use client'
 
-export const metadata = {
-  title: 'AI Side Hustle Guides | GigWithAI',
-  description: 'Practical guides to earning extra income with AI tools.',
-}
+import Link from 'next/link'
+import { useState, useMemo } from 'react'
 
 const guides = [
-  {
-    slug: 'social-media-management-side-hustle',
-    title: 'How to Start a Social Media Management Side Hustle with AI in 2025',
-    description: 'Complete guide to starting a social media management side hustle using AI tools. Charge $500-2000/month per client while working part-time.',
-    difficulty: 'Beginner',
-    time: '16 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'chatgpt-consulting-business',
-    title: 'How to Start a ChatGPT Consulting Business in 2026',
-    description: 'Start a ChatGPT consulting business with low startup costs. Learn the consulting model, how to find clients, and avoid common mistakes.',
-    difficulty: 'Beginner',
-    time: '12 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'ai-thumbnail-designer',
-    title: 'AI Thumbnail Designer: Make $500-2,000/Month Creating YouTube Thumbnails',
-    description: 'Start an AI thumbnail design business. Learn the tools, process, and how to find YouTube creator clients. Earn $60-300/hour effective rate.',
-    difficulty: 'Beginner',
-    time: '15 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'ai-coloring-books-kdp',
-    title: 'Sell AI-Generated Coloring Books on Amazon KDP (Full Guide)',
-    description: 'Create and sell AI coloring books on Amazon KDP. Step-by-step guide to passive income with low-content books. $50-200/month per book potential.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'start-ai-agency-2026',
-    title: 'How to Start an AI Agency in 2026 (From Zero to First Client)',
-    description: 'Step-by-step guide to starting an AI agency. Find clients, price services, deliver results. No coding required.',
-    difficulty: 'Intermediate',
-    time: '20 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'best-ai-services-freelancers',
-    title: '12 AI Services You Can Sell as a Freelancer in 2026',
-    description: 'High-demand AI services that businesses will pay for. No coding required. Start selling this week.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'chatgpt-business-ideas',
-    title: 'ChatGPT Business Ideas: 10 Proven Ways to Make Money in 2026',
-    description: 'Start a business with ChatGPT. 10 proven ideas including content writing, chatbots, consulting, and more. Zero to $10K/month potential.',
-    difficulty: 'Beginner',
-    time: '15 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'first-1000-with-ai',
-    title: 'How to Make Your First $1,000 with AI (Step-by-Step)',
-    description: 'Step-by-step guide to earning your first $1,000 with AI services. From picking your offer to closing clients in 3-4 weeks.',
-    difficulty: 'Beginner',
-    time: '12 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'chatgpt-for-freelancers',
-    title: 'ChatGPT for Freelancers: Complete Guide to 10x Your Output',
-    description: 'Learn how to use ChatGPT to 10x your freelance output. Proposal writing, client communication, pricing AI-assisted work, and workflows that actually work.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'ai-upwork-profile',
-    title: 'How to Use AI to Create a Winning Upwork Profile',
-    description: 'Use AI to build an Upwork profile that actually converts. Step-by-step guide to crafting your title, overview, and portfolio descriptions with ChatGPT.',
-    difficulty: 'Beginner',
-    time: '15 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'start-ai-automation-agency',
-    title: 'How to Start an AI Automation Agency in 2026',
-    description: 'Complete guide to building an AI automation agency. Learn the tools, find clients, price at $2,000-10,000+, and scale to $10K/month.',
-    difficulty: 'Intermediate',
-    time: '25 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'sell-chatgpt-services',
-    title: 'How to Sell ChatGPT Services and Make $1,000-5,000/Month',
-    description: 'Learn how to sell ChatGPT services to businesses. 5 services you can offer today, pricing strategies, and how to find clients.',
-    difficulty: 'Beginner',
-    time: '15 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'ai-automation-services',
-    title: 'How to Start an AI Automation Business (No Coding Required)',
-    description: 'Start an AI automation business without coding. Learn Make.com, Zapier, and ChatGPT API to build automations businesses pay $2,000-10,000 for.',
-    difficulty: 'Intermediate',
-    time: '18 min',
-    status: 'live'
-  },
-  {
-    slug: 'chatgpt-freelancing',
-    title: '7 Ways to Make Money with ChatGPT as a Freelancer in 2026',
-    description: 'Make money with ChatGPT freelancing. 7 services you can offer, how to price them, and getting your first clients this week.',
-    difficulty: 'Beginner',
-    time: '16 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-dropshipping-guide',
-    title: 'AI for Dropshipping: Run a Profitable Store in 2026',
-    description: 'How to use AI for dropshipping. Product research, descriptions that convert, and customer service automation.',
-    difficulty: 'Intermediate',
-    time: '12 min',
-    status: 'live'
-  },
-  {
-    slug: 'chatgpt-client-acquisition',
-    title: 'ChatGPT Client Acquisition Scripts That Actually Work',
-    description: 'Cold outreach scripts powered by ChatGPT. LinkedIn messages, cold emails, and follow-up sequences that land freelance clients.',
-    difficulty: 'Beginner',
-    time: '10 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-copywriting-freelancers',
-    title: 'AI Copywriting for Freelancers: 10x Your Output',
-    description: 'How freelance copywriters can use AI to 4x their output without sacrificing quality. Prompts, workflows, and pricing strategies.',
-    difficulty: 'Beginner',
-    time: '12 min',
-    status: 'live'
-  },
-  {
-    slug: 'make-money-with-ai',
-    title: 'How to Make Money with AI: 12 Proven Methods',
-    description: 'Comprehensive guide to making money with AI in 2026. Freelancing, content creation, automation, and more.',
-    difficulty: 'Beginner',
-    time: '25 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'best-ai-tools-for-freelancers',
-    title: 'Best AI Tools for Freelancers in 2026',
-    description: 'Curated list of AI tools for writing, design, productivity, and client management. Build your freelance stack.',
-    difficulty: 'Beginner',
-    time: '12 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'ai-youtube-channel',
-    title: 'Start an AI-Powered YouTube Channel',
-    description: 'Cut video production from 13 hours to 3 hours. Scripts, editing, thumbnails, and monetization timeline.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-online-course-business',
-    title: 'Create and Sell Online Courses with AI',
-    description: 'Launch a course in 3 weeks instead of 3 months. Planning, production, pricing, and marketing.',
-    difficulty: 'Intermediate',
-    time: '20 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-social-media-management',
-    title: 'AI Social Media Management: $3K/Month Side Hustle',
-    description: 'Manage social media for small businesses using AI. Turn 2 hours of work into 20 hours of output.',
-    difficulty: 'Beginner',
-    time: '12 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-newsletter-business',
-    title: 'Start an AI-Powered Newsletter',
-    description: 'Build a profitable newsletter using AI. From picking a niche to $8K/month at 10K subscribers.',
-    difficulty: 'Beginner',
-    time: '15 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-data-automation',
-    title: 'Sell AI Data & Spreadsheet Automation: $100/Hour',
-    description: 'Automate spreadsheets and data workflows for businesses. Premium rates, no coding required.',
-    difficulty: 'Intermediate',
-    time: '14 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-virtual-assistant',
-    title: 'AI Virtual Assistant Side Hustle',
-    description: 'Start an AI-powered VA business. Handle 3x the clients with ChatGPT and automation tools. Earn $35-75/hour.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-bookkeeping-services',
-    title: 'AI Bookkeeping: $50-100/Hour Side Hustle',
-    description: 'Use QuickBooks + AI to help small businesses. Auto-categorize transactions, generate reports, earn great money.',
-    difficulty: 'Beginner',
-    time: '20 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-passive-income-2026',
-    title: 'AI Passive Income: 7 Ways to Make Money While You Sleep',
-    description: 'Build income streams that work 24/7 with AI. Print on demand, faceless YouTube, niche blogs, and more.',
-    difficulty: 'Beginner',
-    time: '15 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-etsy-sellers',
-    title: 'AI for Etsy Sellers: Double Your Sales',
-    description: 'Use AI to write better listings, optimize for search, and cut listing time from 3 hours to 30 minutes.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-content-creation-business',
-    title: 'Start an AI Content Creation Business',
-    description: 'Build a content creation service using AI. Services, pricing, tools, and getting clients.',
-    difficulty: 'Beginner',
-    time: '18 min',
-    status: 'live'
-  },
-  {
-    slug: 'pricing-ai-services',
-    title: 'How to Price AI Services',
-    description: 'Don\'t leave money on the table. Project-based, retainer, and value-based pricing strategies with real market benchmarks.',
-    difficulty: 'Intermediate',
-    time: '12 min',
-    status: 'live'
-  },
-  {
-    slug: 'selling-ai-automation-services',
-    title: 'How to Sell AI Automation Services',
-    description: 'No coding needed. Learn the tools, find clients, and price your AI automation services.',
-    difficulty: 'Intermediate',
-    time: '22 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-tutoring-side-hustle',
-    title: 'AI Tutoring Side Hustle: Make $50-150/Hour',
-    description: 'Build an AI-powered tutoring business. Use ChatGPT for prep, custom materials, and 24/7 student support.',
-    difficulty: 'Beginner',
-    time: '20 min',
-    status: 'live'
-  },
-  {
-    slug: 'ai-side-hustles-2026',
-    title: '15 Best AI Side Hustles for 2026 (Realistic Income)',
-    description: 'Comprehensive guide to AI side hustles with realistic income potential. 15 proven methods with time to first dollar, skills needed, and tools to use.',
-    difficulty: 'Beginner',
-    time: '22 min',
-    status: 'live',
-    featured: true
-  },
-  {
-    slug: 'chatgpt-money-guide',
-    title: 'How to Make Money with ChatGPT',
-    description: 'Turn ChatGPT into a money-making tool. Freelancing, content, automation, and more.',
-    difficulty: 'Beginner',
-    time: '20 min',
-    status: 'coming-soon'
-  },
-  {
-    slug: 'ai-freelancing-first-client',
-    title: 'AI Freelancing: Getting Your First Client',
-    description: 'How to position, price, and land your first AI services client on Upwork or Fiverr.',
-    difficulty: 'Intermediate',
-    time: '25 min',
-    status: 'coming-soon'
-  },
+  { title: 'Social Media Management Side Hustle', desc: 'Complete guide to starting a social media management side hustle using AI tools. Charge $500-2000/month per client.', tag: 'Social Media', href: '/guides/social-media-management-side-hustle', featured: true },
+  { title: 'Start a ChatGPT Consulting Business', desc: 'Start a ChatGPT consulting business with low startup costs. Learn the consulting model and how to find clients.', tag: 'Consulting', href: '/guides/chatgpt-consulting-business', featured: true },
+  { title: 'AI Thumbnail Designer Business', desc: 'Start an AI thumbnail design business. Learn the tools, process, and how to find YouTube creator clients.', tag: 'Design', href: '/guides/ai-thumbnail-designer', featured: true },
+  { title: 'AI Coloring Books on Amazon KDP', desc: 'Create and sell AI coloring books on Amazon KDP. Step-by-step guide to passive income with low-content books.', tag: 'Passive Income', href: '/guides/ai-coloring-books-kdp', featured: true },
+  { title: 'Start an AI Agency in 2026', desc: 'Step-by-step guide to starting an AI agency. Find clients, price services, deliver results. No coding required.', tag: 'Agency', href: '/guides/start-ai-agency-2026', featured: true },
+  { title: '12 AI Services to Sell as a Freelancer', desc: 'High-demand AI services that businesses will pay for. No coding required. Start selling this week.', tag: 'Freelancing', href: '/guides/best-ai-services-freelancers', featured: true },
+  { title: 'ChatGPT Business Ideas 2026', desc: 'Start a business with ChatGPT. 10 proven ideas including content writing, chatbots, consulting, and more.', tag: 'Business Ideas', href: '/guides/chatgpt-business-ideas', featured: true },
+  { title: 'Make Your First $1,000 with AI', desc: 'Step-by-step guide to earning your first $1,000 with AI services. From picking your offer to closing clients.', tag: 'Getting Started', href: '/guides/first-1000-with-ai', featured: true },
+  { title: 'ChatGPT for Freelancers', desc: 'Learn how to use ChatGPT to 10x your freelance output. Proposal writing, client communication, and workflows.', tag: 'Freelancing', href: '/guides/chatgpt-for-freelancers', featured: true },
+  { title: 'AI Upwork Profile Guide', desc: 'Use AI to build an Upwork profile that actually converts. Step-by-step guide to crafting your title and overview.', tag: 'Freelancing', href: '/guides/ai-upwork-profile', featured: true },
+  { title: 'AI Automation Agency Guide', desc: 'Complete guide to building an AI automation agency. Learn the tools, find clients, price at $2,000-10,000+.', tag: 'Agency', href: '/guides/start-ai-automation-agency', featured: true },
+  { title: 'Sell ChatGPT Services ($1-5K/Month)', desc: 'Learn how to sell ChatGPT services to businesses. 5 services you can offer today, pricing strategies.', tag: 'Consulting', href: '/guides/sell-chatgpt-services', featured: true },
+  { title: 'AI Automation Business (No Code)', desc: 'Start an AI automation business without coding. Learn Make.com, Zapier, and ChatGPT API.', tag: 'Automation', href: '/guides/ai-automation-services' },
+  { title: 'Make Money with ChatGPT Freelancing', desc: 'Make money with ChatGPT freelancing. 7 services you can offer, how to price them.', tag: 'Freelancing', href: '/guides/chatgpt-freelancing' },
+  { title: 'AI for Dropshipping', desc: 'How to use AI for dropshipping. Product research, descriptions that convert, and customer service automation.', tag: 'E-commerce', href: '/guides/ai-dropshipping-guide' },
+  { title: 'ChatGPT Client Acquisition Scripts', desc: 'Cold outreach scripts powered by ChatGPT. LinkedIn messages, cold emails, and follow-up sequences.', tag: 'Sales', href: '/guides/chatgpt-client-acquisition' },
+  { title: 'AI Copywriting for Freelancers', desc: 'How freelance copywriters can use AI to 4x their output without sacrificing quality.', tag: 'Writing', href: '/guides/ai-copywriting-freelancers' },
+  { title: 'How to Make Money with AI (12 Methods)', desc: 'Comprehensive guide to making money with AI in 2026. Freelancing, content creation, automation, and more.', tag: 'Getting Started', href: '/guides/make-money-with-ai', featured: true },
+  { title: 'Best AI Tools for Freelancers 2026', desc: 'Curated list of AI tools for writing, design, productivity, and client management.', tag: 'Tools', href: '/guides/best-ai-tools-for-freelancers', featured: true },
+  { title: 'AI-Powered YouTube Channel', desc: 'Cut video production from 13 hours to 3 hours. Scripts, editing, thumbnails, and monetization.', tag: 'Content Creation', href: '/guides/ai-youtube-channel' },
+  { title: 'Create Online Courses with AI', desc: 'Launch a course in 3 weeks instead of 3 months. Planning, production, pricing, and marketing.', tag: 'Education', href: '/guides/ai-online-course-business' },
+  { title: 'AI Social Media Management ($3K/Month)', desc: 'Manage social media for small businesses using AI. Turn 2 hours of work into 20 hours of output.', tag: 'Social Media', href: '/guides/ai-social-media-management' },
+  { title: 'AI-Powered Newsletter Business', desc: 'Build a profitable newsletter using AI. From picking a niche to $8K/month at 10K subscribers.', tag: 'Content Creation', href: '/guides/ai-newsletter-business' },
+  { title: 'AI Data Automation ($100/Hour)', desc: 'Automate spreadsheets and data workflows for businesses. Premium rates, no coding required.', tag: 'Automation', href: '/guides/ai-data-automation' },
+  { title: 'AI Virtual Assistant Business', desc: 'Start an AI-powered VA business. Handle 3x the clients with ChatGPT and automation tools.', tag: 'Virtual Assistant', href: '/guides/ai-virtual-assistant' },
+  { title: 'AI Bookkeeping ($50-100/Hour)', desc: 'Use QuickBooks + AI to help small businesses. Auto-categorize transactions, generate reports.', tag: 'Finance', href: '/guides/ai-bookkeeping-services' },
+  { title: 'AI Passive Income (7 Methods)', desc: 'Build income streams that work 24/7 with AI. Print on demand, faceless YouTube, niche blogs.', tag: 'Passive Income', href: '/guides/ai-passive-income-2026' },
+  { title: 'AI for Etsy Sellers', desc: 'Use AI to write better listings, optimize for search, and cut listing time from 3 hours to 30 minutes.', tag: 'E-commerce', href: '/guides/ai-etsy-sellers' },
+  { title: 'AI Content Creation Business', desc: 'Build a content creation service using AI. Services, pricing, tools, and getting clients.', tag: 'Content Creation', href: '/guides/ai-content-creation-business' },
+  { title: 'How to Price AI Services', desc: 'Don\'t leave money on the table. Project-based, retainer, and value-based pricing strategies.', tag: 'Pricing', href: '/guides/pricing-ai-services' },
+  { title: 'Sell AI Automation Services', desc: 'No coding needed. Learn the tools, find clients, and price your AI automation services.', tag: 'Automation', href: '/guides/selling-ai-automation-services' },
+  { title: 'AI Tutoring ($50-150/Hour)', desc: 'Build an AI-powered tutoring business. Use ChatGPT for prep, custom materials, and student support.', tag: 'Education', href: '/guides/ai-tutoring-side-hustle' },
+  { title: '15 Best AI Side Hustles 2026', desc: 'Comprehensive guide to AI side hustles with realistic income potential. 15 proven methods.', tag: 'Getting Started', href: '/guides/ai-side-hustles-2026', featured: true },
+  { title: 'AI Data Entry Jobs', desc: 'Find and excel at AI data entry jobs. Tools, platforms, and strategies for remote data work.', tag: 'Remote Work', href: '/guides/ai-data-entry-jobs' },
+  { title: 'AI Virtual Assistant Jobs', desc: 'Land AI virtual assistant jobs. Skills needed, platforms to find work, and how to stand out.', tag: 'Virtual Assistant', href: '/guides/ai-virtual-assistant-jobs' },
+  { title: 'ChatGPT Customer Service Jobs', desc: 'Use ChatGPT for customer service roles. Templates, workflows, and productivity tips.', tag: 'Customer Service', href: '/guides/chatgpt-customer-service-jobs' },
+  { title: 'AI Freelance Services', desc: 'Top AI freelance services in demand. What to offer, how to price, where to find clients.', tag: 'Freelancing', href: '/guides/ai-freelance-services' },
 ]
 
+const categories = ['All', 'Getting Started', 'Freelancing', 'Agency', 'Automation', 'Content Creation', 'Social Media', 'Consulting', 'Passive Income', 'Tools', 'E-commerce']
+
 export default function GuidesPage() {
+  const [search, setSearch] = useState('')
+  const [category, setCategory] = useState('All')
+  const [showFeaturedOnly, setShowFeaturedOnly] = useState(false)
+
+  const filteredGuides = useMemo(() => {
+    return guides.filter(guide => {
+      const matchesSearch = search === '' || 
+        guide.title.toLowerCase().includes(search.toLowerCase()) ||
+        guide.desc.toLowerCase().includes(search.toLowerCase())
+      const matchesCategory = category === 'All' || guide.tag === category
+      const matchesFeatured = !showFeaturedOnly || guide.featured
+      return matchesSearch && matchesCategory && matchesFeatured
+    })
+  }, [search, category, showFeaturedOnly])
+
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
-<section className="px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-2">AI Side Hustle Guides</h1>
-          <p className="text-gray-400 mb-12">Practical, no-fluff guides to making money with AI.</p>
+    <main className="max-w-6xl mx-auto px-6 py-20">
+      <div className="max-w-2xl mb-12">
+        <p className="text-violet-400 font-mono text-sm mb-4 uppercase tracking-wider">
+          {guides.length} Guides
+        </p>
+        <h1 className="text-4xl font-bold mb-6">
+          AI Side Hustle Guides
+        </h1>
+        <p className="text-xl text-white/60 leading-relaxed">
+          Practical, no-fluff guides to making money with AI tools.
+        </p>
+      </div>
 
-          <div className="space-y-4">
-            {guides.map((guide) => {
-              const isLive = guide.status === 'live'
-              const content = (
-                <>
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className={`text-lg font-semibold mb-2 ${isLive ? 'group-hover:text-violet-400 transition' : ''}`}>
-                        {guide.title}
-                      </h3>
-                      <p className="text-gray-400 text-sm">
-                        {guide.description}
-                      </p>
-                    </div>
-                    {isLive && <span className="text-violet-400 opacity-0 group-hover:opacity-100 transition">→</span>}
-                  </div>
-                  <div className="mt-4 flex gap-2">
-                    {'featured' in guide && guide.featured && <span className="text-xs px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded">⭐ Featured</span>}
-                    <span className={`text-xs px-2 py-1 rounded ${
-                      guide.difficulty === 'Beginner' 
-                        ? 'bg-violet-500/10 text-violet-400'
-                        : 'bg-amber-500/10 text-amber-400'
-                    }`}>
-                      {guide.difficulty}
-                    </span>
-                    <span className="text-xs px-2 py-1 bg-white/5 text-gray-400 rounded">{guide.time}</span>
-                    {!isLive && <span className="text-xs px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded">Coming Soon</span>}
-                  </div>
-                </>
-              )
-              
-              return isLive ? (
-                <Link
-                  key={guide.slug}
-                  href={`/guides/${guide.slug}`}
-                  className="block p-6 border border-white/10 rounded-lg relative overflow-hidden hover:border-violet-500/50 hover:bg-white/[0.02] transition group"
-                >
-                  {content}
-                </Link>
-              ) : (
-                <div
-                  key={guide.slug}
-                  className="block p-6 border border-white/10 rounded-lg relative overflow-hidden"
-                >
-                  {content}
-                </div>
-              )
-            })}
-          </div>
+      {/* Search */}
+      <div className="mb-6">
+        <input
+          type="text"
+          placeholder="Search guides..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full md:w-96 bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:outline-none focus:border-violet-500/50 transition-colors"
+        />
+      </div>
 
-          <p className="text-center text-gray-500 text-sm mt-12">
-            More guides coming weekly. Check back soon.
-          </p>
+      {/* Category filters */}
+      <div className="flex gap-2 flex-wrap mb-6">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setCategory(cat)}
+            className={`text-xs font-mono px-4 py-2 rounded-full border transition-colors ${
+              category === cat
+                ? 'border-violet-500 bg-violet-500/10 text-violet-400'
+                : 'border-white/20 text-white/60 hover:border-white/40'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Featured toggle */}
+      <div className="flex items-center gap-2 mb-10">
+        <button
+          onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
+          className={`text-xs font-mono px-4 py-2 rounded-full border transition-colors ${
+            showFeaturedOnly
+              ? 'border-emerald-500 bg-emerald-500/10 text-emerald-400'
+              : 'border-white/20 text-white/60 hover:border-white/40'
+          }`}
+        >
+          ⭐ Featured Only
+        </button>
+      </div>
+
+      {/* Results count */}
+      {(search || category !== 'All' || showFeaturedOnly) && (
+        <p className="text-white/40 text-sm mb-6">
+          {filteredGuides.length} guide{filteredGuides.length !== 1 ? 's' : ''} found
+        </p>
+      )}
+
+      {/* Guides grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredGuides.map((guide) => (
+          <Link
+            key={guide.href}
+            href={guide.href}
+            className="border border-white/10 rounded-lg p-5 hover:border-violet-500/50 hover:bg-white/[0.02] transition-colors group"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs font-mono text-violet-400 uppercase">
+                {guide.tag}
+              </span>
+              {guide.featured && (
+                <span className="text-xs text-emerald-400">⭐</span>
+              )}
+            </div>
+            <h2 className="font-medium text-lg mb-2 group-hover:text-violet-400 transition-colors">
+              {guide.title}
+            </h2>
+            <p className="text-white/50 text-sm line-clamp-2">{guide.desc}</p>
+          </Link>
+        ))}
+      </div>
+
+      {filteredGuides.length === 0 && (
+        <div className="text-center py-16 text-white/40">
+          <p className="text-lg mb-2">No guides found</p>
+          <p className="text-sm">Try a different search or category</p>
         </div>
-      </section>
-
-      {/* Footer */}
-      </main>
+      )}
+    </main>
   )
 }
