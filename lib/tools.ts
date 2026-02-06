@@ -1269,6 +1269,158 @@ Module 3: Capstone (4 hours)
   ],
 }
 
+// ============ BUSINESS TOOLS ============
+
+export const invoiceScore: ScoreTool = {
+  slug: 'invoice-score',
+  name: 'Freelance Invoice Score',
+  description: 'Rate your invoices for professionalism and on-time payment likelihood',
+  category: 'Business',
+  type: 'score',
+  seo: {
+    title: 'Freelance Invoice Score | Get Paid Faster',
+    description: 'Score your invoices for professionalism and payment likelihood. Get tips to ensure clients pay on time.',
+  },
+  inputLabel: 'Paste Your Invoice Text',
+  inputPlaceholder: `INVOICE #1234
+Date: Feb 6, 2026
+Due: Feb 20, 2026
+
+Bill To:
+Acme Corp
+123 Main St
+
+Services:
+- Website redesign (20 hours) - $3,000
+- Logo design - $500
+
+Subtotal: $3,500
+Total Due: $3,500
+
+Payment Methods:
+Bank Transfer, PayPal, Stripe
+
+Thank you for your business!`,
+  criteria: [
+    {
+      name: 'Clear Identification',
+      weight: 20,
+      keywords: ['invoice', 'number', '#', 'date', 'bill to', 'from', 'client', 'address'],
+      description: 'Invoice number, date, and client details clearly shown',
+    },
+    {
+      name: 'Due Date Specified',
+      weight: 25,
+      keywords: ['due', 'due date', 'payment due', 'net', 'within', 'days', 'by'],
+      description: 'Clear payment deadline stated',
+    },
+    {
+      name: 'Itemized Services',
+      weight: 20,
+      keywords: ['hours', 'rate', 'services', 'description', 'qty', 'quantity', 'unit', 'items'],
+      description: 'Services broken down with details',
+    },
+    {
+      name: 'Payment Options',
+      weight: 15,
+      keywords: ['payment', 'pay', 'bank', 'transfer', 'paypal', 'stripe', 'wire', 'check', 'credit card'],
+      description: 'Multiple payment methods offered',
+    },
+    {
+      name: 'Professional Details',
+      weight: 10,
+      keywords: ['total', 'subtotal', 'tax', 'thank', 'terms', 'late fee', 'contact'],
+      description: 'Professional touches like totals and terms',
+    },
+    {
+      name: 'Late Payment Terms',
+      weight: 10,
+      keywords: ['late', 'overdue', 'penalty', 'fee', 'interest', 'after due date'],
+      description: 'Late payment consequences stated',
+    },
+  ],
+  tips: [
+    'Always include a clear due date (Net 14 or Net 30)',
+    'Add late payment fees (1.5%/month is standard)',
+    'Offer multiple payment methods (bank, PayPal, Stripe)',
+    'Include your business name and contact info',
+    'Send invoices immediately upon completion',
+    'Follow up 3 days before due date as a reminder',
+  ],
+}
+
+export const scopeCreepDetector: ScoreTool = {
+  slug: 'scope-creep-detector',
+  name: 'Scope Creep Detector',
+  description: 'Analyze project specs and contracts for scope creep risk before signing',
+  category: 'Business',
+  type: 'score',
+  seo: {
+    title: 'Scope Creep Detector | Protect Your Freelance Projects',
+    description: 'Analyze project specifications for scope creep risk. Identify vague requirements and missing boundaries before they cost you.',
+  },
+  inputLabel: 'Paste Project Description or Contract',
+  inputPlaceholder: `Project: Website Redesign
+
+The client wants a modern, professional website that "wows" visitors. Should include:
+- Homepage that makes a great first impression
+- Several internal pages as needed
+- Mobile responsive
+- "Fast and SEO-friendly"
+- Unlimited revisions until happy
+- Logo tweaks if needed
+- Social media graphics would be nice
+
+Budget: $2,000
+Timeline: 2 weeks`,
+  criteria: [
+    {
+      name: 'Specific Deliverables',
+      weight: 25,
+      keywords: ['pages', 'screens', 'features', 'deliverables', 'includes', 'scope', 'specifically', 'exactly', 'defined'],
+      description: 'Deliverables are clearly defined with quantities',
+    },
+    {
+      name: 'Revision Limits',
+      weight: 20,
+      keywords: ['revisions', 'rounds', 'changes', 'edits', 'feedback', 'iterations', 'final'],
+      description: 'Number of revision rounds specified',
+    },
+    {
+      name: 'Timeline Clarity',
+      weight: 15,
+      keywords: ['deadline', 'timeline', 'milestones', 'due date', 'delivery', 'phases', 'weeks', 'days'],
+      description: 'Clear timeline with milestones',
+    },
+    {
+      name: 'Out of Scope',
+      weight: 20,
+      keywords: ['not included', 'excluded', 'out of scope', 'does not include', 'separate', 'additional'],
+      description: 'Explicitly states what is NOT included',
+    },
+    {
+      name: 'Change Request Process',
+      weight: 10,
+      keywords: ['change request', 'additional work', 'extra', 'hourly', 'additional fee', 'outside scope'],
+      description: 'Process for handling scope changes',
+    },
+    {
+      name: 'Red Flags',
+      weight: 10,
+      keywords: ['unlimited', 'as needed', 'whatever', 'flexible', 'etc', 'and more', 'if needed', 'would be nice'],
+      description: 'Absence of vague, open-ended language',
+    },
+  ],
+  tips: [
+    '"Unlimited revisions" = RUN (cap at 2-3 rounds)',
+    '"As needed" = Define exactly what that means',
+    '"Fast turnaround" = Get specific dates in writing',
+    'Always list what is OUT of scope explicitly',
+    'Add hourly rate for work beyond scope',
+    'Get sign-off at each milestone before proceeding',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1290,6 +1442,8 @@ export const allTools: Tool[] = [
   clientOnboardingGenerator,
   gigPitchScore,
   courseOutlineScore,
+  invoiceScore,
+  scopeCreepDetector,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
