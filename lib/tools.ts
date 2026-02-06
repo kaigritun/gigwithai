@@ -1816,6 +1816,87 @@ export const clientRedFlagScore: ScoreTool = {
   ],
 }
 
+// ============ CLIENT MANAGEMENT TOOLS ============
+
+export const upsellScriptGenerator: GeneratorTool = {
+  slug: 'upsell-script-generator',
+  name: 'Upsell Script Generator',
+  description: 'Generate natural scripts to upsell existing clients on additional services',
+  category: 'Sales',
+  type: 'generator',
+  seo: {
+    title: 'Upsell Script Generator | Increase Revenue from Existing Clients',
+    description: 'Create natural upsell scripts that feel helpful, not salesy. Grow revenue from your existing client base.',
+  },
+  fields: [
+    { id: 'current', label: 'Current Service', type: 'text', placeholder: 'Logo design, $800 project', required: true },
+    { id: 'upsell', label: 'Upsell Service', type: 'text', placeholder: 'Brand guidelines package, $1,500', required: true },
+    { id: 'benefit', label: 'Key Client Benefit', type: 'textarea', placeholder: 'Why this will help them specifically' },
+    { id: 'timing', label: 'When to Pitch', type: 'select', options: [
+      { value: 'midproject', label: 'During current project' },
+      { value: 'delivery', label: 'At project delivery' },
+      { value: 'followup', label: 'Post-project follow-up' },
+    ], required: true },
+  ],
+  template: `📈 UPSELL SCRIPT
+
+CONTEXT: You completed {{current}} and want to offer {{upsell}}
+
+---
+
+NATURAL CONVERSATION STARTER:
+
+"Hey [Client], I've been thinking about your project and noticed something that might be worth discussing.
+
+Right now you have {{current}}, which is working great. But I've seen clients get even more value when they pair this with {{upsell}}.
+
+{{benefit}}
+
+I wanted to mention it now because [timing-specific reason]:
+• Mid-project: "We're already deep in the creative process, so adding this would be seamless"
+• At delivery: "While everything is fresh, it's the perfect time to extend this foundation"  
+• Follow-up: "Now that you've had time to use what we created, you can see where there are gaps"
+
+If it's not the right time, totally understand. Just wanted you to know the option exists."
+
+---
+
+💡 UPSELL TIPS:
+• Best time is when client is happiest (after a win)
+• Position as helping them, not selling
+• Make it easy to say no (removes pressure)
+• Existing clients are 3x easier to sell than new ones`,
+  outputLabel: 'Your Upsell Script',
+}
+
+export const projectTimelineScore: ScoreTool = {
+  slug: 'project-timeline-score',
+  name: 'Project Timeline Score',
+  description: 'Rate how realistic and client-friendly your project timelines are',
+  category: 'Project Management',
+  type: 'score',
+  seo: {
+    title: 'Project Timeline Score | Create Realistic Estimates',
+    description: 'Analyze your project timeline for realism, buffer, and client clarity. Stop underestimating.',
+  },
+  inputLabel: 'Describe Your Project Timeline',
+  inputPlaceholder: 'Describe the project, your estimated timeline, phases, milestones, and any dependencies...',
+  criteria: [
+    { name: 'Buffer Time', weight: 25, keywords: ['buffer', 'contingency', 'margin', 'flexibility', 'extra', 'room', 'worst case', 'if delayed'], description: 'Includes realistic buffer for unexpected issues' },
+    { name: 'Clear Milestones', weight: 20, keywords: ['milestone', 'phase', 'deliverable', 'checkpoint', 'review', 'approval', 'deadline', 'week'], description: 'Broken into clear checkpoints' },
+    { name: 'Dependencies Noted', weight: 20, keywords: ['depends', 'waiting', 'client', 'feedback', 'approval', 'asset', 'content', 'before', 'after'], description: 'Identifies client dependencies that could cause delays' },
+    { name: 'Revision Rounds', weight: 20, keywords: ['revision', 'round', 'feedback', 'iteration', 'change', 'adjust', 'refine', 'version'], description: 'Accounts for revision time' },
+    { name: 'Communication Cadence', weight: 15, keywords: ['update', 'check-in', 'weekly', 'daily', 'status', 'call', 'meeting', 'report'], description: 'Clear communication schedule' },
+  ],
+  tips: [
+    'Add 20-30% buffer to your realistic estimate',
+    'Identify everything you need from the client upfront',
+    'Include specific revision rounds (e.g., 2 rounds included)',
+    'Set milestones every 1-2 weeks for longer projects',
+    'Build in explicit approval gates before moving forward',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1847,6 +1928,8 @@ export const allTools: Tool[] = [
   cancellationPolicyGenerator,
   pricingStrategyQuiz,
   clientRedFlagScore,
+  upsellScriptGenerator,
+  projectTimelineScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
