@@ -2572,6 +2572,86 @@ export const communityBuildingScore: ScoreTool = {
   ],
 }
 
+// ============ AFFILIATE & HANDOFFS ============
+
+export const affiliateContentScore: ScoreTool = {
+  slug: 'affiliate-content-score',
+  name: 'Affiliate Content Score',
+  description: 'Rate your affiliate marketing content for conversions',
+  category: 'Monetization',
+  type: 'score',
+  seo: {
+    title: 'Affiliate Content Score | Create Content That Converts',
+    description: 'Score your affiliate content for authenticity and conversions. Learn what makes affiliate recommendations that sell.',
+  },
+  inputLabel: 'Paste Your Affiliate Content',
+  inputPlaceholder: `I've been using Notion for 2 years now and it's transformed how I run my freelance business.
+
+Here's what I love:
+- All my client projects in one place
+- Easy to share pages with clients
+- Templates save me hours every week
+
+Honestly, I tried Asana and Trello first, but nothing clicked until Notion.
+
+If you're a freelancer struggling with organization, I'd highly recommend giving it a try. Here's my affiliate link for 20% off your first year: [link]
+
+Full disclosure: I earn a small commission if you sign up, but I genuinely use this every single day.`,
+  criteria: [
+    { name: 'Authentic Experience', weight: 30, keywords: ['I use', 'I\'ve been', 'my experience', 'personally', 'honestly', 'genuinely', 'every day', 'transformed', 'love', 'helped me'], description: 'Shows genuine personal usage and experience' },
+    { name: 'Specific Benefits', weight: 25, keywords: ['save', 'hours', 'easy', 'helped', 'benefit', 'feature', 'result', 'specifically', 'example', 'how I'], description: 'Details specific benefits, not generic praise' },
+    { name: 'Honest Limitations', weight: 15, keywords: ['however', 'but', 'downside', 'not for', 'if you', 'consider', 'tried', 'alternative', 'compared'], description: 'Acknowledges limitations or alternatives' },
+    { name: 'Clear Disclosure', weight: 15, keywords: ['affiliate', 'commission', 'disclosure', 'partner', 'sponsored', 'earn', 'paid', 'compensated'], description: 'Transparent about affiliate relationship' },
+    { name: 'Soft Sell', weight: 15, keywords: ['recommend', 'check out', 'might help', 'worth trying', 'if you\'re interested', 'here\'s a link'], description: 'Recommendation feels natural, not pushy' },
+  ],
+  tips: [
+    'Only promote products you actually use — authenticity sells',
+    'Share specific results or time/money saved',
+    'Compare to alternatives you\'ve tried (shows credibility)',
+    'Always disclose affiliate relationships (legally required + builds trust)',
+    'Best converting: tutorials, comparisons, "day in my life" content',
+    'Avoid overpromotion — one affiliate mention per piece max',
+  ],
+}
+
+export const clientHandoffScore: ScoreTool = {
+  slug: 'client-handoff-score',
+  name: 'Client Handoff Score',
+  description: 'Rate your project handoff documentation and process',
+  category: 'Client Management',
+  type: 'score',
+  seo: {
+    title: 'Client Handoff Score | Deliver Projects Professionally',
+    description: 'Score your project handoff process. Create smooth transitions that lead to referrals and repeat business.',
+  },
+  inputLabel: 'Describe Your Handoff Process or Documentation',
+  inputPlaceholder: `Handoff includes:
+
+1. Final deliverables folder (organized by type)
+2. Quick start guide - how to use/edit what I built
+3. Credentials document (all logins, organized)
+4. Video walkthrough (10-15 min Loom)
+5. 30-day support window for questions
+6. Feedback request (testimonial ask)
+
+I schedule a final call to walk through everything and answer questions. Then send a follow-up email with all links and next steps.`,
+  criteria: [
+    { name: 'Organized Deliverables', weight: 25, keywords: ['folder', 'organized', 'files', 'assets', 'deliverables', 'final', 'labeled', 'structure', 'drive', 'dropbox'], description: 'Files are organized and easy to find' },
+    { name: 'Documentation', weight: 25, keywords: ['guide', 'documentation', 'how to', 'instructions', 'walkthrough', 'video', 'loom', 'tutorial', 'readme'], description: 'Includes instructions for using deliverables' },
+    { name: 'Credentials/Access', weight: 15, keywords: ['credentials', 'login', 'password', 'access', 'accounts', 'transfer', 'ownership', 'admin'], description: 'All access properly transferred' },
+    { name: 'Support Period', weight: 15, keywords: ['support', 'questions', 'available', 'help', 'days', 'weeks', 'reach out', 'follow-up'], description: 'Offers post-project support' },
+    { name: 'Testimonial Ask', weight: 20, keywords: ['feedback', 'testimonial', 'review', 'referral', 'recommend', 'case study', 'portfolio'], description: 'Requests feedback or testimonial' },
+  ],
+  tips: [
+    'Record a Loom walkthrough — clients love video',
+    'Create a template handoff doc you reuse every project',
+    'Transfer ownership before final payment',
+    'Ask for testimonial while they\'re happiest (at handoff)',
+    'Include a "what to do if..." troubleshooting section',
+    'Offer a paid retainer for ongoing support',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2617,6 +2697,8 @@ export const allTools: Tool[] = [
   recurringRevenueScore,
   webinarScriptGenerator,
   communityBuildingScore,
+  affiliateContentScore,
+  clientHandoffScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
