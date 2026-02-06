@@ -2420,6 +2420,158 @@ export const recurringRevenueScore: ScoreTool = {
   ],
 }
 
+// ============ ADVANCED GROWTH TOOLS ============
+
+export const webinarScriptGenerator: GeneratorTool = {
+  slug: 'webinar-script-generator',
+  name: 'Webinar Script Generator',
+  description: 'Create a high-converting webinar or workshop outline',
+  category: 'Content Creation',
+  type: 'generator',
+  seo: {
+    title: 'Webinar Script Generator | Create Converting Workshop Outlines',
+    description: 'Generate a professional webinar script with hook, content flow, and call-to-action. Perfect for coaches, consultants, and course creators.',
+  },
+  fields: [
+    { id: 'topic', label: 'Webinar Topic', type: 'text', placeholder: 'How to Land Freelance Clients Without Cold Outreach', required: true },
+    { id: 'audience', label: 'Target Audience', type: 'text', placeholder: 'New freelancers struggling to find clients', required: true },
+    { id: 'duration', label: 'Duration', type: 'select', options: [
+      { value: '30', label: '30 minutes' },
+      { value: '45', label: '45 minutes' },
+      { value: '60', label: '60 minutes' },
+      { value: '90', label: '90 minutes' },
+    ], required: true },
+    { id: 'goal', label: 'Primary Goal', type: 'select', options: [
+      { value: 'sell_course', label: 'Sell a course or program' },
+      { value: 'sell_service', label: 'Sell consulting/coaching' },
+      { value: 'build_list', label: 'Build email list' },
+      { value: 'establish_authority', label: 'Establish thought leadership' },
+    ], required: true },
+    { id: 'offer', label: 'Your Offer (optional)', type: 'text', placeholder: '6-week coaching program, online course, etc.' },
+  ],
+  template: `🎤 WEBINAR SCRIPT: {{topic}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Duration: {{duration}} minutes
+Audience: {{audience}}
+Goal: {{goal}}
+Offer: {{offer}}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🪝 HOOK (5 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ATTENTION GRABBER:
+"What if I told you that {{audience}} could [achieve result] without [common pain point]?"
+
+YOUR STORY:
+- Where you started (relatable struggle)
+- The turning point (discovery)
+- Where you are now (proof/credibility)
+
+PROMISE:
+"By the end of this webinar, you'll have [specific takeaway]"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 CONTENT (25-40 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SECTION 1: THE PROBLEM (5 min)
+- Why most people struggle with [topic]
+- Common myths and mistakes
+- The real root cause
+
+SECTION 2: THE FRAMEWORK (15-20 min)
+Present 3-5 key points with this structure:
+1. [Point Name]
+   - Why it matters
+   - How to implement
+   - Quick example
+
+SECTION 3: CASE STUDIES (5-10 min)
+- Show 2-3 results from yourself or clients
+- Be specific: numbers, timelines, transformations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 TRANSITION (5 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"So you now know [framework]. But here's the thing..."
+- Acknowledge they COULD do it alone
+- Explain what makes it hard/slow
+- Introduce the faster/better path
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💰 OFFER (10-15 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+INTRODUCE: "That's why I created {{offer}}"
+
+WHAT'S INCLUDED:
+- Module/feature 1 (value: $X)
+- Module/feature 2 (value: $X)
+- Bonus 1 (value: $X)
+- Total value: $XXX
+
+PRICE REVEAL:
+"But you won't pay $XXX. Your investment today is just $X"
+
+OBJECTION HANDLING:
+- "I don't have time" → [response]
+- "I can't afford it" → [response]
+- "What if it doesn't work?" → [guarantee]
+
+CTA:
+"Click the link below / stay for Q&A / book a call"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ Q&A (10-15 min)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Prepare answers for common questions:
+1. How long until I see results?
+2. Is this right for [specific situation]?
+3. What support do I get?
+4. What makes this different?
+
+CLOSE:
+"Thank you for spending this time with me. If you're ready to [transformation], {{offer}} is waiting for you. I can't wait to see you inside."`,
+  outputLabel: 'Your Webinar Script',
+}
+
+export const communityBuildingScore: ScoreTool = {
+  slug: 'community-building-score',
+  name: 'Community Building Score',
+  description: 'Rate your strategy for building an engaged community',
+  category: 'Growth',
+  type: 'score',
+  seo: {
+    title: 'Community Building Score | Build an Engaged Audience',
+    description: 'Score your community building strategy. Learn how to create engaged communities that drive sales and referrals.',
+  },
+  inputLabel: 'Describe your current community or plans to build one',
+  inputPlaceholder: `I have a Discord server with 200 members but only 10-15 are active daily. I post occasionally but don't have a consistent schedule. I haven't monetized it yet. Members mostly ask questions but don't help each other much. I'm thinking of creating a paid tier but not sure what to offer...`,
+  criteria: [
+    { name: 'Engagement Level', weight: 25, keywords: ['active', 'engaged', 'conversations', 'daily', 'discussions', 'comments', 'replies', 'participation', 'vibrant'], description: 'How active is the community' },
+    { name: 'Value Delivery', weight: 25, keywords: ['content', 'resources', 'value', 'exclusive', 'helps', 'learning', 'support', 'answers', 'education'], description: 'What members get from participating' },
+    { name: 'Member Connection', weight: 20, keywords: ['connections', 'network', 'help each other', 'peer', 'relationships', 'collaborations', 'friendships'], description: 'Members connecting with each other' },
+    { name: 'Consistency', weight: 15, keywords: ['regular', 'schedule', 'consistent', 'weekly', 'daily', 'routine', 'events', 'predictable'], description: 'Regular engagement and content cadence' },
+    { name: 'Monetization Path', weight: 15, keywords: ['paid', 'premium', 'tier', 'revenue', 'monetize', 'membership', 'sponsor', 'convert'], description: 'Clear path to revenue' },
+  ],
+  tips: [
+    'Start small and engaged > large and dead',
+    'Create rituals: weekly calls, daily prompts, monthly challenges',
+    'Highlight members: features, shoutouts, wins channels',
+    'Make it easy to participate: simple prompts, low-friction activities',
+    'Paid communities work best when free has real value too',
+    'Define your community\'s "why" — what transformation do members seek?',
+    'Empower super-users to help moderate and engage',
+    'Track: DAU/MAU ratio, messages per member, retention rate',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2463,6 +2615,8 @@ export const allTools: Tool[] = [
   freelanceBioGenerator,
   courseLaunchChecklistGenerator,
   recurringRevenueScore,
+  webinarScriptGenerator,
+  communityBuildingScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
