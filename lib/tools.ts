@@ -1897,6 +1897,70 @@ export const projectTimelineScore: ScoreTool = {
   ],
 }
 
+// ============ OUTREACH & CONTENT TOOLS ============
+
+export const coldDmScore: ScoreTool = {
+  slug: 'cold-dm-score',
+  name: 'Cold DM Score',
+  description: 'Rate your cold DMs for response likelihood before sending',
+  category: 'Outreach',
+  type: 'score',
+  seo: {
+    title: 'Cold DM Score | Get More Responses',
+    description: 'Score your cold DMs before sending. Get feedback on hooks, personalization, and response likelihood.',
+  },
+  inputLabel: 'Paste Your Cold DM',
+  inputPlaceholder: `Hey Sarah! Loved your thread on AI automation - the part about saving 10 hours/week really resonated.
+
+I help creators like you turn their expertise into digital products. Just helped someone in your space launch a $15k course.
+
+Would you be open to a quick chat about whether this could work for you?`,
+  criteria: [
+    { name: 'Personalized Hook', weight: 30, keywords: ['loved', 'saw', 'noticed', 'your post', 'your thread', 'your video', 'your content', 'resonated', 'impressed'], description: 'Opens with something specific about them' },
+    { name: 'Relevant Value', weight: 25, keywords: ['help', 'helped', 'similar', 'like you', 'in your space', 'your niche', 'creators', 'result', '$'], description: 'Shows relevant value you can provide' },
+    { name: 'Social Proof', weight: 15, keywords: ['helped', 'worked with', 'client', 'result', '$', '%', 'case study', 'example', 'testimonial'], description: 'Includes brief proof of results' },
+    { name: 'Soft Ask', weight: 20, keywords: ['would you be', 'open to', 'interested', 'quick', 'brief', 'chat', 'call', 'curious if'], description: 'Low-pressure call to action' },
+    { name: 'Brevity', weight: 10, keywords: [], description: 'Short and easy to read (under 100 words)' },
+  ],
+  tips: [
+    'Lead with THEIR content, not your pitch',
+    'One specific compliment > generic praise',
+    'Keep it under 4-5 sentences',
+    'Soft ask: "open to chatting" not "let\'s hop on a call"',
+    'Don\'t attach anything or include links',
+  ],
+}
+
+export const youtubeTitleScore: ScoreTool = {
+  slug: 'youtube-title-score',
+  name: 'YouTube Title Score',
+  description: 'Rate your YouTube titles for click-through potential',
+  category: 'Content Creator',
+  type: 'score',
+  seo: {
+    title: 'YouTube Title Score | Get More Clicks',
+    description: 'Score your YouTube titles for CTR potential. Get feedback on hooks, curiosity gaps, and searchability.',
+  },
+  inputLabel: 'Paste Your YouTube Title(s)',
+  inputPlaceholder: `Option 1: I Made $10,000 in 30 Days Using AI (Here's How)
+Option 2: How to Make Money with AI in 2026
+Option 3: The AI Side Hustle That Changed My Life`,
+  criteria: [
+    { name: 'Curiosity Gap', weight: 25, keywords: ['how', 'why', 'what', 'secret', 'truth', 'actually', 'really', 'revealed', 'nobody tells you', 'here\'s'], description: 'Creates curiosity that demands a click' },
+    { name: 'Specific Numbers', weight: 25, keywords: ['$', '%', '1', '2', '3', '4', '5', '7', '10', '30', '100', 'days', 'hours', 'minutes', 'steps'], description: 'Includes specific numbers or timeframes' },
+    { name: 'Emotional Hook', weight: 20, keywords: ['changed', 'transformed', 'mistake', 'regret', 'wish', 'finally', 'stopped', 'quit', 'best', 'worst'], description: 'Triggers emotional response' },
+    { name: 'Clear Topic', weight: 15, keywords: ['ai', 'money', 'business', 'tutorial', 'guide', 'review', 'vs', 'how to', 'what is'], description: 'Viewer knows what the video is about' },
+    { name: 'Length', weight: 15, keywords: [], description: 'Optimal length (40-60 characters)' },
+  ],
+  tips: [
+    'Front-load the hook (first 3-4 words matter most)',
+    'Use numbers: "$10k" > "money"',
+    'Create curiosity: "Here\'s How" makes people click',
+    'Test with/without "I" - personal can boost or hurt CTR',
+    'Keep under 60 characters (gets cut off on mobile)',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1930,6 +1994,8 @@ export const allTools: Tool[] = [
   clientRedFlagScore,
   upsellScriptGenerator,
   projectTimelineScore,
+  coldDmScore,
+  youtubeTitleScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
