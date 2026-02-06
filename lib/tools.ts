@@ -2652,6 +2652,154 @@ I schedule a final call to walk through everything and answer questions. Then se
   ],
 }
 
+// ============ SERVICE GUARANTEE ============
+
+export const serviceGuaranteeScore: ScoreTool = {
+  slug: 'service-guarantee-score',
+  name: 'Service Guarantee Score',
+  description: 'Rate your service guarantee for client confidence',
+  category: 'Sales',
+  type: 'score',
+  seo: {
+    title: 'Service Guarantee Score | Build Client Confidence',
+    description: 'Score your service guarantee. Learn how to create guarantees that increase conversions without excessive risk.',
+  },
+  inputLabel: 'Describe Your Service Guarantee',
+  inputPlaceholder: `My guarantee for website design:
+
+"If you're not completely satisfied with your website design within the first round of revisions, I'll continue revising until you love it — at no additional cost. If after 3 revision rounds you're still not happy, I'll refund 50% of your deposit.
+
+Timeline guarantee: Your first draft delivered within 10 business days, or I'll discount the project 10%.
+
+I've delivered 150+ websites and never had to use the refund clause."`,
+  criteria: [
+    { name: 'Specific Promise', weight: 25, keywords: ['specific', 'deliverable', 'timeline', 'days', 'results', 'guarantee', 'promise', 'will', 'committed'], description: 'Clear, measurable commitment' },
+    { name: 'Risk Reversal', weight: 25, keywords: ['refund', 'free', 'discount', 'money back', 'no charge', 'at no cost', 'no questions'], description: 'Takes risk off the client' },
+    { name: 'Reasonable Limits', weight: 20, keywords: ['within', 'rounds', 'reasonable', 'conditions', 'terms', 'applies', 'excludes'], description: 'Has sensible boundaries to prevent abuse' },
+    { name: 'Confidence Signal', weight: 15, keywords: ['never', 'track record', 'confident', 'delivered', 'clients', 'years', 'experience'], description: 'Backs guarantee with credibility' },
+    { name: 'Easy to Understand', weight: 15, keywords: [], description: 'Simple, not buried in fine print' },
+  ],
+  tips: [
+    'Strong guarantee > no guarantee (increases conversions 2-3x)',
+    'Be specific: "10 days or 10% off" > "fast delivery"',
+    'Add reasonable limits to prevent abuse',
+    'Confidence sells: "I\'ve never had to use it"',
+    'Risk reversal works: full refunds increase trust',
+    'Money-back guarantees sound scary but rarely get used',
+    'Timeline guarantees are lower risk than satisfaction guarantees',
+    'Test different guarantees — measure conversion impact',
+  ],
+}
+
+export const clientOnboardingChecklist: GeneratorTool = {
+  slug: 'client-onboarding-checklist',
+  name: 'Client Onboarding Checklist Generator',
+  description: 'Create a professional client onboarding checklist',
+  category: 'Operations',
+  type: 'generator',
+  seo: {
+    title: 'Client Onboarding Checklist Generator | Professional Freelance Onboarding',
+    description: 'Generate a complete client onboarding checklist. Start projects smoothly with proper kickoff, access collection, and expectations.',
+  },
+  fields: [
+    { id: 'service', label: 'Service Type', type: 'text', placeholder: 'e.g., Web Design, Consulting, Marketing', required: true },
+    { id: 'duration', label: 'Typical Project Duration', type: 'select', options: [
+      { value: '1-2 weeks', label: '1-2 weeks' },
+      { value: '1 month', label: '1 month' },
+      { value: '2-3 months', label: '2-3 months' },
+      { value: '3+ months', label: '3+ months' },
+      { value: 'Ongoing', label: 'Ongoing retainer' },
+    ], required: true },
+    { id: 'deliverables', label: 'Main Deliverables', type: 'textarea', placeholder: 'e.g., Logo files, website, strategy document, social media posts', required: true },
+    { id: 'access', label: 'What Access Do You Need?', type: 'textarea', placeholder: 'e.g., Brand guidelines, website logins, analytics access, content assets' },
+    { id: 'tools', label: 'Tools You\'ll Use', type: 'text', placeholder: 'e.g., Figma, Notion, Slack, Asana' },
+  ],
+  template: `# CLIENT ONBOARDING CHECKLIST
+## {{service}} Project
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 PRE-KICKOFF (Before Start Date)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Contract & Payment**
+☐ Signed contract/agreement received
+☐ Deposit/first payment received
+☐ Invoice sent with payment terms
+☐ Payment schedule confirmed for {{duration}} project
+
+**Client Information**
+☐ Primary contact name & preferred contact method
+☐ Secondary contact (for urgent issues)
+☐ Company details for invoicing
+☐ Time zone and preferred meeting times
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔑 ACCESS COLLECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Required Access:**
+{{access}}
+
+☐ All logins received and tested
+☐ Permissions verified (admin/editor as needed)
+☐ Backup access method confirmed
+☐ Credentials stored securely
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 ASSETS & MATERIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+☐ Brand guidelines/style guide
+☐ Logo files (vector formats)
+☐ Existing content/materials
+☐ Competitor examples or inspiration
+☐ Previous work to reference
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 KICKOFF CALL AGENDA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Introductions & project goals (5 min)
+2. Review scope & deliverables:
+   {{deliverables}}
+3. Timeline & milestones for {{duration}} (10 min)
+4. Communication preferences (5 min)
+5. Q&A and next steps (10 min)
+
+**After Kickoff:**
+☐ Send meeting summary/notes
+☐ Share project timeline
+☐ Create shared workspace ({{tools}})
+☐ Schedule first check-in
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 COMMUNICATION SETUP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+☐ Add to project management tool ({{tools}})
+☐ Share project folder/workspace
+☐ Confirm preferred communication channel
+☐ Set expectations for response times
+☐ Schedule recurring check-ins (if {{duration}} > 1 month)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ READY TO START
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Before beginning work, confirm:
+☐ All access granted and working
+☐ Scope and deliverables clear
+☐ First milestone date confirmed
+☐ Payment received/scheduled
+☐ Communication channel active
+
+---
+Project Start Date: ___________
+First Milestone Due: ___________
+Client Point of Contact: ___________`,
+  outputLabel: 'Your Onboarding Checklist',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -2699,6 +2847,8 @@ export const allTools: Tool[] = [
   communityBuildingScore,
   affiliateContentScore,
   clientHandoffScore,
+  serviceGuaranteeScore,
+  clientOnboardingChecklist,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
