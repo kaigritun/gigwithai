@@ -1134,6 +1134,141 @@ Phase 3: Delivery (Final days)
   outputLabel: 'Your Onboarding Sequence',
 }
 
+// ============ PITCH & COURSE TOOLS ============
+
+export const gigPitchScore: ScoreTool = {
+  slug: 'gig-pitch-score',
+  name: 'Gig Pitch Score',
+  description: 'Score your freelance pitch messages for conversion likelihood',
+  category: 'Freelance',
+  type: 'score',
+  seo: {
+    title: 'Gig Pitch Score | Freelance Proposal Analyzer',
+    description: 'Score your freelance pitch messages. Get feedback on personalization, value proposition, and conversion likelihood.',
+  },
+  inputLabel: 'Paste Your Pitch Message',
+  inputPlaceholder: `Building a waitlist for an AI product? I noticed you need both the landing page and email collection integrated.
+
+I recently built a similar waitlist page for an AI writing tool - it converted at 12% and collected 3,000 signups in the first month.
+
+I can have a draft ready in 3 days. Would Tuesday work for a quick call to discuss?`,
+  criteria: [
+    {
+      name: 'Opening Hook',
+      weight: 20,
+      keywords: ['noticed', 'saw', 'read', 'your', 'problem', 'challenge', 'goal', 'looking for', 'need'],
+      description: 'First line grabs attention and shows understanding',
+    },
+    {
+      name: 'Problem Understanding',
+      weight: 25,
+      keywords: ['looks like', 'sounds like', 'understand', 'your goal', 'you need', 'specifically', 'because', 'particularly'],
+      description: 'Shows you understand their specific needs',
+    },
+    {
+      name: 'Relevant Proof',
+      weight: 25,
+      keywords: ['similar', 'built', 'created', 'helped', 'worked on', 'portfolio', '%', 'increased', 'generated', 'saved', 'x'],
+      description: 'Shows similar work or results',
+    },
+    {
+      name: 'Clear Next Step',
+      weight: 15,
+      keywords: ['call', 'chat', 'discuss', 'send', 'share', 'would', 'can we', 'available', 'ready'],
+      description: 'Ends with a specific call to action',
+    },
+    {
+      name: 'Not Generic',
+      weight: 15,
+      keywords: ['specifically', 'your project', 'this', 'for you', 'based on'],
+      description: 'Avoids copy-paste template feel',
+    },
+  ],
+  tips: [
+    'Lead with their problem, not your intro',
+    'Include ONE highly relevant portfolio example',
+    'Add specific results (12% conversion > "good results")',
+    'Keep it under 150 words - clients skim',
+    'End with a specific next step (not "let me know")',
+    'Don\'t mention your rates in the first message',
+  ],
+}
+
+export const courseOutlineScore: ScoreTool = {
+  slug: 'course-outline-score',
+  name: 'Course Outline Score',
+  description: 'Score your course or workshop outline for student success likelihood',
+  category: 'Digital Products',
+  type: 'score',
+  seo: {
+    title: 'Course Outline Score | Online Course Analyzer',
+    description: 'Score your course or workshop outline. Get feedback on structure, clarity, and student success likelihood.',
+  },
+  inputLabel: 'Paste Your Course Outline',
+  inputPlaceholder: `AI Automation for Freelancers
+
+By the end of this course, you'll have 5 working AI automations saving you 10+ hours per week.
+
+Perfect for: Freelancers who want to scale without hiring
+
+Module 1: Foundations (2 hours)
+- How AI automation actually works
+- Exercise: Set up your first automation
+
+Module 2: Client Communication (3 hours)
+- Automated follow-ups and scheduling
+- Project: Build your client onboarding automation
+
+Module 3: Capstone (4 hours)
+- Build a custom automation for your business`,
+  criteria: [
+    {
+      name: 'Clear Outcome',
+      weight: 25,
+      keywords: ['learn', 'master', 'build', 'create', 'understand', 'able to', 'by the end', 'you\'ll', 'walk away', 'result'],
+      description: 'Students know exactly what they\'ll achieve',
+    },
+    {
+      name: 'Logical Progression',
+      weight: 20,
+      keywords: ['module', 'week', 'lesson', 'chapter', 'part', 'section', 'intro', 'basics', 'fundamentals', 'advanced', 'capstone'],
+      description: 'Modules build on each other logically',
+    },
+    {
+      name: 'Practical Application',
+      weight: 25,
+      keywords: ['exercise', 'project', 'build', 'create', 'practice', 'hands-on', 'assignment', 'workshop', 'real-world', 'template'],
+      description: 'Includes hands-on exercises or projects',
+    },
+    {
+      name: 'Time Estimates',
+      weight: 10,
+      keywords: ['hour', 'hours', 'minute', 'minutes', 'week', 'day', 'total', 'duration'],
+      description: 'Students know time commitment',
+    },
+    {
+      name: 'Target Audience',
+      weight: 10,
+      keywords: ['for', 'perfect for', 'designed for', 'beginner', 'intermediate', 'advanced', 'prerequisite', 'who should'],
+      description: 'States who it\'s for and any requirements',
+    },
+    {
+      name: 'Unique Angle',
+      weight: 10,
+      keywords: ['unlike', 'different', 'unique', 'my approach', 'framework', 'system', 'method', 'proven', 'experience'],
+      description: 'What makes this different from other courses',
+    },
+  ],
+  tips: [
+    'Start with the transformation: "By the end, you\'ll be able to..."',
+    'Include a capstone project that uses all skills',
+    'Add time estimates for each module',
+    'Include "quick wins" early for motivation',
+    'Make exercises progressively more challenging',
+    'Define your target audience clearly',
+  ],
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -1153,6 +1288,8 @@ export const allTools: Tool[] = [
   passiveIncomeQuiz,
   contentRoiCalculator,
   clientOnboardingGenerator,
+  gigPitchScore,
+  courseOutlineScore,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
