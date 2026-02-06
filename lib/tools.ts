@@ -3359,6 +3359,76 @@ export const clientGhostingRecoveryScore: ScoreTool = {
   ],
 }
 
+// ============ MORE TOOLS 2026-02-06 PM ============
+
+export const competitorAnalysisScore: ScoreTool = {
+  slug: 'competitor-analysis-score',
+  name: 'Competitor Analysis Score',
+  description: 'Rate your competitor research for positioning and differentiation',
+  category: 'Strategy',
+  type: 'score',
+  seo: {
+    title: 'Competitor Analysis Score | Stand Out in Your Freelance Niche',
+    description: 'Score your competitor research. Identify gaps and opportunities to differentiate your services.',
+  },
+  inputLabel: 'Paste Your Competitor Analysis',
+  inputPlaceholder: 'Paste your notes on competitors: their services, pricing, positioning, strengths, weaknesses...',
+  criteria: [
+    { name: 'Multiple Competitors', weight: 20, keywords: ['competitor', 'compared', 'other', 'alternative', 'similar', 'also offers', 'vs', 'versus'], description: 'Analyzes multiple competitors' },
+    { name: 'Pricing Research', weight: 25, keywords: ['price', 'rate', 'cost', 'charge', '$', 'package', 'tier', 'expensive', 'affordable'], description: 'Understands market pricing' },
+    { name: 'Strength Analysis', weight: 20, keywords: ['strength', 'advantage', 'good at', 'known for', 'reputation', 'specialize', 'expert'], description: 'Identifies competitor strengths' },
+    { name: 'Gap Identification', weight: 20, keywords: ['gap', 'missing', 'don\'t', 'weakness', 'opportunity', 'underserved', 'unmet', 'pain point'], description: 'Spots market gaps' },
+    { name: 'Differentiation Plan', weight: 15, keywords: ['differentiate', 'unique', 'position', 'angle', 'niche', 'focus', 'specialize', 'instead'], description: 'Has a positioning strategy' },
+  ],
+  tips: [
+    'Check competitor reviews — client complaints = your opportunity',
+    'Don\'t just compete on price — find underserved niches',
+    'Look for positioning gaps: "fast" or "premium" or "specialized"',
+    'Review their portfolio — what types of clients do they attract?',
+    'Sign up for their newsletters to learn their content strategy',
+  ],
+}
+
+export const caseStudyGenerator: GeneratorTool = {
+  slug: 'case-study-generator',
+  name: 'Case Study Generator',
+  description: 'Generate compelling case studies that convert prospects into clients',
+  category: 'Portfolio',
+  type: 'generator',
+  seo: {
+    title: 'Case Study Generator | Convert Prospects with Proof',
+    description: 'Generate portfolio case studies that showcase results. Turn past projects into client-winning social proof.',
+  },
+  fields: [
+    { id: 'client_type', label: 'Client Type (anonymized)', type: 'text', placeholder: 'B2B SaaS startup', required: true },
+    { id: 'challenge', label: 'Their Challenge', type: 'textarea', placeholder: 'Low conversion rate on pricing page, losing deals to competitors...', required: true },
+    { id: 'solution', label: 'Your Solution', type: 'textarea', placeholder: 'Redesigned pricing page with A/B testing, added social proof...', required: true },
+    { id: 'results', label: 'Results (with numbers)', type: 'textarea', placeholder: '47% increase in conversions, $50k additional MRR...', required: true },
+    { id: 'timeline', label: 'Project Timeline', type: 'text', placeholder: '6 weeks', required: false },
+    { id: 'testimonial', label: 'Client Quote (optional)', type: 'textarea', placeholder: '"Working with [you] was a game-changer for our business..."' },
+  ],
+  template: `## The Challenge
+
+{{client_type}} came to me with a critical problem: {{challenge}}
+
+## The Solution
+
+{{solution}}
+
+## The Results
+
+After {{timeline}}, the results spoke for themselves:
+
+{{results}}
+
+{{testimonial}}
+
+---
+
+*Ready for similar results? Let's talk about your project.*`,
+  outputLabel: 'Your Case Study',
+}
+
 // ============ ALL TOOLS ============
 
 export const allTools: Tool[] = [
@@ -3420,6 +3490,8 @@ export const allTools: Tool[] = [
   salesPageScore,
   retainerPitchScore,
   clientGhostingRecoveryScore,
+  competitorAnalysisScore,
+  caseStudyGenerator,
 ]
 
 export function getToolBySlug(slug: string): Tool | undefined {
