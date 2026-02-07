@@ -227,6 +227,188 @@ export const products: Product[] = [
       title: 'Passive Income Automation - Build Income on Autopilot',
       description: 'Automate your income streams. Digital products, affiliate marketing, and content monetization systems.'
     }
+  },
+  {
+    slug: 'upwork-success-prompts',
+    name: 'Upwork Success Prompt Pack',
+    description: '50 prompts to dominate Upwork',
+    longDescription: 'From profile optimization to proposal writing to client management. Everything you need to build a thriving Upwork business.',
+    price: 900,
+    category: 'prompt-pack',
+    features: [
+      'Profile headline & overview optimization',
+      'Proposal templates that convert',
+      'Portfolio presentation',
+      'Client communication scripts',
+      'Review request automation'
+    ],
+    includes: [
+      '10 Profile optimization prompts',
+      '15 Proposal writing prompts',
+      '10 Client communication prompts',
+      '10 Portfolio description prompts',
+      '5 Review & referral prompts'
+    ],
+    seo: {
+      title: 'Upwork AI Prompts - Win More Freelance Projects',
+      description: 'AI prompts for Upwork success. Profile optimization, proposal writing, and client management that wins projects.'
+    }
+  },
+  {
+    slug: 'fiverr-gig-success-prompts',
+    name: 'Fiverr Gig Success Prompt Pack',
+    description: '50 prompts for Fiverr sellers',
+    longDescription: 'Create gigs that rank and convert. From keyword research to gig descriptions to buyer communication - automate your Fiverr growth.',
+    price: 900,
+    category: 'prompt-pack',
+    features: [
+      'Gig keyword research',
+      'Title & description optimization',
+      'Package tier pricing',
+      'FAQ generation',
+      'Buyer message templates'
+    ],
+    includes: [
+      '10 Keyword research prompts',
+      '15 Gig description prompts',
+      '10 Buyer communication prompts',
+      '10 Upselling prompts',
+      '5 Review response templates'
+    ],
+    seo: {
+      title: 'Fiverr AI Prompts - Create Gigs That Sell',
+      description: 'AI prompts for Fiverr success. Gig optimization, pricing, and buyer communication that drives sales.'
+    }
+  },
+  {
+    slug: 'client-retention-prompts',
+    name: 'Client Retention Prompt Pack',
+    description: '50 prompts to keep clients coming back',
+    longDescription: 'Recurring revenue beats one-time gigs. These prompts help you build relationships, deliver exceptional service, and create clients for life.',
+    price: 900,
+    category: 'prompt-pack',
+    features: [
+      'Check-in message templates',
+      'Value-add suggestions',
+      'Upsell conversation starters',
+      'Feedback collection',
+      'Referral program setup'
+    ],
+    includes: [
+      '15 Client check-in prompts',
+      '10 Value-add suggestions',
+      '10 Upsell conversation prompts',
+      '10 Feedback collection prompts',
+      '5 Referral ask templates'
+    ],
+    seo: {
+      title: 'Client Retention AI Prompts - Build Recurring Revenue',
+      description: 'Keep clients for life with AI prompts. Check-ins, upsells, and referral requests that build recurring revenue.'
+    }
+  },
+  {
+    slug: 'consulting-business-starter',
+    name: 'Consulting Business Starter Cheat Sheet',
+    description: 'Launch your consulting practice in 30 days',
+    longDescription: 'From defining your niche to landing your first client. A complete roadmap for starting a consulting business from scratch.',
+    price: 1200,
+    category: 'cheat-sheet',
+    features: [
+      'Niche selection framework',
+      'Pricing & packaging',
+      'Brand positioning',
+      'Lead generation systems',
+      'Client onboarding process'
+    ],
+    includes: [
+      'Niche validation checklist',
+      'Pricing calculator spreadsheet',
+      'Positioning statement templates',
+      '30-day launch plan',
+      'Client onboarding checklist'
+    ],
+    seo: {
+      title: 'Start a Consulting Business - 30 Day Launch Guide',
+      description: 'Launch your consulting practice. Niche selection, pricing, positioning, and a 30-day action plan.'
+    }
+  },
+  {
+    slug: 'ai-workflow-templates',
+    name: 'AI Workflow Templates Bundle',
+    description: '10 ready-to-use automation workflows',
+    longDescription: 'Copy-paste workflows for common AI tasks. Content creation, research, client delivery, and more - all pre-built and customizable.',
+    price: 1500,
+    category: 'template-bundle',
+    features: [
+      'Content creation pipelines',
+      'Research automation',
+      'Client deliverable workflows',
+      'Email sequence builders',
+      'Social media batching'
+    ],
+    includes: [
+      '3 Content creation workflows',
+      '2 Research & analysis workflows',
+      '2 Client delivery workflows',
+      '2 Marketing automation workflows',
+      '1 Admin & invoicing workflow'
+    ],
+    seo: {
+      title: 'AI Workflow Templates - Automation for Freelancers',
+      description: 'Pre-built AI workflows for freelancers. Content, research, delivery, and marketing automation templates.'
+    }
+  },
+  {
+    slug: 'freelance-pricing-calculator',
+    name: 'Freelance Pricing Calculator Cheat Sheet',
+    description: 'Price your services for profit',
+    longDescription: 'Stop guessing what to charge. This calculator factors in your costs, market rates, and value to set prices that grow your business.',
+    price: 700,
+    category: 'cheat-sheet',
+    features: [
+      'Cost-based pricing formula',
+      'Value-based pricing framework',
+      'Market rate research guide',
+      'Package tier templates',
+      'Rate increase scripts'
+    ],
+    includes: [
+      'Pricing calculator spreadsheet',
+      'Market research template',
+      'Package pricing examples',
+      'Rate increase email templates',
+      'Negotiation response scripts'
+    ],
+    seo: {
+      title: 'Freelance Pricing Calculator - Charge What You\'re Worth',
+      description: 'Calculate your freelance rates. Cost analysis, market research, and pricing strategies that maximize profit.'
+    }
+  },
+  {
+    slug: 'service-proposal-templates',
+    name: 'Service Business Proposal Templates',
+    description: '15 proposal templates that close deals',
+    longDescription: 'Professional proposals that win projects. Includes templates for different service types, pricing presentations, and follow-up sequences.',
+    price: 1200,
+    category: 'template-bundle',
+    features: [
+      'Multiple service types',
+      'Pricing presentation formats',
+      'Case study integration',
+      'Terms & conditions',
+      'Follow-up sequences'
+    ],
+    includes: [
+      '5 Consulting proposal templates',
+      '5 Creative service templates',
+      '3 Retainer proposal templates',
+      '2 Project-based templates',
+      'Follow-up email sequence'
+    ],
+    seo: {
+      title: 'Freelance Proposal Templates - Win More Projects',
+      description: 'Proposal templates that close deals. Consulting, creative, and retainer proposals with follow-up sequences.'
+    }
   }
 ]
 
