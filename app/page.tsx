@@ -106,6 +106,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Income Potential Stats */}
+      <section className="px-6 py-16 border-t border-white/10">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-mono text-white/40 uppercase tracking-wider mb-8 text-center">
+            Real Income Potential
+          </p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { stat: '$500-2K', label: 'Social Media/mo' },
+              { stat: '$2-10K', label: 'AI Agency/project' },
+              { stat: '$50-150', label: 'Consulting/hour' },
+              { stat: '37+', label: 'Detailed Guides' },
+            ].map((item) => (
+              <div key={item.label}>
+                <div className="text-2xl md:text-3xl font-bold text-violet-400 mb-2">{item.stat}</div>
+                <div className="text-xs text-white/50">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why This Works */}
       <section className="px-6 py-16 border-t border-white/10">
         <div className="max-w-5xl mx-auto">
